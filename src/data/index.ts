@@ -1,30 +1,50 @@
 import raw from './beys.json';
-import type { Bey } from './types';
+import { LINES, type Bey } from './types';
+import { HEIGHT_STEPS } from './meta';
 
-const LINE_ORDER = ['BX', 'UX', 'CX'];
-
-function codeOrder(code: string): number {
-  const [line, number] = code.split('-');
-  return LINE_ORDER.indexOf(line) * 1000 + Number(number);
+/** The name kids see first: the Hasbro name when there is one. */
+export function displayName(bey: Bey): string {
+  return bey.names.hasbro ?? bey.names.takaraTomy ?? bey.id;
 }
 
-/** Every Bey, in product-code order: BX, then UX, then CX. */
-export const BEYS: Bey[] = (raw as Bey[]).slice().sort((a, b) => codeOrder(a.code) - codeOrder(b.code));
+/** The same Bey's name on the other brand's boxes, when both are known. */
+export function otherName(bey: Bey): string | undefined {
+  return bey.names.hasbro ? bey.names.takaraTomy : undefined;
+}
+
+function sortKey(bey: Bey): number {
+  const number = bey.code ? Number(bey.code.split('-')[1]) : 999;
+  return LINES.indexOf(bey.line) * 1000 + number;
+}
+
+/** Every Bey: BX, then UX, then CX; numbered ones first, then by name. */
+export const BEYS: Bey[] = (raw as Bey[])
+  .slice()
+  .sort((a, b) => sortKey(a) - sortKey(b) || displayName(a).localeCompare(displayName(b)));
 
 export function findBey(id: string): Bey | undefined {
   return BEYS.find((bey) => bey.id === id);
 }
 
-/** The combo as printed on the box, e.g. "3-60F". */
+/** The combo as printed on the box, e.g. "4-70LF". */
 export function comboName(bey: Bey): string {
   return `${bey.ratchet.name}${bey.bit.code}`;
 }
 
-/** Reads a ratchet code like "3-60": 3 points, 6.0 mm tall. */
-export function parseRatchet(name: string): { points: number; heightMm: number } {
+/** Reads a ratchet code like "4-70": 4 points, 7.0 mm tall, shown as 70 on the box. */
+export function parseRatchet(name: string): { points: number; height: number } {
   const match = /^(\d+)-(\d+)$/.exec(name);
-  if (!match) return { points: 0, heightMm: 0 };
-  return { points: Number(match[1]), heightMm: Number(match[2]) / 10 };
+  if (!match) return { points: 0, height: 0 };
+  return { points: Number(match[1]), height: Number(match[2]) };
+}
+
+/** Which of the 5 height blocks lights up (1-5). */
+export function heightStep(height: number): number {
+  let best = 0;
+  HEIGHT_STEPS.forEach((step, i) => {
+    if (Math.abs(step - height) < Math.abs(HEIGHT_STEPS[best] - height)) best = i;
+  });
+  return best + 1;
 }
 
 /** Total weight in grams, or undefined until every part's weight is known. */

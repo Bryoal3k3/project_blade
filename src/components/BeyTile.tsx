@@ -1,6 +1,6 @@
 import type { Bey } from '../data/types';
 import { TYPE_INFO } from '../data/meta';
-import { comboName } from '../data';
+import { comboName, displayName } from '../data';
 import { BeyPicture } from './BeyPicture';
 import { Icon } from './Icon';
 import { typeVars } from './TypeChips';
@@ -20,12 +20,12 @@ export function BeyTile({ bey, have, want, onOpen }: Props) {
       href={`#/bey/${bey.id}`}
       style={typeVars(bey.type)}
       onClick={onOpen}
-      aria-label={`${bey.name} ${comboName(bey)}, ${type.label} type`}
+      aria-label={`${displayName(bey)} ${comboName(bey)}, ${type.label} type`}
     >
       <span className="tile-stage">
         <BeyPicture bey={bey} spin />
       </span>
-      <span className="tile-name">{bey.name}</span>
+      <span className="tile-name">{displayName(bey)}</span>
       <span className="tile-row">
         <span className="tile-combo">{comboName(bey)}</span>
         <span className="tile-type">

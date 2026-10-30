@@ -4,17 +4,23 @@ export type BeyType = (typeof BEY_TYPES)[number];
 export const SET_KINDS = ['Starter', 'Booster', 'Random Booster', 'Deck Set'] as const;
 export type SetKind = (typeof SET_KINDS)[number];
 
+export const LINES = ['BX', 'UX', 'CX'] as const;
+export type Line = (typeof LINES)[number];
+
+export const BRANDS = ['Hasbro', 'Takara Tomy'] as const;
+export type Brand = (typeof BRANDS)[number];
+
 export const ART_SHAPES = ['blade', 'round', 'wall', 'wing'] as const;
 export type ArtShape = (typeof ART_SHAPES)[number];
 
-/** Stats for one part, on the same scale the box uses. */
+/** Stats for one part, exactly as printed on the box. */
 export interface PartStats {
   attack: number;
   defense: number;
   stamina: number;
 }
 
-/** Bits also carry Dash and Burst resistance. */
+/** Bits also carry Dash and Burst. */
 export interface BitStats extends PartStats {
   dash: number;
   burstResistance: number;
@@ -22,17 +28,22 @@ export interface BitStats extends PartStats {
 
 export type StatKey = keyof BitStats;
 
-export interface Part<S extends PartStats> {
-  name: string;
-  /** Grams, from the box. Leave out until checked. */
+export interface PartData<S extends PartStats> {
+  /** Grams. Leave out until known. */
   weight?: number;
-  /** Leave out until the numbers are copied from the box. */
+  /** Leave out until the numbers are copied from a box. */
   stats?: S;
 }
 
-export interface Bit extends Part<BitStats> {
-  /** Letters at the end of the combo, e.g. "F" or "HN". */
+export interface Ratchet extends PartData<PartStats> {
+  /** The ratchet code, e.g. "4-70": 4 points, 7.0 mm tall. */
+  name: string;
+}
+
+export interface Bit extends PartData<BitStats> {
+  /** Letters at the end of the combo, e.g. "F" or "LF". */
   code: string;
+  name: string;
 }
 
 /** Settings for the drawn stand-in picture shown until a real photo is added. */
@@ -43,22 +54,22 @@ export interface BeyArt {
 }
 
 export interface Bey {
-  /** URL-safe id. Also the file name of the Bey's photo in src/photos. */
+  /** URL-safe id. Also the file name of the Bey's photos in src/photos. */
   id: string;
-  /** Product code printed on the box, e.g. "BX-01". */
-  code: string;
-  /** Takara Tomy name. */
-  name: string;
-  /** Name on Hasbro boxes, when it differs. */
-  hasbroName?: string;
+  /** Names as printed on each brand's boxes. The Hasbro name is shown first. */
+  names: { hasbro?: string; takaraTomy?: string };
+  line: Line;
+  /** Takara Tomy product number, e.g. "BX-01". Hasbro boxes don't print one. */
+  code?: string;
   set: SetKind;
   type: BeyType;
   spin: 'right' | 'left';
-  blade: Part<PartStats>;
-  /** Name is the ratchet code, e.g. "3-60". */
-  ratchet: Part<PartStats>;
+  /** Whose box the stats were copied from. Needed once any part has stats. */
+  statsFrom?: Brand;
+  blade: PartData<PartStats>;
+  ratchet: Ratchet;
   bit: Bit;
-  /** True when the photo is shot from straight above, so it can spin. */
+  /** True when the main photo is taken from straight above, so it can spin. */
   photoSpins?: boolean;
   art: BeyArt;
 }

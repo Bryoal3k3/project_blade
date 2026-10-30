@@ -1,8 +1,14 @@
 import type { BeyType, PartKey, SetKind, StatKey } from './types';
 import type { IconName } from '../components/Icon';
 
-/** Highest value a stat can have. Bars are drawn as tenths of this. */
-export const STAT_MAX = 100;
+/**
+ * The value that fills a whole bar, per part. Measured from a Hasbro box:
+ * blade and bit bars run to 100, ratchet bars to about 32.
+ */
+export const STAT_MAX: Record<PartKey, number> = { blade: 100, ratchet: 32, bit: 100 };
+
+/** Ratchet heights shown as 5 blocks, the way the box does (a 70 lights the middle block). */
+export const HEIGHT_STEPS = [55, 60, 70, 80, 85];
 
 export const TYPE_INFO: Record<BeyType, { label: string; color: string; ink: string; icon: IconName }> = {
   attack: { label: 'Attack', color: '#F0412F', ink: '#FFFFFF', icon: 'bolt' },
@@ -11,12 +17,12 @@ export const TYPE_INFO: Record<BeyType, { label: string; color: string; ink: str
   balance: { label: 'Balance', color: '#F2A812', ink: '#2B1C00', icon: 'yin' },
 };
 
-export const STAT_INFO: Record<StatKey, { label: string; color: string; icon: IconName }> = {
-  attack: { label: 'Attack', color: '#F0412F', icon: 'bolt' },
-  defense: { label: 'Defense', color: '#2D7BF5', icon: 'shield' },
-  stamina: { label: 'Stamina', color: '#14B26B', icon: 'battery' },
-  dash: { label: 'Dash', color: '#F23D9C', icon: 'dash' },
-  burstResistance: { label: 'Burst resistance', color: '#8F55F5', icon: 'lock' },
+export const STAT_INFO: Record<StatKey, { label: string; icon: IconName }> = {
+  attack: { label: 'Attack', icon: 'bolt' },
+  defense: { label: 'Defense', icon: 'shield' },
+  stamina: { label: 'Stamina', icon: 'battery' },
+  dash: { label: 'Dash', icon: 'dash' },
+  burstResistance: { label: 'Burst', icon: 'lock' },
 };
 
 export const PART_STAT_KEYS: StatKey[] = ['attack', 'defense', 'stamina'];
@@ -38,6 +44,7 @@ export const SET_INFO: Record<SetKind, string> = {
 /** Kid-sized description of each bit, keyed by its code. */
 export const BIT_INFO: Record<string, string> = {
   F: 'A flat tip that grips the floor. Fast and wild.',
+  LF: 'A flat tip that sits low to the floor. Fast and wild.',
   T: 'A pointy tip with a flat edge. Some zoom, some staying put.',
   B: 'A round tip. Spins for a long time.',
   N: 'A sharp point. Holds its spot in the middle.',

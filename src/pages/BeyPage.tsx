@@ -1,13 +1,15 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { Bey, PartKey } from '../data/types';
-import { BIT_INFO, PART_INFO, SET_INFO, STAT_INFO, TYPE_INFO } from '../data/meta';
-import { comboName, parseRatchet, totalWeight } from '../data';
+import { PART_INFO, SET_INFO, STAT_INFO, TYPE_INFO } from '../data/meta';
+import { comboName, displayName, otherName, parseRatchet, totalWeight } from '../data';
 import type { Collection } from '../hooks/useCollection';
 import { canSpeak, speak } from '../lib/speak';
 import { BeyPicture } from '../components/BeyPicture';
 import { Icon } from '../components/Icon';
-import { StatsPanel, statKeys } from '../components/StatsPanel';
+import { PartSection, statKeys } from '../components/PartSection';
 import { typeVars } from '../components/TypeChips';
+
+const PARTS: PartKey[] = ['blade', 'ratchet', 'bit'];
 
 function useToast(): [string | null, (message: string) => void] {
   const [message, setMessage] = useState<string | null>(null);
@@ -21,16 +23,20 @@ function useToast(): [string | null, (message: string) => void] {
   return [message, show];
 }
 
-/** What the read-aloud button says for the part on screen. */
-export function spokenText(bey: Bey, part: PartKey): string {
-  const [points, height] = bey.ratchet.name.split('-');
-  const intro = `${bey.name}, ${points} ${height} ${bey.bit.name}. ${TYPE_INFO[bey.type].label} type.`;
+/** What the big speaker button says: name, combo, type and spin. */
+export function spokenIntro(bey: Bey): string {
+  const { points, height } = parseRatchet(bey.ratchet.name);
+  return `${displayName(bey)}, ${points} ${height} ${bey.bit.name}. ${TYPE_INFO[bey.type].label} type. Spins ${bey.spin}.`;
+}
+
+/** What a part's speaker button says. */
+export function spokenPart(bey: Bey, part: PartKey): string {
+  const label = PART_INFO[part].label;
+  const name = part === 'blade' ? displayName(bey) : part === 'ratchet' ? bey.ratchet.name.replace('-', ' ') : bey.bit.name;
   const stats = bey[part].stats as Record<string, number> | undefined;
-  if (!stats) return `${intro} Stats coming soon.`;
-  const list = statKeys(part)
-    .map((key) => `${STAT_INFO[key].label} ${stats[key]}`)
-    .join(', ');
-  return `${intro} ${PART_INFO[part].label} stats: ${list}.`;
+  const said = stats ? statKeys(part).map((key) => `${STAT_INFO[key].label} ${stats[key]}`) : ['Stats coming soon'];
+  if (part === 'ratchet') said.push(`Height ${parseRatchet(bey.ratchet.name).height}`);
+  return `${label}, ${name}. ${said.join(', ')}.`;
 }
 
 interface Props {
@@ -40,14 +46,14 @@ interface Props {
 }
 
 export function BeyPage({ bey, backHref, collection }: Props) {
-  const [part, setPart] = useState<PartKey>('blade');
   const [toast, showToast] = useToast();
   const type = TYPE_INFO[bey.type];
-  const combo = comboName(bey);
+  const name = displayName(bey);
+  const alsoCalled = otherName(bey);
   const have = collection.has('mine', bey.id);
   const want = collection.has('wish', bey.id);
   const weight = totalWeight(bey);
-  const { points, heightMm } = parseRatchet(bey.ratchet.name);
+  const talk = canSpeak();
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -69,10 +75,10 @@ export function BeyPage({ bey, backHref, collection }: Props) {
           <a className="icon-btn" href={backHref} aria-label="Back">
             <Icon name="back" />
           </a>
-          <span className="code-chip">{bey.code}</span>
+          <span className="code-chip">{bey.code ?? bey.line}</span>
           <span className="spacer" />
-          {canSpeak() && (
-            <button type="button" className="icon-btn" aria-label="Read out loud" onClick={() => speak(spokenText(bey, part))}>
+          {talk && (
+            <button type="button" className="icon-btn" aria-label="Read out loud" onClick={() => speak(spokenIntro(bey))}>
               <Icon name="speaker" />
             </button>
           )}
@@ -91,26 +97,24 @@ export function BeyPage({ bey, backHref, collection }: Props) {
         <div className="bey-id">
           <span className="type-badge">
             <Icon name={type.icon} />
-            <span>{type.label}</span>
+            <span>{type.label} type</span>
           </span>
-          <h1 className="bey-name">{bey.name}</h1>
-          <span className="bey-combo">{combo}</span>
-          {bey.hasbroName && <span className="bey-alt">On Hasbro boxes: {bey.hasbroName}</span>}
+          <h1 className="bey-name">{name}</h1>
+          <span className="bey-combo">{comboName(bey)}</span>
+          {alsoCalled && <span className="bey-alt">Takara Tomy name: {alsoCalled}</span>}
         </div>
 
-        <StatsPanel bey={bey} part={part} onPart={setPart} />
-
         <div className="facts">
-          <div className="fact">
-            <span className="fact-label">{bey.set}</span>
-            <span className="fact-value">{SET_INFO[bey.set]}</span>
-          </div>
           <div className="fact">
             <span className="fact-label">Spins</span>
             <span className="fact-value fact-spin">
               <Icon name="spin" className={bey.spin === 'left' ? 'flip' : undefined} />
               {bey.spin === 'left' ? 'Left' : 'Right'}
             </span>
+          </div>
+          <div className="fact">
+            <span className="fact-label">{bey.set}</span>
+            <span className="fact-value">{SET_INFO[bey.set]}</span>
           </div>
           {weight !== undefined && (
             <div className="fact">
@@ -120,21 +124,9 @@ export function BeyPage({ bey, backHref, collection }: Props) {
           )}
         </div>
 
-        <section className="decode" aria-labelledby="decode-title">
-          <h2 id="decode-title">What {combo} means</h2>
-          <div className="decode-row">
-            <span className="decode-key">{bey.ratchet.name}</span>
-            <span className="decode-text">
-              Ratchet with {points} {points === 1 ? 'point' : 'points'}, {heightMm.toFixed(1)} mm tall.
-            </span>
-          </div>
-          <div className="decode-row">
-            <span className="decode-key">{bey.bit.code}</span>
-            <span className="decode-text">
-              {bey.bit.name}: {BIT_INFO[bey.bit.code]}
-            </span>
-          </div>
-        </section>
+        {PARTS.map((part) => (
+          <PartSection key={part} bey={bey} part={part} onSpeak={talk ? () => speak(spokenPart(bey, part)) : undefined} />
+        ))}
       </div>
       <div className="toast" role="status" hidden={!toast}>
         {toast}

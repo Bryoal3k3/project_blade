@@ -41,6 +41,7 @@ const PATHS = {
       <rect x="13" y="13" width="8" height="8" rx="2" />
     </>
   ),
+  height: <path d="M12 3.5v17M7.5 8 12 3.5 16.5 8M7.5 16l4.5 4.5 4.5-4.5" {...stroke} strokeWidth="2.4" />,
   spin: (
     <>
       <path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3" {...stroke} strokeWidth="2.4" />

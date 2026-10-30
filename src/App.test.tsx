@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import App from './App';
-import { BEYS } from './data';
-import { spokenText } from './pages/BeyPage';
+import { BEYS, findBey } from './data';
+import { spokenIntro, spokenPart } from './pages/BeyPage';
+import { barPercent } from './components/PartSection';
 
 function go(hash: string) {
   act(() => {
@@ -23,17 +24,29 @@ describe('App', () => {
     tiles.forEach((tile) => expect(tile.getAttribute('aria-label')).toMatch(/Defense type$/));
   });
 
-  it('opens a Bey page with its parts', () => {
+  it('shows all three parts with the stats from the box', () => {
+    render(<App />);
+    go('#/bey/rudder-phoenix');
+    expect(screen.getByRole('heading', { level: 1, name: 'Rudder Phoenix' })).toBeTruthy();
+    expect(screen.getByText('4-70LF')).toBeTruthy();
+
+    const blade = screen.getByRole('region', { name: 'Rudder Phoenix' });
+    const ratchet = screen.getByRole('region', { name: '4-70' });
+    const bit = screen.getByRole('region', { name: /LF/ });
+    const values = (part: HTMLElement) => within(part).getAllByText(/^\d+$/).map((el) => Number(el.textContent));
+    expect(values(blade)).toEqual([15, 40, 60]);
+    expect(values(ratchet)).toEqual([11, 12, 7, 70]);
+    expect(values(bit)).toEqual([45, 5, 10, 40, 80]);
+    expect(within(bit).getByText('Burst')).toBeTruthy();
+    expect(screen.queryByText('Stats coming soon')).toBeNull();
+  });
+
+  it('shows the Hasbro name and says when stats are not in yet', () => {
     render(<App />);
     go('#/bey/dran-sword');
-    expect(screen.getByRole('heading', { name: 'Dran Sword' })).toBeTruthy();
-    expect(screen.getByText('3-60F')).toBeTruthy();
-    expect(screen.getByText('On Hasbro boxes: Sword Dran')).toBeTruthy();
-    expect(screen.getByText('Stats coming soon')).toBeTruthy();
-
-    fireEvent.click(screen.getByRole('tab', { name: 'Bit' }));
-    expect(screen.getByRole('tab', { name: 'Bit' }).getAttribute('aria-selected')).toBe('true');
-    expect(screen.getByText('F · Flat')).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 1, name: 'Sword Dran' })).toBeTruthy();
+    expect(screen.getByText('Takara Tomy name: Dran Sword')).toBeTruthy();
+    expect(screen.getAllByText('Stats coming soon')).toHaveLength(3);
   });
 
   it('adds a Bey to My Beys and takes it off the wish list', () => {
@@ -60,15 +73,25 @@ describe('App', () => {
   });
 });
 
+describe('stat bars', () => {
+  it('use the box scale for each part', () => {
+    expect(barPercent('blade', 60)).toBe(60);
+    expect(barPercent('bit', 80)).toBe(80);
+    expect(barPercent('ratchet', 12)).toBe(37.5);
+  });
+});
+
 describe('read aloud', () => {
-  it('says the stats for the part on screen', () => {
-    const bey = {
-      ...BEYS[0],
-      bit: { ...BEYS[0].bit, stats: { attack: 40, defense: 15, stamina: 10, dash: 35, burstResistance: 30 } },
-    };
-    expect(spokenText(bey, 'bit')).toBe(
-      'Dran Sword, 3 60 Flat. Attack type. Bit stats: Attack 40, Defense 15, Stamina 10, Dash 35, Burst resistance 30.',
-    );
-    expect(spokenText(bey, 'blade')).toBe('Dran Sword, 3 60 Flat. Attack type. Stats coming soon.');
+  const bey = findBey('rudder-phoenix')!;
+
+  it('says the name, combo, type and spin', () => {
+    expect(spokenIntro(bey)).toBe('Rudder Phoenix, 4 70 Low Flat. Attack type. Spins right.');
+  });
+
+  it('says each part like the box', () => {
+    expect(spokenPart(bey, 'blade')).toBe('Blade, Rudder Phoenix. Attack 15, Defense 40, Stamina 60.');
+    expect(spokenPart(bey, 'ratchet')).toBe('Ratchet, 4 70. Attack 11, Defense 12, Stamina 7, Height 70.');
+    expect(spokenPart(bey, 'bit')).toBe('Bit, Low Flat. Attack 45, Defense 5, Stamina 10, Dash 40, Burst 80.');
+    expect(spokenPart(findBey('dran-sword')!, 'bit')).toBe('Bit, Flat. Stats coming soon.');
   });
 });
