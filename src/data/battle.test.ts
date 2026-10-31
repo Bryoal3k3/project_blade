@@ -48,6 +48,37 @@ describe('battle simulation', () => {
     expect(winRate({ ...base, stamina: 150 }, { ...base, stamina: 30 })).toBeGreaterThan(0.6);
   });
 
+  it('gives the weaker Bey a real chance, even against the strongest', () => {
+    const fighters = BEYS.map(fighterFrom);
+    const power = (f: Fighter) => f.attack + f.defense + f.stamina;
+    const strongest = fighters.reduce((best, f) => (power(f) > power(best) ? f : best));
+    const weakest = fighters.reduce((worst, f) => (power(f) < power(worst) ? f : worst));
+    const rate = winRate(strongest, weakest, 1000);
+    expect(rate).toBeGreaterThan(0.6);
+    expect(rate).toBeLessThan(0.9);
+  });
+
+  it('swings back and forth: the winner is often behind at some point', () => {
+    const random = seededRandom(3);
+    let comebacks = 0;
+    let decided = 0;
+    for (let i = 0; i < 600; i++) {
+      const { winner, ticks } = simulateBattle(base, { ...base, attack: 100, type: 'attack' }, random);
+      if (winner === null) continue;
+      decided++;
+      if (ticks.some((t) => t.energy[1 - winner] - t.energy[winner] >= 8)) comebacks++;
+    }
+    expect(comebacks / decided).toBeGreaterThan(0.35);
+  });
+
+  it('launches each Bey with a little more or less power every round', () => {
+    const random = seededRandom(5);
+    const launches = Array.from({ length: 200 }, () => simulateBattle(base, base, random).launch).flat();
+    expect(Math.min(...launches)).toBeGreaterThanOrEqual(0.9);
+    expect(Math.max(...launches)).toBeLessThanOrEqual(1.1);
+    expect(new Set(launches.map((l) => l.toFixed(2))).size).toBeGreaterThan(10);
+  });
+
   it('gives Attack an edge over Stamina', () => {
     const plain = winRate({ ...base, type: 'balance' }, { ...base, type: 'balance' });
     const typed = winRate({ ...base, type: 'attack' }, { ...base, type: 'stamina' });

@@ -980,6 +980,8 @@ a, button { -webkit-touch-callout: none; user-select: none; }
   transform: translate(-50%, -50%);
 }
 .pow.go { animation: pow .7s ease-out; }
+.pow.is-big { font-size: clamp(26px, 8.5vw, 36px); color: #FFFFFF; text-shadow: -2px -2px 0 #0A0F1F, 2px -2px 0 #0A0F1F, -2px 2px 0 #0A0F1F, 2px 2px 0 #0A0F1F, 4px 4px 0 var(--side), 0 0 26px var(--side); }
+.pow.is-big.go { animation: pow 1.1s ease-out; }
 @keyframes pow {
   0% { opacity: 0; transform: translate(-50%, -50%) scale(.3) rotate(-14deg); }
   20% { opacity: 1; transform: translate(-50%, -50%) scale(1.15) rotate(-8deg); }
