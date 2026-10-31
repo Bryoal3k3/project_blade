@@ -29,7 +29,10 @@ export function BeyTile({ bey, have, want, onOpen }: Props) {
       {status && <span className={`tile-badge is-${status}`}>{status === 'new' ? 'New' : 'Soon'}</span>}
       <span className="tile-name">{displayName(bey)}</span>
       <span className="tile-row">
-        <span className="tile-combo">{comboName(bey)}</span>
+        <span className="tile-meta">
+          <span className={`line-chip line-${bey.line.toLowerCase()}`}>{bey.line}</span>
+          <span className="tile-combo">{comboName(bey)}</span>
+        </span>
         <span className="tile-type">
           <Icon name={type.icon} />
         </span>

@@ -75,6 +75,34 @@ describe('App', () => {
     expect(screen.getByText('Your wish list is empty')).toBeTruthy();
   });
 
+  it('shows each Bey\'s line on its tile', () => {
+    render(<App />);
+    const tile = screen.getByRole('link', { name: /^Rudder Phoenix 4-70LF/ });
+    expect(within(tile).getByText('UX')).toBeTruthy();
+    const courage = screen.getByRole('link', { name: /^Courage Dran S 6-60V/ });
+    expect(within(courage).getByText('CX')).toBeTruthy();
+  });
+
+  it('has a spin speed throttle that is remembered', () => {
+    render(<App />);
+    go('#/bey/rudder-phoenix-4-70lf');
+    const throttle = screen.getByRole('slider', { name: /Spin speed/ }) as HTMLInputElement;
+    expect(throttle.value).toBe('3');
+    fireEvent.change(throttle, { target: { value: '0' } });
+    expect(throttle.getAttribute('aria-valuetext')).toBe('Stopped');
+    fireEvent.change(throttle, { target: { value: '8' } });
+    expect(localStorage.getItem('project-blade:spin-level:v1')).toBe('8');
+
+    go('#/bey/sword-dran-3-60f');
+    expect((screen.getByRole('slider', { name: /Spin speed/ }) as HTMLInputElement).value).toBe('8');
+  });
+
+  it('has no throttle when the photo is taken from the side', () => {
+    render(<App />);
+    go('#/bey/seize-jaguar-hn');
+    expect(screen.queryByRole('slider')).toBeNull();
+  });
+
   it('shows a friendly page for an unknown Bey', () => {
     render(<App />);
     go('#/bey/not-a-bey');
