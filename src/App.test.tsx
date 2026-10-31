@@ -148,6 +148,15 @@ describe('App', () => {
 
     fireEvent.click(within(shop).getByRole('button', { name: 'Add to my wish list' }));
     expect(within(shop).getByRole('button', { name: 'On your wish list' })).toBeTruthy();
+
+    // Save it, start over, and find it on the My Builds shelf.
+    fireEvent.change(screen.getByLabelText('Give it a name'), { target: { value: 'Fire Bird' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Save' }));
+    expect(screen.getByText('Fire Bird')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Build another' }));
+    const shelf = screen.getByRole('region', { name: 'My Builds' });
+    fireEvent.click(within(shelf).getByText('Fire Bird'));
+    expect(screen.getByText('Your new Bey')).toBeTruthy();
   });
 
   it('skips the ratchet for a blade with one built in', () => {
@@ -156,6 +165,49 @@ describe('App', () => {
     fireEvent.click(screen.getAllByRole('button').find((b) => b.classList.contains('pick') && b.querySelector('.pick-name')?.textContent === 'Valor Bison')!);
     expect(screen.getByRole('heading', { name: 'Pick a bit' })).toBeTruthy();
     expect(screen.getByText('Built in')).toBeTruthy();
+  });
+
+  it('plays a battle round and keeps the match score', () => {
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'requestAnimationFrame', 'cancelAnimationFrame', 'performance'] });
+    render(<App />);
+    go('#/battle');
+    const pickFirst = (side: string) => {
+      fireEvent.click(screen.getByRole('button', { name: `Pick the ${side} Bey` }));
+      const grid = screen.getByRole('heading', { name: `Pick the ${side} Bey` }).closest('section')!.querySelector('.grid')!;
+      fireEvent.click(grid.querySelectorAll('button.pick')[side === 'red' ? 0 : 1]);
+    };
+    pickFirst('red');
+    pickFirst('blue');
+    fireEvent.click(screen.getByRole('button', { name: 'Let it rip!' }));
+    act(() => {
+      vi.advanceTimersByTime(30000);
+    });
+    expect(screen.getByText(/^Round 1$/)).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Next round|New match/ })).toBeTruthy();
+  });
+
+  it('keeps score for a real battle, first to 4', () => {
+    render(<App />);
+    go('#/battle');
+    fireEvent.click(screen.getByRole('tab', { name: 'Keep score' }));
+    const red = document.querySelector('.score-col.side-0') as HTMLElement;
+    fireEvent.click(within(red).getByRole('button', { name: /Over/ }));
+    expect(within(red).getByLabelText('2 points')).toBeTruthy();
+    fireEvent.click(within(red).getByRole('button', { name: /Burst/ }));
+    expect(screen.getByText('Player 1 wins!')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Undo' }));
+    expect(screen.queryByText('Player 1 wins!')).toBeNull();
+    expect(within(red).getByLabelText('2 points')).toBeTruthy();
+  });
+
+  it('shows collection progress and badges on My Beys', () => {
+    render(<App />);
+    go('#/bey/cobalt-dragoon-2-60c');
+    fireEvent.click(screen.getByRole('button', { name: 'I have it' }));
+    go('#/mine');
+    const progress = screen.getByRole('region', { name: /1 of \d+ Beys/ });
+    const earned = [...progress.querySelectorAll('.badge.is-earned .badge-label')].map((el) => el.textContent);
+    expect(earned).toEqual(expect.arrayContaining(['First Bey', 'Left Spinner', 'Pack Opener']));
   });
 
   it('shows a friendly page for an unknown Bey', () => {

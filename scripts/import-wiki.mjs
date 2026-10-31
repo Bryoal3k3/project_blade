@@ -15,6 +15,7 @@ import sharp from 'sharp';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DATA_FILE = path.join(ROOT, 'src/data/beys.json');
 const PACKS_FILE = path.join(ROOT, 'src/data/packs.json');
+const CHECKED_FILE = path.join(ROOT, 'src/data/checked.json');
 const PHOTO_DIR = path.join(ROOT, 'src/photos');
 const BOX_STATS_FILE = path.join(ROOT, 'scripts/box-stats.json');
 const API = 'https://beyblade.fandom.com/api.php';
@@ -511,6 +512,7 @@ async function main() {
     }
   }
   console.log(`Pictures: ${counts.saved} saved, ${counts.kept} already there, ${counts.failed} failed`);
+  await fs.writeFile(CHECKED_FILE, `${JSON.stringify({ date: new Date().toISOString().slice(0, 10) })}\n`);
   if (report.noStats.length) console.log(`Missing stats (add them to scripts/box-stats.json from the box):\n  ${report.noStats.join('\n  ')}`);
   if (report.noPicture.length) console.log(`Missing pictures:\n  ${report.noPicture.join('\n  ')}`);
 }

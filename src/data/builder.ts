@@ -240,3 +240,13 @@ export function shoppingList(choice: Choice, owned: string[] = [], today = new D
 export function findOption<T extends { key: string }>(options: T[], key: string | undefined): T | undefined {
   return key === undefined ? undefined : options.find((option) => option.key === key);
 }
+
+/** The parts behind saved picks, or undefined if one of them no longer exists. */
+export function choiceFromPicks(picks: Partial<Record<PartKey, string>>): Choice | undefined {
+  const blade = findOption(BLADE_OPTIONS, picks.blade);
+  const bit = findOption(BIT_OPTIONS, picks.bit);
+  if (!blade || !bit) return undefined;
+  const ratchet = findOption(RATCHET_OPTIONS, picks.ratchet);
+  if (!blade.blade.integratedRatchet && !ratchet) return undefined;
+  return { blade, ratchet, bit };
+}
