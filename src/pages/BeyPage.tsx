@@ -1,15 +1,13 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { Bey, PartKey } from '../data/types';
-import { PART_INFO, SET_INFO, STAT_INFO, TYPE_INFO } from '../data/meta';
-import { comboName, displayName, otherName, parseRatchet, totalWeight } from '../data';
+import { SET_INFO, STAT_INFO, TYPE_INFO } from '../data/meta';
+import { comboName, displayName, otherName, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '../data';
 import type { Collection } from '../hooks/useCollection';
 import { canSpeak, speak } from '../lib/speak';
 import { BeyPicture } from '../components/BeyPicture';
 import { Icon } from '../components/Icon';
-import { PartSection, statKeys } from '../components/PartSection';
+import { PartSection, partLabel, statKeys } from '../components/PartSection';
 import { typeVars } from '../components/TypeChips';
-
-const PARTS: PartKey[] = ['blade', 'ratchet', 'bit'];
 
 function useToast(): [string | null, (message: string) => void] {
   const [message, setMessage] = useState<string | null>(null);
@@ -25,17 +23,18 @@ function useToast(): [string | null, (message: string) => void] {
 
 /** What the big speaker button says: name, combo, type and spin. */
 export function spokenIntro(bey: Bey): string {
-  const { points, height } = parseRatchet(bey.ratchet.name);
-  return `${displayName(bey)}, ${points} ${height} ${bey.bit.name}. ${TYPE_INFO[bey.type].label} type. Spins ${bey.spin}.`;
+  const ratchet = bey.ratchet ? `${bey.ratchet.name.replace('-', ' ')} ` : '';
+  return `${displayName(bey)}, ${ratchet}${bey.bit.name}. ${TYPE_INFO[bey.type].label} type. Spins ${bey.spin}.`;
 }
 
 /** What a part's speaker button says. */
 export function spokenPart(bey: Bey, part: PartKey): string {
-  const label = PART_INFO[part].label;
-  const name = part === 'blade' ? displayName(bey) : part === 'ratchet' ? bey.ratchet.name.replace('-', ' ') : bey.bit.name;
-  const stats = bey[part].stats as Record<string, number> | undefined;
+  const label = partLabel(bey, part);
+  const ratchet = bey.ratchet?.name ?? '';
+  const name = part === 'blade' ? displayName(bey) : part === 'ratchet' ? ratchet.replace('-', ' ') : bey.bit.name;
+  const stats = bey[part]?.stats as Record<string, number> | undefined;
   const said = stats ? statKeys(part).map((key) => `${STAT_INFO[key].label} ${stats[key]}`) : ['Stats coming soon'];
-  if (part === 'ratchet') said.push(`Height ${parseRatchet(bey.ratchet.name).height}`);
+  if (part === 'ratchet') said.push(`Height ${parseRatchet(ratchet).height}`);
   return `${label}, ${name}. ${said.join(', ')}.`;
 }
 
@@ -53,6 +52,7 @@ export function BeyPage({ bey, backHref, collection }: Props) {
   const have = collection.has('mine', bey.id);
   const want = collection.has('wish', bey.id);
   const weight = totalWeight(bey);
+  const status = releaseStatus(bey);
   const talk = canSpeak();
 
   useLayoutEffect(() => {
@@ -75,7 +75,7 @@ export function BeyPage({ bey, backHref, collection }: Props) {
           <a className="icon-btn" href={backHref} aria-label="Back">
             <Icon name="back" />
           </a>
-          <span className="code-chip">{bey.code ?? bey.line}</span>
+          <span className="code-chip">{bey.line}</span>
           <span className="spacer" />
           {talk && (
             <button type="button" className="icon-btn" aria-label="Read out loud" onClick={() => speak(spokenIntro(bey))}>
@@ -122,9 +122,15 @@ export function BeyPage({ bey, backHref, collection }: Props) {
               <span className="fact-value">{weight.toFixed(1)} g</span>
             </div>
           )}
+          {bey.released && (
+            <div className="fact">
+              <span className="fact-label">{status === 'soon' ? 'Coming' : 'In stores'}</span>
+              <span className="fact-value">{releaseLabel(bey.released)}</span>
+            </div>
+          )}
         </div>
 
-        {PARTS.map((part) => (
+        {partsOf(bey).map((part) => (
           <PartSection key={part} bey={bey} part={part} onSpeak={talk ? () => speak(spokenPart(bey, part)) : undefined} />
         ))}
       </div>

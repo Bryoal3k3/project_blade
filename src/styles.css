@@ -149,6 +149,21 @@ a, button { -webkit-touch-callout: none; user-select: none; }
 }
 .tile-type .ic { width: 16px; height: 16px; }
 .tile-marks { position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; }
+.tile-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  transform: skewX(-12deg);
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.tile-badge.is-new { background: var(--stat); color: var(--bg); }
+.tile-badge.is-soon { background: var(--surface-sunk); color: var(--muted); border: 1px solid var(--line); }
 .mark { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: rgba(10, 15, 31, .85); }
 .mark .ic { width: 16px; height: 16px; }
 .mark-star { color: var(--star); }
@@ -335,6 +350,10 @@ a, button { -webkit-touch-callout: none; user-select: none; }
 .part-pic img, .part-pic svg { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 .part-stats { display: grid; gap: 12px; min-width: 0; }
 .part-what { font-size: 14.5px; color: var(--muted); }
+.pieces { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 6px; }
+.pieces li { display: grid; gap: 1px; padding: 8px 10px; border-radius: 12px; background: var(--surface-sunk); min-width: 0; }
+.piece-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.piece-name { font-family: var(--f-display); font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: .03em; overflow-wrap: anywhere; }
 
 .bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .bar {

@@ -1,5 +1,5 @@
 import raw from './beys.json';
-import { LINES, type Bey } from './types';
+import type { Bey, PartKey } from './types';
 import { HEIGHT_STEPS } from './meta';
 
 /** The name kids see first: the Hasbro name when there is one. */
@@ -12,23 +12,23 @@ export function otherName(bey: Bey): string | undefined {
   return bey.names.hasbro ? bey.names.takaraTomy : undefined;
 }
 
-function sortKey(bey: Bey): number {
-  const number = bey.code ? Number(bey.code.split('-')[1]) : 999;
-  return LINES.indexOf(bey.line) * 1000 + number;
-}
-
-/** Every Bey: BX, then UX, then CX; numbered ones first, then by name. */
+/** Every Bey, newest first; ones without a release date go last. */
 export const BEYS: Bey[] = (raw as Bey[])
   .slice()
-  .sort((a, b) => sortKey(a) - sortKey(b) || displayName(a).localeCompare(displayName(b)));
+  .sort((a, b) => (b.released ?? '').localeCompare(a.released ?? '') || displayName(a).localeCompare(displayName(b)));
 
 export function findBey(id: string): Bey | undefined {
   return BEYS.find((bey) => bey.id === id);
 }
 
-/** The combo as printed on the box, e.g. "4-70LF". */
+/** The parts shown on the box, in order. Beys with a built-in ratchet have no ratchet panel. */
+export function partsOf(bey: Bey): PartKey[] {
+  return bey.ratchet ? ['blade', 'ratchet', 'bit'] : ['blade', 'bit'];
+}
+
+/** The combo as printed on the box, e.g. "4-70LF", or just "FB" when the ratchet is built in. */
 export function comboName(bey: Bey): string {
-  return `${bey.ratchet.name}${bey.bit.code}`;
+  return `${bey.ratchet?.name ?? ''}${bey.bit.code}`;
 }
 
 /** Reads a ratchet code like "4-70": 4 points, 7.0 mm tall, shown as 70 on the box. */
@@ -47,9 +47,31 @@ export function heightStep(height: number): number {
   return best + 1;
 }
 
-/** Total weight in grams, or undefined until every part's weight is known. */
+/** Total weight in grams: the Bey's own weight, or its parts added up when all are known. */
 export function totalWeight(bey: Bey): number | undefined {
-  const weights = [bey.blade.weight, bey.ratchet.weight, bey.bit.weight];
+  if (bey.weight !== undefined) return bey.weight;
+  const weights = [bey.blade.weight, bey.ratchet?.weight ?? (bey.ratchet ? undefined : 0), bey.bit.weight];
   if (weights.some((w) => w === undefined)) return undefined;
   return weights.reduce<number>((sum, w) => sum + (w ?? 0), 0);
+}
+
+const NEW_FOR_DAYS = 90;
+
+/** "soon" before the release date, "new" for 90 days after it. */
+export function releaseStatus(bey: Bey, today = new Date()): 'soon' | 'new' | undefined {
+  if (!bey.released) return undefined;
+  const [y, m, d] = bey.released.split('-').map(Number);
+  const released = new Date(y, m - 1, d ?? 1);
+  const days = (today.getTime() - released.getTime()) / 86_400_000;
+  if (days < 0) return 'soon';
+  if (days <= NEW_FOR_DAYS) return 'new';
+  return undefined;
+}
+
+const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/** "2026-02-12" -> "Feb 2026". */
+export function releaseLabel(released: string): string {
+  const [y, m] = released.split('-').map(Number);
+  return `${MONTH_NAMES[m - 1]} ${y}`;
 }

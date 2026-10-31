@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import raw from './beys.json';
-import { BEYS, comboName, displayName, findBey, heightStep, otherName, parseRatchet, totalWeight } from '.';
+import boxStats from '../../scripts/box-stats.json';
+import { BEYS, comboName, displayName, findBey, heightStep, otherName, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '.';
 import { validateBeys } from './validate';
 import type { Bey } from './types';
 
@@ -9,63 +10,86 @@ describe('Bey data', () => {
     expect(validateBeys(raw as Bey[])).toEqual([]);
   });
 
-  it('is sorted BX, then UX, numbered ones first', () => {
-    const order = BEYS.map((bey) => bey.code ?? displayName(bey));
-    expect(order[0]).toBe('BX-01');
-    expect(order.indexOf('BX-34')).toBeLessThan(order.indexOf('UX-01'));
-    expect(order.at(-1)).toBe('Rudder Phoenix');
+  it('has the Hasbro lineup, newest first', () => {
+    expect(BEYS.length).toBeGreaterThan(60);
+    const dates = BEYS.map((bey) => bey.released).filter(Boolean) as string[];
+    expect(dates).toEqual([...dates].sort().reverse());
   });
 
   it('has Rudder Phoenix exactly as printed on its Hasbro box', () => {
-    const bey = findBey('rudder-phoenix')!;
+    const bey = findBey('rudder-phoenix-4-70lf')!;
+    expect(displayName(bey)).toBe('Rudder Phoenix');
     expect(comboName(bey)).toBe('4-70LF');
-    expect(bey.statsFrom).toBe('Hasbro');
+    expect(bey.statsFrom).toBe('Hasbro box');
     expect(bey.blade.stats).toEqual({ attack: 15, defense: 40, stamina: 60 });
-    expect(bey.ratchet.stats).toEqual({ attack: 11, defense: 12, stamina: 7 });
+    expect(bey.ratchet?.stats).toEqual({ attack: 11, defense: 12, stamina: 7 });
     expect(bey.bit.stats).toEqual({ attack: 45, defense: 5, stamina: 10, dash: 40, burstResistance: 80 });
+  });
+
+  it('matches the Sword Dran box', () => {
+    const bey = findBey('sword-dran-3-60f')!;
+    expect(bey.blade.stats).toEqual({ attack: 55, defense: 25, stamina: 20 });
+    expect(bey.ratchet?.stats).toEqual({ attack: 15, defense: 9, stamina: 6 });
+    expect(bey.bit.stats).toEqual({ attack: 40, defense: 15, stamina: 10, dash: 35, burstResistance: 80 });
+  });
+
+  it('adds up Custom Line blade pieces the way the box does', () => {
+    const courage = findBey('courage-dran-s-6-60v')!;
+    expect(courage.blade.stats).toEqual({ attack: 60, defense: 20, stamina: 20 });
+    expect(courage.blade.pieces?.map((p) => p.label)).toEqual(['Lock Chip', 'Primary Blade', 'Auxiliary Blade']);
+    expect(findBey('blitz-bahamut-bk-1-50i')!.blade.stats).toEqual({ attack: 65, defense: 20, stamina: 15 });
+  });
+
+  it('keeps half points the box prints', () => {
+    expect(findBey('whip-brachio-ow-5-70nr')!.ratchet?.stats).toEqual({ attack: 12, defense: 8.5, stamina: 9.5 });
+  });
+
+  it('uses every box reading in scripts/box-stats.json', () => {
+    for (const [id, parts] of Object.entries(boxStats)) {
+      const bey = findBey(id)!;
+      expect(bey, id).toBeTruthy();
+      for (const [part, stats] of Object.entries(parts)) expect(bey[part as 'blade'].stats, `${id} ${part}`).toEqual(stats);
+    }
+  });
+
+  it('handles a blade with a built-in ratchet', () => {
+    const bey = findBey('valor-bison-fb')!;
+    expect(bey.ratchet).toBeUndefined();
+    expect(partsOf(bey)).toEqual(['blade', 'bit']);
+    expect(comboName(bey)).toBe('FB');
   });
 });
 
 describe('validateBeys', () => {
-  const good = (raw as Bey[])[0];
+  const good = findBey('sword-dran-3-60f')!;
 
   it('catches a duplicate id, a bad type and an out-of-range stat', () => {
     const bad: Bey = {
       ...good,
-      code: 'BX-99',
       type: 'speedy' as Bey['type'],
-      statsFrom: 'Hasbro',
       ratchet: { name: '3-60', stats: { attack: 40, defense: 10, stamina: 10 } },
     };
     const errors = validateBeys([good, bad]);
     expect(errors.some((e) => e.includes('used twice'))).toBe(true);
     expect(errors.some((e) => e.includes('type "speedy"'))).toBe(true);
-    expect(errors.some((e) => e.includes('ratchet attack must be a whole number from 0 to 32'))).toBe(true);
+    expect(errors.some((e) => e.includes('ratchet attack must be a number from 0 to 32'))).toBe(true);
   });
 
-  it('needs a description for every bit', () => {
-    const errors = validateBeys([{ ...good, bit: { code: 'ZZ', name: 'Mystery' } }]);
-    expect(errors).toEqual([expect.stringContaining('bit "ZZ" needs a description')]);
+  it('needs a ratchet unless the blade has one built in', () => {
+    expect(validateBeys([{ ...good, ratchet: undefined }])).toEqual([expect.stringContaining('ratchet is missing')]);
+    expect(validateBeys([{ ...good, ratchet: undefined, blade: { ...good.blade, integratedRatchet: true } }])).toEqual([]);
   });
 
-  it('needs to know whose box the stats came from', () => {
-    const filled: Bey = { ...good, blade: { stats: { attack: 60, defense: 20, stamina: 20 } } };
-    expect(validateBeys([filled])).toEqual([expect.stringContaining('statsFrom')]);
-    expect(validateBeys([{ ...filled, statsFrom: 'Takara Tomy' }])).toEqual([]);
-  });
-
-  it('checks the code matches the line', () => {
-    expect(validateBeys([{ ...good, line: 'UX' }])).toEqual([expect.stringContaining('does not match line')]);
+  it('needs to know where the stats came from', () => {
+    expect(validateBeys([{ ...good, statsFrom: undefined }])).toEqual([expect.stringContaining('statsFrom')]);
   });
 });
 
 describe('helpers', () => {
   it('shows the Hasbro name first', () => {
-    const bey = findBey('dran-sword')!;
+    const bey = findBey('sword-dran-3-60f')!;
     expect(displayName(bey)).toBe('Sword Dran');
-    expect(otherName(bey)).toBe('Dran Sword');
-    expect(displayName(findBey('rhino-horn')!)).toBe('Rhino Horn');
-    expect(otherName(findBey('rhino-horn')!)).toBeUndefined();
+    expect(otherName(bey)).toBe('DranSword');
   });
 
   it('reads ratchet codes', () => {
@@ -79,9 +103,19 @@ describe('helpers', () => {
     expect(heightStep(80)).toBe(4);
   });
 
-  it('only totals the weight when every part has one', () => {
-    const bey = BEYS[0];
-    expect(totalWeight(bey)).toBeUndefined();
-    expect(totalWeight({ ...bey, blade: { weight: 33 }, ratchet: { ...bey.ratchet, weight: 6.2 }, bit: { ...bey.bit, weight: 2.1 } })).toBeCloseTo(41.3);
+  it('uses the Bey weight, or adds up the parts', () => {
+    const bey = findBey('sword-dran-3-60f')!;
+    expect(totalWeight(bey)).toBe(43.2);
+    const parts: Bey = { ...bey, weight: undefined, blade: { weight: 33 }, ratchet: { name: '3-60', weight: 6.2 }, bit: { ...bey.bit, weight: 2.1 } };
+    expect(totalWeight(parts)).toBeCloseTo(41.3);
+  });
+
+  it('marks new and upcoming Beys', () => {
+    const bey = findBey('sword-dran-3-60f')!;
+    const today = new Date(2026, 9, 31);
+    expect(releaseStatus({ ...bey, released: '2026-12-01' }, today)).toBe('soon');
+    expect(releaseStatus({ ...bey, released: '2026-09-15' }, today)).toBe('new');
+    expect(releaseStatus({ ...bey, released: '2024-05-30' }, today)).toBeUndefined();
+    expect(releaseLabel('2026-02-12')).toBe('Feb 2026');
   });
 });

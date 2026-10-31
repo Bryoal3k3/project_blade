@@ -1,163 +1,4188 @@
 [
   {
-    "id": "dran-sword",
-    "names": { "hasbro": "Sword Dran", "takaraTomy": "Dran Sword" },
+    "id": "sword-dran-3-60f",
+    "names": {
+      "hasbro": "Sword Dran",
+      "takaraTomy": "DranSword"
+    },
     "line": "BX",
-    "code": "BX-01",
+    "productCode": "F9580",
     "set": "Starter",
     "type": "attack",
     "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "3-60" },
-    "bit": { "code": "F", "name": "Flat" },
-    "art": { "shape": "blade", "blades": 3, "accent": "#FFC24B" }
+    "released": "2024-05-30",
+    "weight": 43.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 55,
+        "defense": 25,
+        "stamina": 20
+      },
+      "weight": 34.6
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "F",
+      "name": "Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
   },
   {
-    "id": "hells-scythe",
-    "names": { "hasbro": "Scythe Incendio", "takaraTomy": "Hells Scythe" },
+    "id": "helm-knight-3-80n",
+    "names": {
+      "hasbro": "Helm Knight",
+      "takaraTomy": "KnightShield"
+    },
     "line": "BX",
-    "code": "BX-02",
+    "productCode": "F9581",
     "set": "Starter",
-    "type": "balance",
+    "type": "defense",
     "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "4-60" },
-    "bit": { "code": "T", "name": "Taper" },
-    "art": { "shape": "wing", "blades": 4, "accent": "#6A35D9" }
+    "released": "2024-05-30",
+    "weight": 41.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 20,
+        "defense": 55,
+        "stamina": 25
+      },
+      "weight": 32.4
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
   },
   {
-    "id": "wizard-arrow",
-    "names": { "hasbro": "Arrow Wizard", "takaraTomy": "Wizard Arrow" },
+    "id": "arrow-wizard-4-80b",
+    "names": {
+      "hasbro": "Arrow Wizard",
+      "takaraTomy": "WizardArrow"
+    },
     "line": "BX",
-    "code": "BX-03",
+    "productCode": "F9582",
     "set": "Starter",
     "type": "stamina",
     "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "4-80" },
-    "bit": { "code": "B", "name": "Ball" },
-    "art": { "shape": "round", "blades": 5, "accent": "#9EE6FF" }
+    "released": "2024-05-30",
+    "weight": 41,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 30,
+        "stamina": 55
+      },
+      "weight": 31.8
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
   },
   {
-    "id": "knight-shield",
-    "names": { "hasbro": "Helm Knight", "takaraTomy": "Knight Shield" },
+    "id": "scythe-incendio-4-60t",
+    "names": {
+      "hasbro": "Scythe Incendio",
+      "takaraTomy": "HellsScythe"
+    },
     "line": "BX",
-    "code": "BX-04",
-    "set": "Starter",
-    "type": "defense",
-    "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "3-80" },
-    "bit": { "code": "N", "name": "Needle" },
-    "art": { "shape": "wall", "blades": 6, "accent": "#C9D6FF" }
-  },
-  {
-    "id": "knight-lance",
-    "names": { "hasbro": "Lance Knight", "takaraTomy": "Knight Lance" },
-    "line": "BX",
-    "code": "BX-13",
-    "set": "Booster",
-    "type": "defense",
-    "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "4-80" },
-    "bit": { "code": "HN", "name": "High Needle" },
-    "art": { "shape": "wall", "blades": 4, "accent": "#FFD54A" }
-  },
-  {
-    "id": "rhino-horn",
-    "names": { "takaraTomy": "Rhino Horn" },
-    "line": "BX",
-    "code": "BX-19",
-    "set": "Booster",
-    "type": "defense",
-    "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "3-80" },
-    "bit": { "code": "S", "name": "Spike" },
-    "art": { "shape": "wall", "blades": 5, "accent": "#B9C3D6" }
-  },
-  {
-    "id": "phoenix-wing",
-    "names": { "takaraTomy": "Phoenix Wing" },
-    "line": "BX",
-    "code": "BX-23",
-    "set": "Starter",
-    "type": "attack",
-    "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "9-60" },
-    "bit": { "code": "GF", "name": "Gear Flat" },
-    "art": { "shape": "wing", "blades": 3, "accent": "#FF9A3D" }
-  },
-  {
-    "id": "cobalt-dragoon",
-    "names": { "takaraTomy": "Cobalt Dragoon" },
-    "line": "BX",
-    "code": "BX-34",
-    "set": "Starter",
-    "type": "attack",
-    "spin": "left",
-    "blade": {},
-    "ratchet": { "name": "2-60" },
-    "bit": { "code": "C", "name": "Cyclone" },
-    "art": { "shape": "blade", "blades": 4, "accent": "#3EC6FF" }
-  },
-  {
-    "id": "dran-buster",
-    "names": { "takaraTomy": "Dran Buster" },
-    "line": "UX",
-    "code": "UX-01",
-    "set": "Starter",
-    "type": "attack",
-    "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "1-60" },
-    "bit": { "code": "A", "name": "Accel" },
-    "art": { "shape": "blade", "blades": 2, "accent": "#E8ECF5" }
-  },
-  {
-    "id": "hells-hammer",
-    "names": { "takaraTomy": "Hells Hammer" },
-    "line": "UX",
-    "code": "UX-02",
+    "productCode": "F9583",
     "set": "Starter",
     "type": "balance",
     "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "3-70" },
-    "bit": { "code": "H", "name": "Hexa" },
-    "art": { "shape": "wing", "blades": 3, "accent": "#8B3DFF" }
+    "released": "2024-05-30",
+    "weight": 41.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 35,
+        "stamina": 35
+      },
+      "weight": 32.7
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
   },
   {
-    "id": "wizard-rod",
-    "names": { "takaraTomy": "Wizard Rod" },
-    "line": "UX",
-    "code": "UX-03",
-    "set": "Booster",
-    "type": "stamina",
+    "id": "lance-knight-4-80hn",
+    "names": {
+      "hasbro": "Lance Knight",
+      "takaraTomy": "KnightLance"
+    },
+    "line": "BX",
+    "productCode": "G0184",
+    "set": "Starter",
+    "type": "defense",
     "spin": "right",
-    "blade": {},
-    "ratchet": { "name": "5-70" },
-    "bit": { "code": "DB", "name": "Disk Ball" },
-    "art": { "shape": "round", "blades": 4, "accent": "#7FD0FF" }
+    "released": "2024-09-02",
+    "weight": 42.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 60,
+        "stamina": 15
+      },
+      "weight": 32.9
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "HN",
+      "name": "High Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 15,
+        "defense": 55,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-high-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
   },
   {
-    "id": "rudder-phoenix",
-    "names": { "hasbro": "Rudder Phoenix" },
+    "id": "claw-leon-5-60p",
+    "names": {
+      "hasbro": "Claw Leon",
+      "takaraTomy": "LeonClaw"
+    },
+    "line": "BX",
+    "productCode": "G0193",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-09-02",
+    "weight": 40.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 40,
+        "defense": 40,
+        "stamina": 20
+      },
+      "weight": 31.4
+    },
+    "ratchet": {
+      "name": "5-60",
+      "stats": {
+        "attack": 12,
+        "defense": 9,
+        "stamina": 9
+      },
+      "weight": 6.6,
+      "photo": "ratchet-5-60"
+    },
+    "bit": {
+      "code": "P",
+      "name": "Point",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "buster-dran-1-60a",
+    "names": {
+      "hasbro": "Buster Dran",
+      "takaraTomy": "DranBuster"
+    },
     "line": "UX",
+    "productCode": "G1536",
     "set": "Starter",
     "type": "attack",
     "spin": "right",
-    "statsFrom": "Hasbro",
-    "blade": { "stats": { "attack": 15, "defense": 40, "stamina": 60 } },
-    "ratchet": { "name": "4-70", "stats": { "attack": 11, "defense": 12, "stamina": 7 } },
+    "released": "2025-01-06",
+    "weight": 45.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 70,
+        "defense": 20,
+        "stamina": 10
+      },
+      "weight": 36.5
+    },
+    "ratchet": {
+      "name": "1-60",
+      "stats": {
+        "attack": 17,
+        "defense": 9,
+        "stamina": 4
+      },
+      "weight": 6,
+      "photo": "ratchet-1-60"
+    },
+    "bit": {
+      "code": "A",
+      "name": "Accel",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-accel"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "wand-wizard-5-70db",
+    "names": {
+      "hasbro": "Wand Wizard",
+      "takaraTomy": "WizardRod"
+    },
+    "line": "UX",
+    "productCode": "G1537",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-01-06",
+    "weight": 45.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 60
+      },
+      "weight": 35.3
+    },
+    "ratchet": {
+      "name": "5-70",
+      "stats": {
+        "attack": 12,
+        "defense": 8.5,
+        "stamina": 9.5
+      },
+      "weight": 6.7,
+      "photo": "ratchet-5-70"
+    },
+    "bit": {
+      "code": "DB",
+      "name": "Disk Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 20,
+        "stamina": 55,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 3.2,
+      "photo": "bit-disk-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "wand-wizard-1-60r",
+    "names": {
+      "hasbro": "Wand Wizard",
+      "takaraTomy": "WizardRod"
+    },
+    "line": "UX",
+    "productCode": "G1538",
+    "set": "Starter",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-04-09",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 60
+      },
+      "weight": 35.3
+    },
+    "ratchet": {
+      "name": "1-60",
+      "stats": {
+        "attack": 17,
+        "defense": 9,
+        "stamina": 4
+      },
+      "weight": 6,
+      "photo": "ratchet-1-60"
+    },
+    "bit": {
+      "code": "R",
+      "name": "Rush",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 20,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-rush"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "shadow-shinobi-1-80mn",
+    "names": {
+      "hasbro": "Shadow Shinobi",
+      "takaraTomy": "ShinobiShadow"
+    },
+    "line": "UX",
+    "productCode": "G1539",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-04-09",
+    "weight": 37.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 70,
+        "stamina": 20
+      },
+      "weight": 28.2
+    },
+    "ratchet": {
+      "name": "1-80",
+      "stats": {
+        "attack": 17,
+        "defense": 4,
+        "stamina": 9
+      },
+      "weight": 6.7,
+      "photo": "ratchet-1-80"
+    },
+    "bit": {
+      "code": "MN",
+      "name": "Metal Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 8,
+        "defense": 57,
+        "stamina": 30,
+        "dash": 5,
+        "burstResistance": 30
+      },
+      "weight": 2.8,
+      "photo": "bit-metal-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "scarlet-garuda-4-70tp",
+    "names": {
+      "hasbro": "Scarlet Garuda",
+      "takaraTomy": "CrimsonGaruda"
+    },
+    "line": "BX",
+    "productCode": "G1673",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-08",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 45,
+        "defense": 25,
+        "stamina": 30
+      },
+      "weight": 35
+    },
+    "ratchet": {
+      "name": "4-70",
+      "stats": {
+        "attack": 11,
+        "defense": 12,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-4-70"
+    },
+    "bit": {
+      "code": "TP",
+      "name": "Trans Point",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 15,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-trans-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "sterling-wolf-3-80fb",
+    "names": {
+      "hasbro": "Sterling Wolf",
+      "takaraTomy": "SilverWolf"
+    },
+    "line": "UX",
+    "productCode": "G1674",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-08",
+    "weight": 45.8,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 30,
+        "stamina": 65
+      },
+      "weight": 36.8
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "FB",
+      "name": "Free Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 25,
+        "stamina": 60,
+        "dash": 5,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-free-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "shelter-drake-7-80gp",
+    "names": {
+      "hasbro": "Shelter Drake"
+    },
+    "line": "BX",
+    "productCode": "G1675",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-09",
+    "weight": 42.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 40,
+        "stamina": 35
+      },
+      "weight": 32.6
+    },
+    "ratchet": {
+      "name": "7-80",
+      "stats": {
+        "attack": 7,
+        "defense": 14,
+        "stamina": 9
+      },
+      "weight": 7.8,
+      "photo": "ratchet-7-80"
+    },
+    "bit": {
+      "code": "GP",
+      "name": "Gear Point",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 25,
+        "stamina": 15,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "rock-golem-1-60un",
+    "names": {
+      "hasbro": "Rock Golem",
+      "takaraTomy": "GolemRock"
+    },
+    "line": "UX",
+    "productCode": "G1676",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-08",
+    "weight": 41.9,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 60,
+        "stamina": 10
+      },
+      "weight": 34
+    },
+    "ratchet": {
+      "name": "1-60",
+      "stats": {
+        "attack": 17,
+        "defense": 9,
+        "stamina": 4
+      },
+      "weight": 6,
+      "photo": "ratchet-1-60"
+    },
+    "bit": {
+      "code": "UN",
+      "name": "Under Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 60,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-under-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "buster-dran-5-70db",
+    "names": {
+      "hasbro": "Buster Dran"
+    },
+    "line": "UX",
+    "productCode": "G1751",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-04-09",
+    "weight": 46.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 70,
+        "defense": 20,
+        "stamina": 10
+      },
+      "weight": 36.5
+    },
+    "ratchet": {
+      "name": "5-70",
+      "stats": {
+        "attack": 12,
+        "defense": 8.5,
+        "stamina": 9.5
+      },
+      "weight": 6.7,
+      "photo": "ratchet-5-70"
+    },
+    "bit": {
+      "code": "DB",
+      "name": "Disk Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 20,
+        "stamina": 55,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 3.2,
+      "photo": "bit-disk-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "hammer-incendio-3-70h",
+    "names": {
+      "hasbro": "Hammer Incendio",
+      "takaraTomy": "HellsHammer"
+    },
+    "line": "UX",
+    "productCode": "G1752",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-04-09",
+    "weight": 42,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 50,
+        "defense": 25,
+        "stamina": 25
+      },
+      "weight": 33
+    },
+    "ratchet": {
+      "name": "3-70",
+      "stats": {
+        "attack": 15,
+        "defense": 8,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-70"
+    },
+    "bit": {
+      "code": "H",
+      "name": "Hexa",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 35,
+        "stamina": 20,
+        "dash": 15,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-hexa"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "stun-medusa-9-60gb",
+    "names": {
+      "hasbro": "Stun Medusa"
+    },
+    "line": "UX",
+    "productCode": "G2738",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-02-12",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 13,
+        "defense": 70,
+        "stamina": 17
+      },
+      "weight": 27.4
+    },
+    "ratchet": {
+      "name": "9-60",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-9-60"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "rudder-phoenix-4-70lf",
+    "names": {
+      "hasbro": "Rudder Phoenix",
+      "takaraTomy": "PhoenixRudder"
+    },
+    "line": "UX",
+    "productCode": "G2739",
+    "set": "Starter",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-02-12",
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 40,
+        "stamina": 60
+      },
+      "weight": 34.5
+    },
+    "ratchet": {
+      "name": "4-70",
+      "stats": {
+        "attack": 11,
+        "defense": 12,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-4-70"
+    },
     "bit": {
       "code": "LF",
       "name": "Low Flat",
-      "stats": { "attack": 45, "defense": 5, "stamina": 10, "dash": 40, "burstResistance": 80 }
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
     },
     "photoSpins": true,
-    "art": { "shape": "blade", "blades": 7, "accent": "#C9CED8" }
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "feather-phoenix-2-60n",
+    "names": {
+      "hasbro": "Feather Phoenix",
+      "takaraTomy": "PhoenixFeather"
+    },
+    "line": "BX",
+    "productCode": "G2740",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-02-12",
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "stats": {
+        "attack": 50,
+        "defense": 20,
+        "stamina": 30
+      },
+      "weight": 33.3
+    },
+    "ratchet": {
+      "name": "2-60",
+      "stats": {
+        "attack": 10,
+        "defense": 13,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-2-60"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
+  },
+  {
+    "id": "courage-dran-s-6-60v",
+    "names": {
+      "hasbro": "Courage Dran S",
+      "takaraTomy": "DranBrave"
+    },
+    "line": "CX",
+    "productCode": "G1677",
+    "set": "Starter",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-05-21",
+    "weight": 45.9,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Dran"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Courage"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Slash"
+        }
+      ],
+      "stats": {
+        "attack": 60,
+        "defense": 20,
+        "stamina": 20
+      }
+    },
+    "ratchet": {
+      "name": "6-60",
+      "stats": {
+        "attack": 14,
+        "defense": 8,
+        "stamina": 8
+      },
+      "weight": 6.1,
+      "photo": "ratchet-6-60"
+    },
+    "bit": {
+      "code": "V",
+      "name": "Vortex",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 10,
+        "stamina": 5,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-vortex"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "reaper-incendio-t-4-70k",
+    "names": {
+      "hasbro": "Reaper Incendio T",
+      "takaraTomy": "HellsReaper"
+    },
+    "line": "CX",
+    "productCode": "G1678",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-05-21",
+    "weight": 45.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Incendio"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Reaper"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Turn"
+        }
+      ],
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 45
+      }
+    },
+    "ratchet": {
+      "name": "4-70",
+      "stats": {
+        "attack": 11,
+        "defense": 12,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-4-70"
+    },
+    "bit": {
+      "code": "K",
+      "name": "Kick",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 25,
+        "stamina": 15,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-kick"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "arc-wizard-r-4-55lo",
+    "names": {
+      "hasbro": "Arc Wizard R",
+      "takaraTomy": "WizardArc"
+    },
+    "line": "CX",
+    "productCode": "G1679",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-05-21",
+    "weight": 42.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Wizard"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Arc"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Round"
+        }
+      ],
+      "stats": {
+        "attack": 20,
+        "defense": 20,
+        "stamina": 60
+      }
+    },
+    "ratchet": {
+      "name": "4-55",
+      "stats": {
+        "attack": 7,
+        "defense": 11,
+        "stamina": 12
+      },
+      "weight": 4.8,
+      "photo": "ratchet-4-55"
+    },
+    "bit": {
+      "code": "LO",
+      "name": "Low Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 5,
+        "defense": 25,
+        "stamina": 55,
+        "dash": 15,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-low-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "dark-perseus-b-6-80w",
+    "names": {
+      "hasbro": "Dark Perseus B",
+      "takaraTomy": "PerseusDark"
+    },
+    "line": "CX",
+    "productCode": "G1680",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-05-21",
+    "weight": 46,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Perseus"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Dark"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Bumper"
+        }
+      ],
+      "stats": {
+        "attack": 20,
+        "defense": 60,
+        "stamina": 20
+      }
+    },
+    "ratchet": {
+      "name": "6-80",
+      "stats": {
+        "attack": 14,
+        "defense": 6,
+        "stamina": 10
+      },
+      "weight": 6.9,
+      "photo": "ratchet-6-80"
+    },
+    "bit": {
+      "code": "W",
+      "name": "Wedge",
+      "type": "defense",
+      "stats": {
+        "attack": 5,
+        "defense": 55,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 1.8,
+      "photo": "bit-wedge"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "brush-fox-j-9-70gr",
+    "names": {
+      "hasbro": "Brush Fox J",
+      "takaraTomy": "FoxBrush"
+    },
+    "line": "CX",
+    "productCode": "G1681",
+    "set": "Starter",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-08",
+    "weight": 45.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Fox"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Brush"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Jaggy"
+        }
+      ],
+      "stats": {
+        "attack": 60,
+        "defense": 30,
+        "stamina": 10
+      }
+    },
+    "ratchet": {
+      "name": "9-70",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.3,
+      "photo": "ratchet-9-70"
+    },
+    "bit": {
+      "code": "GR",
+      "name": "Gear Rush",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 10,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-gear-rush"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "fort-hornet-r-7-60t",
+    "names": {
+      "hasbro": "Fort Hornet R"
+    },
+    "line": "CX",
+    "productCode": "G1682",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-08",
+    "weight": 44.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Hornet"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Fort"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Round"
+        }
+      ],
+      "stats": {
+        "attack": 34,
+        "defense": 22,
+        "stamina": 44
+      }
+    },
+    "ratchet": {
+      "name": "7-60",
+      "stats": {
+        "attack": 8,
+        "defense": 14,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-7-60"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "wriggle-kraken-s-3-85o",
+    "names": {
+      "hasbro": "Wriggle Kraken S"
+    },
+    "line": "CX",
+    "productCode": "G1683",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-08",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Kraken"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Wriggle"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Slash"
+        }
+      ],
+      "stats": {
+        "attack": 28,
+        "defense": 22,
+        "stamina": 50
+      }
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "antler-stag-b-2-60hn",
+    "names": {
+      "hasbro": "Antler Stag B"
+    },
+    "line": "CX",
+    "productCode": "G1684",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-08",
+    "weight": 44.2,
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Stag"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Antler"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Bumper"
+        }
+      ],
+      "stats": {
+        "attack": 18,
+        "defense": 35,
+        "stamina": 47
+      }
+    },
+    "ratchet": {
+      "name": "2-60",
+      "stats": {
+        "attack": 10,
+        "defense": 13,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-2-60"
+    },
+    "bit": {
+      "code": "HN",
+      "name": "High Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 15,
+        "defense": 55,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-high-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
+  },
+  {
+    "id": "reaper-rhino-c-4-55d",
+    "names": {
+      "hasbro": "Reaper Rhino C",
+      "takaraTomy": "RhinoReaper"
+    },
+    "line": "CX",
+    "productCode": "G2746",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-02-12",
+    "weight": 42.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Rhino"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Reaper"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Charge"
+        }
+      ],
+      "stats": {
+        "attack": 40,
+        "defense": 30,
+        "stamina": 30
+      }
+    },
+    "ratchet": {
+      "name": "4-55",
+      "stats": {
+        "attack": 7,
+        "defense": 11,
+        "stamina": 12
+      },
+      "weight": 4.8,
+      "photo": "ratchet-4-55"
+    },
+    "bit": {
+      "code": "D",
+      "name": "Dot",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 55,
+        "stamina": 25,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-dot"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "flame-cerberus-w-5-80wb",
+    "names": {
+      "hasbro": "Flame Cerberus W",
+      "takaraTomy": "CerberusFlame"
+    },
+    "line": "CX",
+    "productCode": "G2747",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-02-12",
+    "weight": 46.9,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Cerberus"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Flame"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Wheel"
+        }
+      ],
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 60
+      }
+    },
+    "ratchet": {
+      "name": "5-80",
+      "stats": {
+        "attack": 12,
+        "defense": 8,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-5-80"
+    },
+    "bit": {
+      "code": "WB",
+      "name": "Wall Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 30,
+        "stamina": 45,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-wall-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "fang-leon-t-4-60u",
+    "names": {
+      "hasbro": "Fang Leon T"
+    },
+    "line": "CX",
+    "productCode": "G2748",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-02-19",
+    "weight": 46.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Leon"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Fang"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Turn"
+        }
+      ],
+      "stats": {
+        "attack": 45,
+        "defense": 20,
+        "stamina": 35
+      }
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "U",
+      "name": "Unite",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 30,
+        "dash": 20,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-unite"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 4,
+      "accent": "#8B3DFF"
+    }
+  },
+  {
+    "id": "strike-dran-4-50ff",
+    "names": {
+      "hasbro": "Strike Dran",
+      "takaraTomy": "DranStrike"
+    },
+    "line": "BX",
+    "productCode": "G2742",
+    "set": "Starter",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-06",
+    "weight": 49.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 58,
+        "defense": 25,
+        "stamina": 17
+      },
+      "weight": 41.4
+    },
+    "ratchet": {
+      "name": "4-50",
+      "stats": {
+        "attack": 12,
+        "defense": 13,
+        "stamina": 5
+      },
+      "weight": 5.9,
+      "photo": "ratchet-4-50"
+    },
+    "bit": {
+      "code": "FF",
+      "name": "Free Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 15,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "photo": "bit-free-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "suppress-superion-0-70lp",
+    "names": {
+      "hasbro": "Suppress Superion",
+      "takaraTomy": "SiegSuperion"
+    },
+    "line": "BX",
+    "productCode": "G2745",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-08-17",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 38,
+        "defense": 35,
+        "stamina": 27
+      },
+      "weight": 40
+    },
+    "ratchet": {
+      "name": "0-70",
+      "stats": {
+        "attack": 3,
+        "defense": 13,
+        "stamina": 14
+      },
+      "weight": 7,
+      "photo": "ratchet-0-70"
+    },
+    "bit": {
+      "code": "LP",
+      "name": "Low Point",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 15,
+        "stamina": 30,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "photo": "bit-low-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "hurricane-enlil-is-7-55t",
+    "names": {
+      "hasbro": "Hurricane Enlil IS"
+    },
+    "line": "CX",
+    "productCode": "G2750",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-07-15",
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Enlil"
+        },
+        {
+          "label": "Over Blade",
+          "name": "I"
+        },
+        {
+          "label": "Metal Blade",
+          "name": "Hurricane"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Slash"
+        }
+      ],
+      "stats": {
+        "attack": 48,
+        "defense": 32,
+        "stamina": 20
+      }
+    },
+    "ratchet": {
+      "name": "7-55",
+      "stats": {
+        "attack": 6,
+        "defense": 14,
+        "stamina": 10
+      },
+      "weight": 5.2,
+      "photo": "ratchet-7-55"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": false,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "delta-unicorn-po-3-60gu",
+    "names": {
+      "hasbro": "Delta Unicorn PO",
+      "takaraTomy": "UnicornDelta"
+    },
+    "line": "CX",
+    "productCode": "G2752",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-08-17",
+    "weight": 46.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Unicorn"
+        },
+        {
+          "label": "Over Blade",
+          "name": "Peak"
+        },
+        {
+          "label": "Metal Blade",
+          "name": "Delta"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Odd"
+        }
+      ],
+      "stats": {
+        "attack": 40,
+        "defense": 32,
+        "stamina": 28
+      }
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "GU",
+      "name": "Gear Unite",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-unite"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "valor-bison-fb",
+    "names": {
+      "hasbro": "Valor Bison"
+    },
+    "line": "UX",
+    "productCode": "G3497",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-05-12",
+    "weight": 42.9,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 36,
+        "defense": 58,
+        "stamina": 36
+      },
+      "weight": 41,
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "FB",
+      "name": "Free Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 25,
+        "stamina": 60,
+        "dash": 5,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-free-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "rocket-griffon-h",
+    "names": {
+      "hasbro": "Rocket Griffon",
+      "takaraTomy": "BulletGriffon"
+    },
+    "line": "UX",
+    "productCode": "G4561",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-07-15",
+    "weight": 63.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 45,
+        "defense": 45,
+        "stamina": 40
+      },
+      "weight": 60.6,
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "H",
+      "name": "Hexa",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 35,
+        "stamina": 20,
+        "dash": 15,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-hexa"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "rage-ragna-fe-4-55y",
+    "names": {
+      "hasbro": "Rage Ragna FE",
+      "takaraTomy": "RagnaRage"
+    },
+    "line": "CX",
+    "productCode": "G4562",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-07-29",
+    "weight": 47.6,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Ragna"
+        },
+        {
+          "label": "Over Blade",
+          "name": "Flow"
+        },
+        {
+          "label": "Metal Blade",
+          "name": "Rage"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Erase"
+        }
+      ],
+      "stats": {
+        "attack": 25,
+        "defense": 20,
+        "stamina": 55
+      }
+    },
+    "ratchet": {
+      "name": "4-55",
+      "stats": {
+        "attack": 7,
+        "defense": 11,
+        "stamina": 12
+      },
+      "weight": 4.8,
+      "photo": "ratchet-4-55"
+    },
+    "bit": {
+      "code": "Y",
+      "name": "Yielding",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 65,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 4.2,
+      "photo": "bit-yielding"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "armor-knight-gv-8-70un",
+    "names": {
+      "hasbro": "Armor Knight GV",
+      "takaraTomy": "KnightFortress"
+    },
+    "line": "CX",
+    "productCode": "G4563",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-06-26",
+    "weight": 47.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Knight"
+        },
+        {
+          "label": "Over Blade",
+          "name": "Guard"
+        },
+        {
+          "label": "Metal Blade",
+          "name": "Armor"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Vertical"
+        }
+      ],
+      "stats": {
+        "attack": 25,
+        "defense": 55,
+        "stamina": 20
+      }
+    },
+    "ratchet": {
+      "name": "8-70",
+      "stats": {
+        "attack": 8,
+        "defense": 10,
+        "stamina": 12
+      },
+      "weight": 7.7,
+      "photo": "ratchet-8-70"
+    },
+    "bit": {
+      "code": "UN",
+      "name": "Under Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 60,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-under-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "nether-incendio-z",
+    "names": {
+      "hasbro": "Nether Incendio",
+      "takaraTomy": "HellsNether"
+    },
+    "line": "UX",
+    "productCode": "G4564",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-08-17",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 50,
+        "defense": 50,
+        "stamina": 30
+      },
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "Z",
+      "name": "Zap",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 20,
+        "stamina": 15,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.5,
+      "photo": "bit-zap"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 4,
+      "accent": "#8B3DFF"
+    }
+  },
+  {
+    "id": "tread-croc-tq-5-50gn",
+    "names": {
+      "hasbro": "Tread Croc TQ",
+      "takaraTomy": "CrocoTread"
+    },
+    "line": "CX",
+    "productCode": "G4565",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-10-01",
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Croco"
+        },
+        {
+          "label": "Over Blade",
+          "name": "Tough"
+        },
+        {
+          "label": "Metal Blade",
+          "name": "Tread"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Quell"
+        }
+      ],
+      "stats": {
+        "attack": 15,
+        "defense": 65,
+        "stamina": 20
+      }
+    },
+    "ratchet": {
+      "name": "5-50",
+      "stats": {
+        "attack": 10,
+        "defense": 9,
+        "stamina": 11
+      },
+      "photo": "ratchet-5-50"
+    },
+    "bit": {
+      "code": "GN",
+      "name": "Gear Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 20,
+        "defense": 40,
+        "stamina": 10,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "whip-brachio-ow-5-70nr",
+    "names": {
+      "hasbro": "Whip Brachio OW",
+      "takaraTomy": "BrachioWhip"
+    },
+    "line": "CX",
+    "productCode": "G4566",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Brachio"
+        },
+        {
+          "label": "Over Blade",
+          "name": "Outer"
+        },
+        {
+          "label": "Metal Blade",
+          "name": "Whip"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Wheel"
+        }
+      ],
+      "stats": {
+        "attack": 13,
+        "defense": 35,
+        "stamina": 52
+      }
+    },
+    "ratchet": {
+      "name": "5-70",
+      "stats": {
+        "attack": 12,
+        "defense": 8.5,
+        "stamina": 9.5
+      },
+      "weight": 6.7,
+      "photo": "ratchet-5-70"
+    },
+    "bit": {
+      "code": "Nr",
+      "name": "Narrow",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 20,
+        "stamina": 60,
+        "dash": 5,
+        "burstResistance": 30
+      },
+      "photo": "bit-narrow"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "shatter-horus-9-65gb",
+    "names": {
+      "hasbro": "Shatter Horus"
+    },
+    "line": "BX",
+    "productCode": "G4567",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "weight": 39.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 35,
+        "stamina": 50
+      },
+      "weight": 32.9
+    },
+    "ratchet": {
+      "name": "9-65",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 4.5,
+      "photo": "ratchet-9-65"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": false,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "glory-valkerion-lf",
+    "names": {
+      "hasbro": "Glory Valkerion",
+      "takaraTomy": "GloryValkyrie"
+    },
+    "line": "UX",
+    "productCode": "G4568",
+    "set": "Starter",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-08-17",
+    "weight": 45.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 85,
+        "defense": 35,
+        "stamina": 25
+      },
+      "weight": 43.3,
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "LF",
+      "name": "Low Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "glare-cyclops-7-55fb",
+    "names": {
+      "hasbro": "Glare Cyclops"
+    },
+    "line": "BX",
+    "productCode": "G4569",
+    "set": "Starter",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-08-17",
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "stats": {
+        "attack": 32,
+        "defense": 16,
+        "stamina": 52
+      },
+      "weight": 34.4
+    },
+    "ratchet": {
+      "name": "7-55",
+      "stats": {
+        "attack": 6,
+        "defense": 14,
+        "stamina": 10
+      },
+      "weight": 5.2,
+      "photo": "ratchet-7-55"
+    },
+    "bit": {
+      "code": "FB",
+      "name": "Free Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 25,
+        "stamina": 60,
+        "dash": 5,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-free-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "seize-jaguar-hn",
+    "names": {
+      "hasbro": "Seize Jaguar"
+    },
+    "line": "UX",
+    "productCode": "G4570",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-08-17",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "weight": 39.4,
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "HN",
+      "name": "High Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 15,
+        "defense": 55,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-high-needle"
+    },
+    "photoSpins": false,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "ring-aether-0-80ds",
+    "names": {
+      "hasbro": "Ring Aether",
+      "takaraTomy": "HeavensRing"
+    },
+    "line": "BX",
+    "productCode": "G4571",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-05-12",
+    "weight": 48.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 60,
+        "stamina": 30
+      },
+      "weight": 37.4
+    },
+    "ratchet": {
+      "name": "0-80",
+      "stats": {
+        "attack": 3,
+        "defense": 12,
+        "stamina": 15
+      },
+      "weight": 7.6,
+      "photo": "ratchet-0-80"
+    },
+    "bit": {
+      "code": "DS",
+      "name": "Disk Spike",
+      "type": "defense",
+      "stats": {
+        "attack": 5,
+        "defense": 55,
+        "stamina": 40,
+        "dash": 10,
+        "burstResistance": 20
+      },
+      "weight": 3.1,
+      "photo": "bit-disk-spike"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "blitz-bahamut-bk-1-50i",
+    "names": {
+      "hasbro": "Blitz Bahamut BK",
+      "takaraTomy": "BahamutBlitz"
+    },
+    "line": "CX",
+    "productCode": "G4572",
+    "set": "Starter",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-05-12",
+    "weight": 48.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Bahamut"
+        },
+        {
+          "label": "Over Blade",
+          "name": "Break"
+        },
+        {
+          "label": "Metal Blade",
+          "name": "Blitz"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Knuckle"
+        }
+      ],
+      "stats": {
+        "attack": 65,
+        "defense": 20,
+        "stamina": 15
+      }
+    },
+    "ratchet": {
+      "name": "1-50",
+      "stats": {
+        "attack": 18,
+        "defense": 9,
+        "stamina": 3
+      },
+      "weight": 5.7,
+      "photo": "ratchet-1-50"
+    },
+    "bit": {
+      "code": "I",
+      "name": "Ignition",
+      "type": "attack",
+      "stats": {
+        "attack": 50,
+        "defense": 15,
+        "stamina": 5,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.4,
+      "photo": "bit-ignition"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "steel-samurai-4-80t",
+    "names": {
+      "hasbro": "Steel Samurai"
+    },
+    "line": "BX",
+    "productCode": "G0188",
+    "set": "Booster",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-05-30",
+    "weight": 40.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 40,
+        "defense": 37,
+        "stamina": 23
+      },
+      "weight": 31.2
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "horn-rhino-3-80s",
+    "names": {
+      "hasbro": "Horn Rhino",
+      "takaraTomy": "RhinoHorn"
+    },
+    "line": "BX",
+    "productCode": "G0192",
+    "set": "Booster",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-05-30",
+    "weight": 41.8,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 20,
+        "defense": 50,
+        "stamina": 30
+      },
+      "weight": 32.7
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "S",
+      "name": "Spike",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 45,
+        "stamina": 35,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-spike"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "keel-shark-3-60lf",
+    "names": {
+      "hasbro": "Keel Shark",
+      "takaraTomy": "SharkEdge"
+    },
+    "line": "BX",
+    "productCode": "G0194",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-05-30",
+    "weight": 43,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 25,
+        "stamina": 15
+      },
+      "weight": 34.5
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "LF",
+      "name": "Low Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "talon-ptera-3-80b",
+    "names": {
+      "hasbro": "Talon Ptera"
+    },
+    "line": "BX",
+    "productCode": "G0195",
+    "set": "Booster",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-05-30",
+    "weight": 43.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 27,
+        "defense": 23,
+        "stamina": 50
+      },
+      "weight": 34.3
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "sting-unicorn-5-60gp",
+    "names": {
+      "hasbro": "Sting Unicorn",
+      "takaraTomy": "UnicornSting"
+    },
+    "line": "BX",
+    "productCode": "G0283",
+    "set": "Booster",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-08-29",
+    "weight": 42.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 35,
+        "defense": 35,
+        "stamina": 30
+      },
+      "weight": 33.4
+    },
+    "ratchet": {
+      "name": "5-60",
+      "stats": {
+        "attack": 12,
+        "defense": 9,
+        "stamina": 9
+      },
+      "weight": 6.6,
+      "photo": "ratchet-5-60"
+    },
+    "bit": {
+      "code": "GP",
+      "name": "Gear Point",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 25,
+        "stamina": 15,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "roar-tyranno-9-60gf",
+    "names": {
+      "hasbro": "Roar Tyranno"
+    },
+    "line": "BX",
+    "productCode": "G0284",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-08-29",
+    "weight": 44.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 28,
+        "stamina": 12
+      },
+      "weight": 36
+    },
+    "ratchet": {
+      "name": "9-60",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-9-60"
+    },
+    "bit": {
+      "code": "GF",
+      "name": "Gear Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 50,
+        "defense": 5,
+        "stamina": 5,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "scythe-incendio-3-80b",
+    "names": {
+      "hasbro": "Scythe Incendio",
+      "takaraTomy": "HellsScythe"
+    },
+    "line": "BX",
+    "productCode": "G0285",
+    "set": "Booster",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-08-29",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 35,
+        "stamina": 35
+      },
+      "weight": 32.7
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "savage-bear-3-60s",
+    "names": {
+      "hasbro": "Savage Bear"
+    },
+    "line": "BX",
+    "productCode": "G0286",
+    "set": "Booster",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-08-29",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 45,
+        "stamina": 30
+      },
+      "weight": 29.6
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "S",
+      "name": "Spike",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 45,
+        "stamina": 35,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-spike"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "cowl-sphinx-9-80gn",
+    "names": {
+      "hasbro": "Cowl Sphinx",
+      "takaraTomy": "SphinxCowl"
+    },
+    "line": "BX",
+    "productCode": "G1530",
+    "set": "Booster",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-12-17",
+    "weight": 41.6,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 35,
+        "defense": 55,
+        "stamina": 10
+      },
+      "weight": 32.7
+    },
+    "ratchet": {
+      "name": "9-80",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.9,
+      "photo": "ratchet-9-80"
+    },
+    "bit": {
+      "code": "GN",
+      "name": "Gear Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 20,
+        "defense": 40,
+        "stamina": 10,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "arrow-wizard-4-80gb",
+    "names": {
+      "hasbro": "Arrow Wizard",
+      "takaraTomy": "WizardArrow"
+    },
+    "line": "BX",
+    "productCode": "G1531",
+    "set": "Booster",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-12-17",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 30,
+        "stamina": 55
+      },
+      "weight": 31.8
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "obsidian-shell-4-60d",
+    "names": {
+      "hasbro": "Obsidian Shell",
+      "takaraTomy": "BlackShell"
+    },
+    "line": "BX",
+    "productCode": "G1533",
+    "set": "Booster",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-03-13",
+    "weight": 40.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 65,
+        "stamina": 25
+      },
+      "weight": 32.4
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "D",
+      "name": "Dot",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 55,
+        "stamina": 25,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-dot"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "keel-shark-1-60q",
+    "names": {
+      "hasbro": "Keel Shark",
+      "takaraTomy": "SharkEdge"
+    },
+    "line": "BX",
+    "productCode": "G1534",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-03-13",
+    "weight": 42.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 25,
+        "stamina": 15
+      },
+      "weight": 34.5
+    },
+    "ratchet": {
+      "name": "1-60",
+      "stats": {
+        "attack": 17,
+        "defense": 9,
+        "stamina": 4
+      },
+      "weight": 6,
+      "photo": "ratchet-1-60"
+    },
+    "bit": {
+      "code": "Q",
+      "name": "Quake",
+      "type": "attack",
+      "stats": {
+        "attack": 55,
+        "defense": 15,
+        "stamina": 5,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-quake"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "tide-whale-5-80e",
+    "names": {
+      "hasbro": "Tide Whale",
+      "takaraTomy": "WhaleWave"
+    },
+    "line": "BX",
+    "productCode": "G1669",
+    "set": "Booster",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-06",
+    "weight": 48.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 45,
+        "defense": 35,
+        "stamina": 20
+      },
+      "weight": 38.2
+    },
+    "ratchet": {
+      "name": "5-80",
+      "stats": {
+        "attack": 12,
+        "defense": 8,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-5-80"
+    },
+    "bit": {
+      "code": "E",
+      "name": "Elevate",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 15,
+        "stamina": 20,
+        "dash": 35,
+        "burstResistance": 30
+      },
+      "weight": 3.2,
+      "photo": "bit-elevate"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "dagger-dran-4-70q",
+    "names": {
+      "hasbro": "Dagger Dran"
+    },
+    "line": "BX",
+    "productCode": "G1670",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-06",
+    "weight": 44.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 50,
+        "defense": 25,
+        "stamina": 25
+      },
+      "weight": 34.8
+    },
+    "ratchet": {
+      "name": "4-70",
+      "stats": {
+        "attack": 11,
+        "defense": 12,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-4-70"
+    },
+    "bit": {
+      "code": "Q",
+      "name": "Quake",
+      "type": "attack",
+      "stats": {
+        "attack": 55,
+        "defense": 15,
+        "stamina": 5,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-quake"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "lance-knight-3-60lf",
+    "names": {
+      "hasbro": "Lance Knight",
+      "takaraTomy": "KnightLance"
+    },
+    "line": "BX",
+    "productCode": "G1671",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-08",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 60,
+        "stamina": 15
+      },
+      "weight": 32.9
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "LF",
+      "name": "Low Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "yell-kong-3-60gb",
+    "names": {
+      "hasbro": "Yell Kong"
+    },
+    "line": "BX",
+    "productCode": "G0198",
+    "set": "Booster",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-09-11",
+    "weight": 39.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 13,
+        "defense": 37,
+        "stamina": 50
+      },
+      "weight": 31.1
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "arrow-wizard-4-80o",
+    "names": {
+      "hasbro": "Arrow Wizard"
+    },
+    "line": "BX",
+    "productCode": "G1755",
+    "set": "Booster",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-08",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 30,
+        "stamina": 55
+      },
+      "weight": 31.8
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "soar-phoenix-5-80h",
+    "names": {
+      "hasbro": "Soar Phoenix",
+      "takaraTomy": "PhoenixWing"
+    },
+    "line": "BX",
+    "productCode": "G1756",
+    "set": "Booster",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-03-13",
+    "weight": 47.9,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 25,
+        "stamina": 15
+      },
+      "weight": 38
+    },
+    "ratchet": {
+      "name": "5-80",
+      "stats": {
+        "attack": 12,
+        "defense": 8,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-5-80"
+    },
+    "bit": {
+      "code": "H",
+      "name": "Hexa",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 35,
+        "stamina": 20,
+        "dash": 15,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-hexa"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "scale-shark-4-50uf",
+    "names": {
+      "hasbro": "Scale Shark",
+      "takaraTomy": "SharkScale"
+    },
+    "line": "UX",
+    "productCode": "G2731",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-02-19",
+    "weight": 45.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 70,
+        "defense": 15,
+        "stamina": 15
+      },
+      "weight": 37.6
+    },
+    "ratchet": {
+      "name": "4-50",
+      "stats": {
+        "attack": 12,
+        "defense": 13,
+        "stamina": 5
+      },
+      "weight": 5.9,
+      "photo": "ratchet-4-50"
+    },
+    "bit": {
+      "code": "UF",
+      "name": "Under Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 55,
+        "defense": 5,
+        "stamina": 5,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2,
+      "photo": "bit-under-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "shelter-drake-5-70o",
+    "names": {
+      "hasbro": "Shelter Drake"
+    },
+    "line": "BX",
+    "productCode": "G2732",
+    "set": "Booster",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-02-19",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 40,
+        "stamina": 35
+      },
+      "weight": 32.6
+    },
+    "ratchet": {
+      "name": "5-70",
+      "stats": {
+        "attack": 12,
+        "defense": 8.5,
+        "stamina": 9.5
+      },
+      "weight": 6.7,
+      "photo": "ratchet-5-70"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "gust-bat-3-85gp",
+    "names": {
+      "hasbro": "Gust Bat"
+    },
+    "line": "BX",
+    "productCode": "G2733",
+    "set": "Booster",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-06-19",
+    "weight": 43.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 42,
+        "defense": 38,
+        "stamina": 20
+      },
+      "weight": 36.2
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "GP",
+      "name": "Gear Point",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 25,
+        "stamina": 15,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "curse-mummy-7-55w",
+    "names": {
+      "hasbro": "Curse Mummy",
+      "takaraTomy": "MummyCurse"
+    },
+    "line": "UX",
+    "productCode": "G2734",
+    "set": "Booster",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-07-15",
+    "weight": 44.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 60,
+        "stamina": 20
+      },
+      "weight": 37.5
+    },
+    "ratchet": {
+      "name": "7-55",
+      "stats": {
+        "attack": 6,
+        "defense": 14,
+        "stamina": 10
+      },
+      "weight": 5.2,
+      "photo": "ratchet-7-55"
+    },
+    "bit": {
+      "code": "W",
+      "name": "Wedge",
+      "type": "defense",
+      "stats": {
+        "attack": 5,
+        "defense": 55,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 1.8,
+      "photo": "bit-wedge"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "savage-bear-5-60f",
+    "names": {
+      "hasbro": "Savage Bear",
+      "takaraTomy": "BearScratch"
+    },
+    "line": "BX",
+    "productCode": "G2735",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-06-19",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 45,
+        "stamina": 30
+      },
+      "weight": 29.6
+    },
+    "ratchet": {
+      "name": "5-60",
+      "stats": {
+        "attack": 12,
+        "defense": 9,
+        "stamina": 9
+      },
+      "weight": 6.6,
+      "photo": "ratchet-5-60"
+    },
+    "bit": {
+      "code": "F",
+      "name": "Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "cobalt-drake-4-60f",
+    "names": {
+      "hasbro": "Cobalt Drake"
+    },
+    "line": "BX",
+    "productCode": "G2736",
+    "set": "Booster",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-07-15",
+    "weight": 46.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 65,
+        "defense": 30,
+        "stamina": 20
+      },
+      "weight": 38
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "F",
+      "name": "Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "mirage-clock-9-65b",
+    "names": {
+      "hasbro": "Mirage Clock",
+      "takaraTomy": "ClockMirage"
+    },
+    "line": "UX",
+    "productCode": "G2737",
+    "set": "Booster",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-07-15",
+    "weight": 44.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 10,
+        "stamina": 80
+      },
+      "weight": 37.7
+    },
+    "ratchet": {
+      "name": "9-65",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 4.5,
+      "photo": "ratchet-9-65"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "ridge-triceratops-9-80gn",
+    "names": {
+      "hasbro": "Ridge Triceratops"
+    },
+    "line": "BX",
+    "productCode": "G3392",
+    "set": "Booster",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-02-19",
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 32,
+        "defense": 55,
+        "stamina": 13
+      },
+      "weight": 29.9
+    },
+    "ratchet": {
+      "name": "9-80",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.9,
+      "photo": "ratchet-9-80"
+    },
+    "bit": {
+      "code": "GN",
+      "name": "Gear Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 20,
+        "defense": 40,
+        "stamina": 10,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "dranzer-spiral-3-80t",
+    "names": {
+      "hasbro": "Dranzer Spiral"
+    },
+    "line": "BX",
+    "productCode": "F9584",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-05-30",
+    "weight": 37,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 35,
+        "defense": 30,
+        "stamina": 35
+      },
+      "weight": 27.7
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "driger-slash-4-80p",
+    "names": {
+      "hasbro": "Driger Slash"
+    },
+    "line": "BX",
+    "productCode": "G1843",
+    "set": "Starter",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-05",
+    "weight": 37.8,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 40,
+        "defense": 35,
+        "stamina": 25
+      },
+      "weight": 28.6
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "P",
+      "name": "Point",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "draciel-shield-7-60d",
+    "names": {
+      "hasbro": "Draciel Shield"
+    },
+    "line": "BX",
+    "productCode": "G2218",
+    "set": "Starter",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-01",
+    "weight": 37.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 50,
+        "stamina": 20
+      },
+      "weight": 28
+    },
+    "ratchet": {
+      "name": "7-60",
+      "stats": {
+        "attack": 8,
+        "defense": 14,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-7-60"
+    },
+    "bit": {
+      "code": "D",
+      "name": "Dot",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 55,
+        "stamina": 25,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-dot"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
   }
 ]

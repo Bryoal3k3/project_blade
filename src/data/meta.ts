@@ -41,6 +41,14 @@ export const SET_INFO: Record<SetKind, string> = {
   'Deck Set': 'Beys + parts',
 };
 
+/** Bits without a hand-written description get one from their type. */
+export const BIT_TYPE_INFO: Record<BeyType, string> = {
+  attack: 'Built to zoom around the stadium and hit hard.',
+  defense: 'Built to hold its spot and take hits.',
+  stamina: 'Built to keep spinning for a long time.',
+  balance: 'A mix: some zooming, some staying put.',
+};
+
 /** Kid-sized description of each bit, keyed by its code. */
 export const BIT_INFO: Record<string, string> = {
   F: 'A flat tip that grips the floor. Fast and wild.',

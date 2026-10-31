@@ -12,6 +12,8 @@ function go(hash: string) {
   });
 }
 
+const values = (part: HTMLElement) => within(part).getAllByText(/^\d+(\.\d+)?$/).map((el) => Number(el.textContent));
+
 describe('App', () => {
   it('lists every Bey and filters by type', () => {
     render(<App />);
@@ -26,32 +28,39 @@ describe('App', () => {
 
   it('shows all three parts with the stats from the box', () => {
     render(<App />);
-    go('#/bey/rudder-phoenix');
+    go('#/bey/rudder-phoenix-4-70lf');
     expect(screen.getByRole('heading', { level: 1, name: 'Rudder Phoenix' })).toBeTruthy();
     expect(screen.getByText('4-70LF')).toBeTruthy();
+    expect(screen.getByText('Takara Tomy name: PhoenixRudder')).toBeTruthy();
 
-    const blade = screen.getByRole('region', { name: 'Rudder Phoenix' });
-    const ratchet = screen.getByRole('region', { name: '4-70' });
+    expect(values(screen.getByRole('region', { name: 'Rudder Phoenix' }))).toEqual([15, 40, 60]);
+    expect(values(screen.getByRole('region', { name: '4-70' }))).toEqual([11, 12, 7, 70]);
     const bit = screen.getByRole('region', { name: /LF/ });
-    const values = (part: HTMLElement) => within(part).getAllByText(/^\d+$/).map((el) => Number(el.textContent));
-    expect(values(blade)).toEqual([15, 40, 60]);
-    expect(values(ratchet)).toEqual([11, 12, 7, 70]);
     expect(values(bit)).toEqual([45, 5, 10, 40, 80]);
     expect(within(bit).getByText('Burst')).toBeTruthy();
     expect(screen.queryByText('Stats coming soon')).toBeNull();
   });
 
-  it('shows the Hasbro name and says when stats are not in yet', () => {
+  it('shows the pieces of a Custom Line blade', () => {
     render(<App />);
-    go('#/bey/dran-sword');
-    expect(screen.getByRole('heading', { level: 1, name: 'Sword Dran' })).toBeTruthy();
-    expect(screen.getByText('Takara Tomy name: Dran Sword')).toBeTruthy();
-    expect(screen.getAllByText('Stats coming soon')).toHaveLength(3);
+    go('#/bey/courage-dran-s-6-60v');
+    const blade = screen.getByRole('region', { name: 'Courage Dran S' });
+    expect(values(blade)).toEqual([60, 20, 20]);
+    const pieces = within(blade).getByRole('list', { name: 'Blade pieces' });
+    expect(within(pieces).getByText('Courage')).toBeTruthy();
+    expect(within(pieces).getByText('Primary Blade')).toBeTruthy();
+  });
+
+  it('skips the ratchet panel when the ratchet is built into the blade', () => {
+    render(<App />);
+    go('#/bey/valor-bison-fb');
+    expect(screen.getByText('Ratchet-Integrated Blade')).toBeTruthy();
+    expect(screen.getAllByRole('region')).toHaveLength(2);
   });
 
   it('adds a Bey to My Beys and takes it off the wish list', () => {
     render(<App />);
-    go('#/bey/wizard-rod');
+    go('#/bey/wand-wizard-5-70db');
     fireEvent.click(screen.getByRole('button', { name: 'I want it' }));
     fireEvent.click(screen.getByRole('button', { name: 'I have it' }));
     expect(screen.getByRole('button', { name: 'I have it' }).getAttribute('aria-pressed')).toBe('true');
@@ -60,7 +69,7 @@ describe('App', () => {
     go('#/mine');
     const grid = document.querySelector('.grid') as HTMLElement;
     expect(within(grid).getAllByRole('link')).toHaveLength(1);
-    expect(within(grid).getByRole('link', { name: /Wizard Rod/ })).toBeTruthy();
+    expect(within(grid).getByRole('link', { name: /Wand Wizard 5-70DB/ })).toBeTruthy();
 
     go('#/wish');
     expect(screen.getByText('Your wish list is empty')).toBeTruthy();
@@ -82,16 +91,17 @@ describe('stat bars', () => {
 });
 
 describe('read aloud', () => {
-  const bey = findBey('rudder-phoenix')!;
+  const bey = findBey('rudder-phoenix-4-70lf')!;
 
   it('says the name, combo, type and spin', () => {
     expect(spokenIntro(bey)).toBe('Rudder Phoenix, 4 70 Low Flat. Attack type. Spins right.');
+    expect(spokenIntro(findBey('valor-bison-fb')!)).toBe('Valor Bison, Free Ball. Stamina type. Spins right.');
   });
 
   it('says each part like the box', () => {
     expect(spokenPart(bey, 'blade')).toBe('Blade, Rudder Phoenix. Attack 15, Defense 40, Stamina 60.');
     expect(spokenPart(bey, 'ratchet')).toBe('Ratchet, 4 70. Attack 11, Defense 12, Stamina 7, Height 70.');
     expect(spokenPart(bey, 'bit')).toBe('Bit, Low Flat. Attack 45, Defense 5, Stamina 10, Dash 40, Burst 80.');
-    expect(spokenPart(findBey('dran-sword')!, 'bit')).toBe('Bit, Flat. Stats coming soon.');
+    expect(spokenPart(findBey('seize-jaguar-hn')!, 'blade')).toBe('Ratchet-Integrated Blade, Seize Jaguar. Stats coming soon.');
   });
 });

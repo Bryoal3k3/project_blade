@@ -1,6 +1,6 @@
 import type { Bey } from '../data/types';
 import { TYPE_INFO } from '../data/meta';
-import { comboName, displayName } from '../data';
+import { comboName, displayName, releaseStatus } from '../data';
 import { BeyPicture } from './BeyPicture';
 import { Icon } from './Icon';
 import { typeVars } from './TypeChips';
@@ -14,6 +14,7 @@ interface Props {
 
 export function BeyTile({ bey, have, want, onOpen }: Props) {
   const type = TYPE_INFO[bey.type];
+  const status = releaseStatus(bey);
   return (
     <a
       className="tile"
@@ -25,6 +26,7 @@ export function BeyTile({ bey, have, want, onOpen }: Props) {
       <span className="tile-stage">
         <BeyPicture bey={bey} spin />
       </span>
+      {status && <span className={`tile-badge is-${status}`}>{status === 'new' ? 'New' : 'Soon'}</span>}
       <span className="tile-name">{displayName(bey)}</span>
       <span className="tile-row">
         <span className="tile-combo">{comboName(bey)}</span>
