@@ -1,7 +1,7 @@
 export const BEY_TYPES = ['attack', 'defense', 'stamina', 'balance'] as const;
 export type BeyType = (typeof BEY_TYPES)[number];
 
-export const SET_KINDS = ['Starter', 'Booster', 'Random Booster', 'Deck Set', 'Dual Pack', 'Multipack'] as const;
+export const SET_KINDS = ['Starter', 'Booster', 'Random Booster', 'Deck Set', 'Dual Pack', 'Multipack', 'Set', 'Battle Set', 'Launcher Set'] as const;
 export type SetKind = (typeof SET_KINDS)[number];
 
 export const LINES = ['BX', 'UX', 'CX'] as const;
@@ -44,6 +44,8 @@ export interface BladePiece {
 }
 
 export interface Blade extends PartData<PartStats> {
+  /** The blade's own type, which can differ from the whole Bey's. */
+  type?: BeyType;
   /** Custom Line blades are built from pieces; their stats add up to the blade's. */
   pieces?: BladePiece[];
   /** The blade has its ratchet built in, so there is no separate ratchet. */
@@ -81,8 +83,10 @@ export interface Bey {
   set: SetKind;
   type: BeyType;
   spin: 'right' | 'left';
-  /** Dual Packs and Multipack Sets this Bey comes in. */
+  /** Packs and sets this Bey comes in (Dual Packs, Multipacks, Battle Sets and so on). */
   packs?: string[];
+  /** Canadian list price in dollars, for Beys sold on their own. */
+  price?: number;
   /** First release in Canada (or the US), as "2026-02-12" or "2026-02". */
   released?: string;
   /** Total weight in grams. */
@@ -99,3 +103,14 @@ export interface Bey {
 }
 
 export type PartKey = 'blade' | 'ratchet' | 'bit';
+
+/** A product holding more than one Bey, or a Bey with extras. */
+export interface Pack {
+  name: string;
+  set: SetKind;
+  /** Canadian list price in dollars. */
+  price?: number;
+  released?: string;
+  /** Ids of the Beys inside. */
+  beys: string[];
+}

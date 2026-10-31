@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import raw from './beys.json';
 import boxStats from '../../scripts/box-stats.json';
-import { BEYS, comboName, displayName, findBey, heightStep, otherName, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '.';
-import { validateBeys } from './validate';
+import { BEYS, PACKS, comboName, displayName, findBey, heightStep, otherName, packOnly, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '.';
+import { validateBeys, validatePacks } from './validate';
 import type { Bey } from './types';
 
 describe('Bey data', () => {
@@ -45,11 +45,30 @@ describe('Bey data', () => {
   });
 
   it('uses every box reading in scripts/box-stats.json', () => {
-    for (const [id, parts] of Object.entries(boxStats)) {
-      const bey = findBey(id)!;
-      expect(bey, id).toBeTruthy();
-      for (const [part, stats] of Object.entries(parts)) expect(bey[part as 'blade'].stats, `${id} ${part}`).toEqual(stats);
+    for (const [key, value] of Object.entries(boxStats)) {
+      const [part, name] = key.split(':');
+      if (name !== undefined) {
+        // A reading for a part wherever it appears, like "ratchet:2-60".
+        const users = BEYS.filter((bey) => (part === 'ratchet' ? bey.ratchet?.name : bey.bit.code) === name);
+        expect(users.length, key).toBeGreaterThan(0);
+        for (const bey of users) expect(bey[part as 'ratchet']?.stats, `${bey.id} ${key}`).toEqual(value);
+        continue;
+      }
+      const bey = findBey(key)!;
+      expect(bey, key).toBeTruthy();
+      for (const [p, stats] of Object.entries(value)) expect(bey[p as 'blade'].stats, `${key} ${p}`).toEqual(stats);
     }
+  });
+
+  it('has packs and sets that match their Beys', () => {
+    expect(validatePacks(PACKS, BEYS)).toEqual([]);
+    const cobalt = findBey('cobalt-dragoon-2-60c')!;
+    expect(cobalt.set).toBe('Launcher Set');
+    expect(packOnly(cobalt)).toBe(true);
+    expect(findBey('storm-pegasis-3-70ra')!.packs).toEqual(['Beyblade 25th Anniversary Set']);
+    expect(findBey('sword-dran-3-60f')!.packs).toContain('Beyblade 25th Anniversary Set');
+    expect(BEYS.some((bey) => bey.id.startsWith('dransword'))).toBe(false);
+    expect(findBey('rudder-phoenix-4-70lf')!.price).toBe(16.99);
   });
 
   it('includes the Beys from Dual Packs and Multipack Sets', () => {

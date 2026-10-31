@@ -1,5 +1,6 @@
 import raw from './beys.json';
-import type { Bey, PartKey } from './types';
+import rawPacks from './packs.json';
+import type { Bey, Pack, PartKey, SetKind } from './types';
 import { HEIGHT_STEPS } from './meta';
 
 /** The name kids see first: the Hasbro name when there is one. */
@@ -20,6 +21,12 @@ export const BEYS: Bey[] = (raw as Bey[])
 export function findBey(id: string): Bey | undefined {
   return BEYS.find((bey) => bey.id === id);
 }
+
+/** Packs and sets that hold more than one Bey or come with extras. */
+export const PACKS: Pack[] = rawPacks as Pack[];
+
+/** Ways a Bey is sold on its own. */
+export const SINGLE_SETS: SetKind[] = ['Starter', 'Booster', 'Random Booster'];
 
 /** The parts shown on the box, in order. Beys with a built-in ratchet have no ratchet panel. */
 export function partsOf(bey: Bey): PartKey[] {
@@ -42,9 +49,9 @@ export function parseRatchet(name: string): { points?: number; height: number } 
   return { points: Number.isNaN(points) ? undefined : points, height: Number(match[2]) };
 }
 
-/** True for Beys sold only inside a Dual Pack or Multipack Set. */
+/** True for Beys that only come inside a pack or set. */
 export function packOnly(bey: Bey): boolean {
-  return bey.set === 'Dual Pack' || bey.set === 'Multipack';
+  return !SINGLE_SETS.includes(bey.set);
 }
 
 /** Which of the 5 height blocks lights up (1-5). */

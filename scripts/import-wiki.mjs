@@ -14,6 +14,7 @@ import sharp from 'sharp';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DATA_FILE = path.join(ROOT, 'src/data/beys.json');
+const PACKS_FILE = path.join(ROOT, 'src/data/packs.json');
 const PHOTO_DIR = path.join(ROOT, 'src/photos');
 const BOX_STATS_FILE = path.join(ROOT, 'scripts/box-stats.json');
 const API = 'https://beyblade.fandom.com/api.php';
@@ -28,6 +29,9 @@ const SECTIONS = [
   ['X-Over Project', 'Starter', false],
   ['Dual Packs', 'Dual Pack', true],
   ['Multipack Sets', 'Multipack', true],
+  ['Bey Packs/Sets', 'Set', true],
+  ['Battle Sets', 'Battle Set', true],
+  ['Accessories', 'Launcher Set', true],
 ];
 
 /** Infobox field -> wiki page prefix and the label printed on the box. */
@@ -187,47 +191,77 @@ function hash(text) {
 
 // ---------- the Hasbro list ----------
 
+/** Canadian list price in a list row, e.g. "[[File:Flag of Canada.png|20px]] $16.99" -> 16.99. */
+function canadianPrice(rowText) {
+  const m = /Flag of Canada\.png[^\]]*\]\]\s*(?:CAD)?\$(\d+(?:\.\d{2})?)/.exec(rowText);
+  return m ? Number(m[1]) : undefined;
+}
+
+/** Every product row in the Hasbro list that is sold in Canada or the US, with its section, price and date. */
 function hasbroProducts(listText) {
   const products = [];
   let section = '';
+  let row = null;
+  const finish = () => {
+    if (!row?.title) return;
+    const match = SECTIONS.find(([key]) => row.section.includes(key));
+    const text = row.text.replace(/<!--[\s\S]*?-->/g, '');
+    const flags = [...text.matchAll(/Flag of ([A-Za-z ]+)\.png/g)].map((m) => m[1]);
+    const soldHere = !flags.length || flags.includes('Canada') || flags.includes('United States');
+    if (match && soldHere && !products.some((p) => p.title === row.title)) {
+      products.push({ title: row.title, set: match[1], pack: match[2], price: canadianPrice(text) });
+    }
+  };
   for (const line of listText.split('\n')) {
     const heading = /^!\s*colspan="\d+"\s*\|(.*)$/.exec(line);
-    if (heading) {
-      section = heading[1].trim();
+    if (heading || line.startsWith('|-')) {
+      finish();
+      row = heading ? null : { section, title: undefined, text: '' };
+      if (heading) section = heading[1].trim();
       continue;
     }
+    if (!row) continue;
+    row.text += `${line}\n`;
     const link = /^\|\s*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/.exec(line);
-    if (!link || link[1].startsWith('File:')) continue;
-    const match = SECTIONS.find(([key]) => section.includes(key));
-    if (match && !products.some((p) => p.title === link[1])) products.push({ title: link[1], set: match[1], pack: match[2] });
+    if (link && !row.title && !link[1].startsWith('File:')) row.title = link[1];
   }
+  finish();
   return products;
 }
 
 /** Bey pages linked from a pack page's Contents section. */
 function packContents(text = '') {
   const section = /==\s*Contents\s*==([\s\S]*?)(?:\n==|$)/.exec(text)?.[1] ?? '';
-  return [...section.matchAll(/^\*\s*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/gm)].map((m) => m[1].trim());
+  return [...section.matchAll(/^\*+\s*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/gm)].map((m) => m[1].trim());
 }
 
-/** Single Beys first, then the Beys inside each pack. A Bey sold both ways lists its packs. */
+/**
+ * Single Beys first, then the Beys inside each pack. A Bey sold both ways lists its packs.
+ * Also returns each pack with the Bey titles inside it.
+ */
 async function allProducts(listText) {
   const listed = hasbroProducts(listText);
-  const products = listed.filter((p) => !p.pack).map((p) => ({ title: p.title, set: p.set, packs: [] }));
-  const packs = listed.filter((p) => p.pack);
-  const packPages = await pages(packs.map((p) => p.title));
-  for (const pack of packs) {
-    const page = packPages.get(pack.title);
-    const fields = infobox(page.text, 'Product Infobox') ?? {};
-    const released = date(fields.ReleaseCA) ?? date(fields.ReleaseUS);
-    for (const title of packContents(page.text)) {
+  const products = listed.filter((p) => !p.pack).map((p) => ({ title: p.title, set: p.set, price: p.price, packs: [] }));
+  const packs = [];
+  const packRows = listed.filter((p) => p.pack);
+  const packPages = await pages(packRows.map((p) => p.title));
+  for (const row of packRows) {
+    const page = packPages.get(row.title);
+    const fields = infobox(page.text, 'Product Infobox') ?? infobox(page.text, 'Beyblade Set Infobox') ?? {};
+    const pack = { name: row.title, set: row.set, price: row.price, released: date(fields.ReleaseCA) ?? date(fields.ReleaseUS), titles: [] };
+    // Some sets (like deluxe launcher sets) redirect straight to the one Bey inside them.
+    const contents = packContents(page.text);
+    if (!contents.length && infobox(page.text, 'Beyblade Infobox')) contents.push(page.title);
+    for (const title of contents) {
       let product = products.find((p) => p.title === title);
-      if (!product) products.push((product = { title, set: pack.set, packs: [], packReleased: released }));
-      if (!product.packs.includes(pack.title)) product.packs.push(pack.title);
+      if (!product) products.push((product = { title, set: pack.set, packs: [], packReleased: pack.released }));
+      if (!product.packs.includes(pack.name)) product.packs.push(pack.name);
+      pack.titles.push(title);
     }
+    packs.push(pack);
   }
-  console.log(`Hasbro list: ${listed.length - packs.length} single Beys and ${packs.length} packs, ${products.length} Beys in all`);
-  return products;
+  console.log(`Hasbro list: ${listed.length - packRows.length} single Beys and ${packRows.length} packs and sets, ${products.length} Beys in all`);
+  return { products, packs };
 }
 
 // ---------- pictures ----------
@@ -288,17 +322,31 @@ async function savePicture(url, file, size) {
 
 async function main() {
   const list = await pages([LIST_PAGE]);
-  const products = await allProducts(list.get(LIST_PAGE).text);
+  const { products, packs } = await allProducts(list.get(LIST_PAGE).text);
 
   const productPages = await pages(products.map((p) => p.title));
   const parsed = [];
   const partTitles = [];
+  // Different names can point at the same wiki page (e.g. "DranSword 3-60F" and "Sword Dran 3-60F").
+  // The first one wins; the others only add their packs to it.
+  const byPage = new Map();
+  const aliases = [];
   for (const product of products) {
     const page = productPages.get(product.title);
     const fields = infobox(page.text, 'Beyblade Infobox');
+    if (fields && !fields.Bit) {
+      console.warn(`  skipped ${product.title}: not a Beyblade X top`);
+      continue;
+    }
     if (!fields) {
       // Pack contents also link launchers and other extras; only Beys have this infobox.
       if (!product.packs.length) console.warn(`  skipped ${product.title}: no Beyblade infobox`);
+      continue;
+    }
+    const first = byPage.get(page.title);
+    if (first) {
+      for (const pack of product.packs) if (!first.product.packs.includes(pack)) first.product.packs.push(pack);
+      aliases.push([product.title, first]);
       continue;
     }
     const part = (key, prefix) => (fields[key] ? `${prefix} - ${plain(fields[key])}` : undefined);
@@ -309,7 +357,9 @@ async function main() {
       pieces: Object.entries(PIECES).flatMap(([key, info]) => (fields[key] ? [{ key, label: info.label, title: `${info.page} - ${plain(fields[key])}` }] : [])),
     };
     partTitles.push(titles.blade, titles.ratchet, titles.bit, ...titles.pieces.map((p) => p.title));
-    parsed.push({ product, page, fields, titles });
+    const entry = { product, page, fields, titles };
+    byPage.set(page.title, entry);
+    parsed.push(entry);
   }
 
   const partPages = await pages(partTitles.filter(Boolean));
@@ -327,23 +377,30 @@ async function main() {
   const pictures = [];
   const report = { noStats: [], noPicture: [] };
 
-  for (const { product, page, fields, titles } of parsed) {
-    const words = product.title.split(' ');
+  for (const entry of parsed) {
+    const { product, page, fields, titles } = entry;
+    // A link straight to a Takara Tomy page: use the Hasbro name that page gives.
+    const aka = hasbroAka(fields);
+    const title = product.title === page.title && aka ? aka : product.title;
+    const words = title.split(' ');
     const combo = words.at(-1);
     const hasbroName = words.slice(0, -1).join(' ');
-    const id = slug(product.title);
+    const id = slug(title);
+    entry.id = id;
     const type = plain(fields.Type).toLowerCase();
     const ratchetName = titles.ratchet ? plain(fields.Ratchet) : undefined;
     const bitCode = ratchetName && combo.startsWith(ratchetName) ? combo.slice(ratchetName.length) : combo.replace(/^\d-\d{2}/, '');
-    const pageName = page.title !== product.title ? page.title.split(' ').slice(0, -1).join(' ') : undefined;
+    const pageName = page.title !== title ? page.title.split(' ').slice(0, -1).join(' ') : undefined;
     const sameName = (a, b) => a?.replace(/\s+/g, '').toLowerCase() === b?.replace(/\s+/g, '').toLowerCase();
 
     // Blade: one part, or a Custom Line blade built from pieces whose stats add up (as the box shows).
     const blade = {};
     const bladePart = partInfo(titles.blade);
+    const knownType = (t) => (['attack', 'defense', 'stamina', 'balance'].includes(t) ? t : undefined);
     if (titles.pieces.length) {
       const pieces = titles.pieces.map((p) => ({ ...p, info: partInfo(p.title) }));
       blade.pieces = pieces.map((p) => ({ label: p.label, name: p.info.hasbro ?? p.info.name }));
+      blade.type = knownType(pieces.find((p) => p.key === 'MainBlade' || p.key === 'MetalBlade')?.info.type);
       const scored = pieces.filter((p) => p.key !== 'LockChip').map((p) => threeStats(p.info.stats));
       if (scored.length && scored.every(Boolean)) {
         blade.stats = scored.reduce((sum, s) => ({ attack: sum.attack + s.attack, defense: sum.defense + s.defense, stamina: sum.stamina + s.stamina }));
@@ -351,6 +408,7 @@ async function main() {
     } else if (bladePart) {
       blade.stats = threeStats(bladePart.stats);
       blade.weight = bladePart.weight;
+      blade.type = knownType(bladePart.type);
       if (fields.RatchetBlade) blade.integratedRatchet = true;
     }
 
@@ -360,13 +418,18 @@ async function main() {
     const bit = {
       code: bitCode,
       name: plain(fields.Bit),
-      type: ['attack', 'defense', 'stamina', 'balance'].includes(bitPart?.type) ? bitPart.type : undefined,
+      type: knownType(bitPart?.type),
       stats: bitPart?.stats && Object.values(bitPart.stats).every((v) => v !== undefined) ? bitPart.stats : undefined,
       weight: bitPart?.weight,
     };
 
-    // Numbers copied from a real Hasbro box replace the wiki's.
-    const fromBox = boxStats[id] ?? {};
+    // Numbers copied from a real Hasbro box replace the wiki's: first for a part wherever it
+    // appears ("ratchet:2-60", "bit:LF"), then for this Bey.
+    const partBox = {
+      ...(ratchet && boxStats[`ratchet:${ratchetName}`] ? { ratchet: boxStats[`ratchet:${ratchetName}`] } : {}),
+      ...(boxStats[`bit:${bitCode}`] ? { bit: boxStats[`bit:${bitCode}`] } : {}),
+    };
+    const fromBox = { ...partBox, ...(boxStats[id] ?? {}) };
     for (const [key, value] of Object.entries(fromBox)) {
       if (key === 'blade') blade.stats = value;
       if (key === 'ratchet' && ratchet) ratchet.stats = value;
@@ -394,6 +457,7 @@ async function main() {
       spin: /left/i.test(fields.SpinDirection ?? '') ? 'left' : 'right',
       released: date(fields.ReleaseCA) ?? date(fields.ReleaseUS) ?? product.packReleased,
       ...(product.packs.length ? { packs: product.packs } : {}),
+      ...(product.price ? { price: product.price } : {}),
       weight: grams(fields.Weight),
       statsFrom: Object.keys(fromBox).length ? 'Hasbro box' : 'Beyblade wiki',
       blade,
@@ -409,6 +473,23 @@ async function main() {
 
   await fs.writeFile(DATA_FILE, `${JSON.stringify(beys, null, 2)}\n`);
   console.log(`Wrote ${beys.length} Beys to ${path.relative(ROOT, DATA_FILE)}`);
+
+  // Each pack with the ids of the Beys inside it, for the shopping list.
+  const ids = new Set(beys.map((bey) => bey.id));
+  const titleToId = new Map(parsed.map((entry) => [entry.product.title, entry.id]));
+  for (const [alias, entry] of aliases) titleToId.set(alias, entry.id);
+  const packList = packs
+    .map((pack) => ({
+      name: pack.name,
+      set: pack.set,
+      ...(pack.price ? { price: pack.price } : {}),
+      ...(pack.released ? { released: pack.released } : {}),
+      beys: [...new Set(pack.titles.map((title) => titleToId.get(title)))].filter((id) => ids.has(id)),
+    }))
+    .filter((pack) => pack.beys.length)
+    .sort((a, b) => a.name.localeCompare(b.name));
+  await fs.writeFile(PACKS_FILE, `${JSON.stringify(packList, null, 2)}\n`);
+  console.log(`Wrote ${packList.length} packs and sets to ${path.relative(ROOT, PACKS_FILE)}`);
 
   const urls = await fileUrls(pictures.map((p) => p.name));
   const counts = { saved: 0, kept: 0, failed: 0 };
