@@ -28,7 +28,7 @@ export function BeyArt({ bey, className }: { bey: Bey; className?: string }) {
   const outline = useMemo(() => outlinePath(bey.art.shape, bey.art.blades), [bey.art.shape, bey.art.blades]);
   const color = TYPE_INFO[bey.type].color;
   const accent = bey.art.accent;
-  const { points } = parseRatchet(bey.ratchet?.name ?? '0-0');
+  const points = parseRatchet(bey.ratchet?.name ?? '').points ?? 3;
 
   return (
     <svg viewBox="0 0 100 100" className={className} aria-hidden="true">

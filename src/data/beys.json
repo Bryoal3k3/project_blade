@@ -11,6 +11,10 @@
     "type": "attack",
     "spin": "right",
     "released": "2024-05-30",
+    "packs": [
+      "Tail Viper and Sword Dran Dual Pack",
+      "Tackle Goat and Sword Dran Dual Pack"
+    ],
     "weight": 43.2,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3467,6 +3471,9 @@
     "type": "stamina",
     "spin": "right",
     "released": "2024-09-11",
+    "packs": [
+      "Yell Kong and Helm Knight Dual Pack"
+    ],
     "weight": 39.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -4177,6 +4184,3554 @@
       },
       "weight": 2,
       "photo": "bit-dot"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
+  },
+  {
+    "id": "knife-shinobi-4-80hn",
+    "names": {
+      "hasbro": "Knife Shinobi"
+    },
+    "line": "BX",
+    "productCode": "G0190",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Knife Shinobi and Keel Shark Dual Pack",
+      "Beat Tyranno and Knife Shinobi Dual Pack"
+    ],
+    "weight": 40.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 23,
+        "defense": 50,
+        "stamina": 27
+      },
+      "weight": 30.9
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "HN",
+      "name": "High Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 15,
+        "defense": 55,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-high-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "keel-shark-3-80f",
+    "names": {
+      "hasbro": "Keel Shark",
+      "takaraTomy": "SharkEdge"
+    },
+    "line": "BX",
+    "productCode": "G0190",
+    "set": "Dual Pack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Knife Shinobi and Keel Shark Dual Pack"
+    ],
+    "weight": 43.8,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 25,
+        "stamina": 15
+      },
+      "weight": 34.5
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "F",
+      "name": "Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "chain-incendio-5-60ht",
+    "names": {
+      "hasbro": "Chain Incendio",
+      "takaraTomy": "HellsChain"
+    },
+    "line": "BX",
+    "productCode": "G0196",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Chain Incendio and Arrow Wizard Dual Pack",
+      "Circle Ghost and Chain Incendio Dual Pack"
+    ],
+    "weight": 42,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 35,
+        "defense": 40,
+        "stamina": 25
+      },
+      "weight": 33.2
+    },
+    "ratchet": {
+      "name": "5-60",
+      "stats": {
+        "attack": 12,
+        "defense": 9,
+        "stamina": 9
+      },
+      "weight": 6.6,
+      "photo": "ratchet-5-60"
+    },
+    "bit": {
+      "code": "HT",
+      "name": "High Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 25,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-high-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "arrow-wizard-4-60n",
+    "names": {
+      "hasbro": "Arrow Wizard",
+      "takaraTomy": "WizardArrow"
+    },
+    "line": "BX",
+    "productCode": "G0196",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Chain Incendio and Arrow Wizard Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 30,
+        "stamina": 55
+      },
+      "weight": 31.8
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
+  },
+  {
+    "id": "tail-viper-5-80o",
+    "names": {
+      "hasbro": "Tail Viper",
+      "takaraTomy": "ViperTail"
+    },
+    "line": "BX",
+    "productCode": "G0197",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Tail Viper and Sword Dran Dual Pack"
+    ],
+    "weight": 44,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 20,
+        "stamina": 50
+      },
+      "weight": 34.7
+    },
+    "ratchet": {
+      "name": "5-80",
+      "stats": {
+        "attack": 12,
+        "defense": 8,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-5-80"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "helm-knight-5-80t",
+    "names": {
+      "hasbro": "Helm Knight",
+      "takaraTomy": "KnightShield"
+    },
+    "line": "BX",
+    "productCode": "G0198",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-09-11",
+    "packs": [
+      "Yell Kong and Helm Knight Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 20,
+        "defense": 55,
+        "stamina": 25
+      },
+      "weight": 32.4
+    },
+    "ratchet": {
+      "name": "5-80",
+      "stats": {
+        "attack": 12,
+        "defense": 8,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-5-80"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "bite-croc-3-60lf",
+    "names": {
+      "hasbro": "Bite Croc"
+    },
+    "line": "BX",
+    "productCode": "G0199",
+    "set": "Dual Pack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-09-11",
+    "packs": [
+      "Bite Croc and Sting Unicorn Dual Pack"
+    ],
+    "weight": 42.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 22,
+        "stamina": 18
+      },
+      "weight": 34
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "LF",
+      "name": "Low Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "sting-unicorn-4-60p",
+    "names": {
+      "hasbro": "Sting Unicorn"
+    },
+    "line": "BX",
+    "productCode": "G0199",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-09-11",
+    "packs": [
+      "Bite Croc and Sting Unicorn Dual Pack"
+    ],
+    "weight": 42,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 35,
+        "defense": 35,
+        "stamina": 30
+      },
+      "weight": 33.4
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "P",
+      "name": "Point",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "gale-wyvern-5-80gb",
+    "names": {
+      "hasbro": "Gale Wyvern",
+      "takaraTomy": "WyvernGale"
+    },
+    "line": "BX",
+    "productCode": "G0282",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-09-11",
+    "packs": [
+      "Gale Wyvern and Tail Viper Dual Pack"
+    ],
+    "weight": 41.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 40,
+        "stamina": 50
+      },
+      "weight": 31.9
+    },
+    "ratchet": {
+      "name": "5-80",
+      "stats": {
+        "attack": 12,
+        "defense": 8,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-5-80"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "tail-viper-3-80hn",
+    "names": {
+      "hasbro": "Tail Viper",
+      "takaraTomy": "ViperTail"
+    },
+    "line": "BX",
+    "productCode": "G0282",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-09-11",
+    "packs": [
+      "Gale Wyvern and Tail Viper Dual Pack"
+    ],
+    "weight": 43.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 20,
+        "stamina": 50
+      },
+      "weight": 34.7
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "HN",
+      "name": "High Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 15,
+        "defense": 55,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-high-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "beat-tyranno-4-70q",
+    "names": {
+      "hasbro": "Beat Tyranno",
+      "takaraTomy": "TyrannoBeat"
+    },
+    "line": "BX",
+    "productCode": "G1542",
+    "set": "Dual Pack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-01-10",
+    "packs": [
+      "Beat Tyranno and Knife Shinobi Dual Pack"
+    ],
+    "weight": 45.6,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 65,
+        "defense": 30,
+        "stamina": 5
+      },
+      "weight": 37
+    },
+    "ratchet": {
+      "name": "4-70",
+      "stats": {
+        "attack": 11,
+        "defense": 12,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-4-70"
+    },
+    "bit": {
+      "code": "Q",
+      "name": "Quake",
+      "type": "attack",
+      "stats": {
+        "attack": 55,
+        "defense": 15,
+        "stamina": 5,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-quake"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "gale-wyvern-3-60t",
+    "names": {
+      "hasbro": "Gale Wyvern",
+      "takaraTomy": "WyvernGale"
+    },
+    "line": "BX",
+    "productCode": "G1543",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-11-16",
+    "packs": [
+      "Gale Wyvern and Sword Dran Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 40,
+        "stamina": 50
+      },
+      "weight": 31.9
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "sword-dran-3-80b",
+    "names": {
+      "hasbro": "Sword Dran",
+      "takaraTomy": "DranSword"
+    },
+    "line": "BX",
+    "productCode": "G1543",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-11-16",
+    "packs": [
+      "Gale Wyvern and Sword Dran Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 55,
+        "defense": 25,
+        "stamina": 20
+      },
+      "weight": 34.6
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "cowl-sphinx-1-80gf",
+    "names": {
+      "hasbro": "Cowl Sphinx",
+      "takaraTomy": "SphinxCowl"
+    },
+    "line": "BX",
+    "productCode": "G1685",
+    "set": "Dual Pack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-05-21",
+    "packs": [
+      "Cowl Sphinx and Crest Leon Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 35,
+        "defense": 55,
+        "stamina": 10
+      },
+      "weight": 32.7
+    },
+    "ratchet": {
+      "name": "1-80",
+      "stats": {
+        "attack": 17,
+        "defense": 4,
+        "stamina": 9
+      },
+      "weight": 6.7,
+      "photo": "ratchet-1-80"
+    },
+    "bit": {
+      "code": "GF",
+      "name": "Gear Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 50,
+        "defense": 5,
+        "stamina": 5,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "crest-leon-7-60gn",
+    "names": {
+      "hasbro": "Crest Leon",
+      "takaraTomy": "LeonCrest"
+    },
+    "line": "UX",
+    "productCode": "G1685",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-05-21",
+    "packs": [
+      "Cowl Sphinx and Crest Leon Dual Pack"
+    ],
+    "weight": 44.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 70,
+        "stamina": 15
+      },
+      "weight": 35
+    },
+    "ratchet": {
+      "name": "7-60",
+      "stats": {
+        "attack": 8,
+        "defense": 14,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-7-60"
+    },
+    "bit": {
+      "code": "GN",
+      "name": "Gear Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 20,
+        "defense": 40,
+        "stamina": 10,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "pearl-tiger-3-60u",
+    "names": {
+      "hasbro": "Pearl Tiger",
+      "takaraTomy": "WeissTiger"
+    },
+    "line": "BX",
+    "productCode": "G1686",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-05-21",
+    "packs": [
+      "Pearl Tiger and Gill Shark Dual Pack"
+    ],
+    "weight": 43.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 45,
+        "defense": 30,
+        "stamina": 25
+      },
+      "weight": 34.6
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "U",
+      "name": "Unite",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 30,
+        "dash": 20,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-unite"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "gill-shark-4-70o",
+    "names": {
+      "hasbro": "Gill Shark"
+    },
+    "line": "BX",
+    "productCode": "G1686",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-05-21",
+    "packs": [
+      "Pearl Tiger and Gill Shark Dual Pack"
+    ],
+    "weight": 38,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 20,
+        "defense": 25,
+        "stamina": 55
+      },
+      "weight": 29.6
+    },
+    "ratchet": {
+      "name": "4-70",
+      "stats": {
+        "attack": 11,
+        "defense": 12,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-4-70"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "circle-ghost-0-80gb",
+    "names": {
+      "hasbro": "Circle Ghost",
+      "takaraTomy": "GhostCircle"
+    },
+    "line": "UX",
+    "productCode": "G1687",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-07",
+    "packs": [
+      "Circle Ghost and Chain Incendio Dual Pack"
+    ],
+    "weight": 36.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 5,
+        "defense": 40,
+        "stamina": 55
+      },
+      "weight": 26.7
+    },
+    "ratchet": {
+      "name": "0-80",
+      "stats": {
+        "attack": 3,
+        "defense": 12,
+        "stamina": 15
+      },
+      "weight": 7.6,
+      "photo": "ratchet-0-80"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "tackle-goat-2-70n",
+    "names": {
+      "hasbro": "Tackle Goat"
+    },
+    "line": "BX",
+    "productCode": "G1688",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-10",
+    "packs": [
+      "Tackle Goat and Sword Dran Dual Pack"
+    ],
+    "weight": 39.8,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 13,
+        "defense": 65,
+        "stamina": 22
+      },
+      "weight": 31.5
+    },
+    "ratchet": {
+      "name": "2-70",
+      "stats": {
+        "attack": 10,
+        "defense": 12,
+        "stamina": 8
+      },
+      "weight": 6.3,
+      "photo": "ratchet-2-70"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "calibur-samurai-6-70m",
+    "names": {
+      "hasbro": "Calibur Samurai",
+      "takaraTomy": "SamuraiCalibur"
+    },
+    "line": "BX",
+    "productCode": "G2754",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-02-12",
+    "packs": [
+      "Calibur Samurai and Obsidian Shell Dual Pack"
+    ],
+    "weight": 45.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 40,
+        "defense": 30,
+        "stamina": 30
+      },
+      "weight": 36
+    },
+    "ratchet": {
+      "name": "6-70",
+      "stats": {
+        "attack": 14,
+        "defense": 7,
+        "stamina": 9
+      },
+      "weight": 6.3,
+      "photo": "ratchet-6-70"
+    },
+    "bit": {
+      "code": "M",
+      "name": "Merge",
+      "type": "balance",
+      "stats": {
+        "attack": 50,
+        "defense": 20,
+        "stamina": 10,
+        "dash": 20,
+        "burstResistance": 80
+      },
+      "weight": 3.4,
+      "photo": "bit-merge"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "obsidian-shell-3-85s",
+    "names": {
+      "hasbro": "Obsidian Shell"
+    },
+    "line": "BX",
+    "productCode": "G2754",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-02-12",
+    "packs": [
+      "Calibur Samurai and Obsidian Shell Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 65,
+        "stamina": 25
+      },
+      "weight": 32.4
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "S",
+      "name": "Spike",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 45,
+        "stamina": 35,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-spike"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
+  },
+  {
+    "id": "circle-ghost-4-60lr",
+    "names": {
+      "hasbro": "Circle Ghost"
+    },
+    "line": "UX",
+    "productCode": "G2755",
+    "set": "Dual Pack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-02-12",
+    "packs": [
+      "Circle Ghost and Hack Viking Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 5,
+        "defense": 40,
+        "stamina": 55
+      },
+      "weight": 26.7
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "LR",
+      "name": "Low Rush",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 15,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 1.9,
+      "photo": "bit-low-rush"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "hack-viking-4-55o",
+    "names": {
+      "hasbro": "Hack Viking"
+    },
+    "line": "UX",
+    "productCode": "G2755",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-02-12",
+    "packs": [
+      "Circle Ghost and Hack Viking Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 47,
+        "defense": 28,
+        "stamina": 25
+      },
+      "weight": 32.7
+    },
+    "ratchet": {
+      "name": "4-55",
+      "stats": {
+        "attack": 7,
+        "defense": 11,
+        "stamina": 12
+      },
+      "weight": 4.8,
+      "photo": "ratchet-4-55"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "spear-scorpio-0-70z",
+    "names": {
+      "hasbro": "Spear Scorpio",
+      "takaraTomy": "ScorpioSpear"
+    },
+    "line": "UX",
+    "productCode": "G2758",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-07-15",
+    "packs": [
+      "Spear Scorpio and Tail Viper Dual Pack"
+    ],
+    "weight": 49.6,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 55,
+        "stamina": 30
+      },
+      "weight": 39.6
+    },
+    "ratchet": {
+      "name": "0-70",
+      "stats": {
+        "attack": 3,
+        "defense": 13,
+        "stamina": 14
+      },
+      "weight": 7,
+      "photo": "ratchet-0-70"
+    },
+    "bit": {
+      "code": "Z",
+      "name": "Zap",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 20,
+        "stamina": 15,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.5,
+      "photo": "bit-zap"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "tail-viper-3-85lo",
+    "names": {
+      "hasbro": "Tail Viper"
+    },
+    "line": "BX",
+    "productCode": "G2758",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-07-15",
+    "packs": [
+      "Spear Scorpio and Tail Viper Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 30,
+        "defense": 20,
+        "stamina": 50
+      },
+      "weight": 34.7
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "LO",
+      "name": "Low Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 5,
+        "defense": 25,
+        "stamina": 55,
+        "dash": 15,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-low-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "clamp-crab-9-65s",
+    "names": {
+      "hasbro": "Clamp Crab"
+    },
+    "line": "BX",
+    "productCode": "G2759",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-07-15",
+    "packs": [
+      "Clamp Crab and Crest Leon Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 43,
+        "stamina": 47
+      },
+      "weight": 27.6
+    },
+    "ratchet": {
+      "name": "9-65",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 4.5,
+      "photo": "ratchet-9-65"
+    },
+    "bit": {
+      "code": "S",
+      "name": "Spike",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 45,
+        "stamina": 35,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-spike"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 4,
+      "accent": "#FFD54A"
+    }
+  },
+  {
+    "id": "crest-leon-4-55a",
+    "names": {
+      "hasbro": "Crest Leon"
+    },
+    "line": "BX",
+    "productCode": "G2759",
+    "set": "Dual Pack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-07-15",
+    "packs": [
+      "Clamp Crab and Crest Leon Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 15,
+        "defense": 70,
+        "stamina": 15
+      },
+      "weight": 35
+    },
+    "ratchet": {
+      "name": "4-55",
+      "stats": {
+        "attack": 7,
+        "defense": 11,
+        "stamina": 12
+      },
+      "weight": 4.8,
+      "photo": "ratchet-4-55"
+    },
+    "bit": {
+      "code": "A",
+      "name": "Accel",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-accel"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "coil-orochi-6-60lf",
+    "names": {
+      "hasbro": "Coil Orochi",
+      "takaraTomy": "OrochiCluster"
+    },
+    "line": "UX",
+    "productCode": "G2762",
+    "set": "Dual Pack",
+    "type": "attack",
+    "spin": "right",
+    "packs": [
+      "Coil Orochi and Pearl Tiger Dual Pack"
+    ],
+    "weight": 44.8,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 65,
+        "defense": 15,
+        "stamina": 20
+      },
+      "weight": 36.6
+    },
+    "ratchet": {
+      "name": "6-60",
+      "stats": {
+        "attack": 14,
+        "defense": 8,
+        "stamina": 8
+      },
+      "weight": 6.1,
+      "photo": "ratchet-6-60"
+    },
+    "bit": {
+      "code": "LF",
+      "name": "Low Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
+    },
+    "photoSpins": false,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "pearl-tiger-3-85wb",
+    "names": {
+      "hasbro": "Pearl Tiger"
+    },
+    "line": "BX",
+    "productCode": "G2762",
+    "set": "Dual Pack",
+    "type": "stamina",
+    "spin": "right",
+    "packs": [
+      "Coil Orochi and Pearl Tiger Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 45,
+        "defense": 30,
+        "stamina": 25
+      },
+      "weight": 34.6
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "WB",
+      "name": "Wall Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 30,
+        "stamina": 45,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-wall-ball"
+    },
+    "photoSpins": false,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "brace-triceratops-m-85bs",
+    "names": {
+      "hasbro": "Brace Triceratops",
+      "takaraTomy": "TriceraPress"
+    },
+    "line": "BX",
+    "productCode": "G2763",
+    "set": "Dual Pack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-07",
+    "packs": [
+      "Brace Triceratops and Dagger Dran Dual Pack"
+    ],
+    "weight": 49.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 20,
+        "defense": 65,
+        "stamina": 15
+      },
+      "weight": 36.5
+    },
+    "ratchet": {
+      "name": "M-85",
+      "stats": {
+        "attack": 8,
+        "defense": 19,
+        "stamina": 13
+      },
+      "weight": 10.6,
+      "photo": "ratchet-m-85"
+    },
+    "bit": {
+      "code": "BS",
+      "name": "Bound Spike",
+      "type": "defense",
+      "stats": {
+        "attack": 5,
+        "defense": 60,
+        "stamina": 30,
+        "dash": 5,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-bound-spike"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "dagger-dran-7-55k",
+    "names": {
+      "hasbro": "Dagger Dran"
+    },
+    "line": "BX",
+    "productCode": "G2763",
+    "set": "Dual Pack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-07",
+    "packs": [
+      "Brace Triceratops and Dagger Dran Dual Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 50,
+        "defense": 25,
+        "stamina": 25
+      },
+      "weight": 34.8
+    },
+    "ratchet": {
+      "name": "7-55",
+      "stats": {
+        "attack": 6,
+        "defense": 14,
+        "stamina": 10
+      },
+      "weight": 5.2,
+      "photo": "ratchet-7-55"
+    },
+    "bit": {
+      "code": "K",
+      "name": "Kick",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 25,
+        "stamina": 15,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-kick"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "the-mandalorian-3-60f",
+    "names": {
+      "hasbro": "The Mandalorian"
+    },
+    "line": "BX",
+    "productCode": "F9589",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "packs": [
+      "The Mandalorian and Moff Gideon Multipack Set"
+    ],
+    "weight": 38.9,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 40,
+        "defense": 43,
+        "stamina": 17
+      },
+      "weight": 30.3
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "F",
+      "name": "Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "moff-gideon-3-80n",
+    "names": {
+      "hasbro": "Moff Gideon"
+    },
+    "line": "BX",
+    "productCode": "F9589",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "packs": [
+      "The Mandalorian and Moff Gideon Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 32,
+        "defense": 35,
+        "stamina": 33
+      },
+      "weight": 30.5
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "iron-man-4-80b",
+    "names": {
+      "hasbro": "Iron Man"
+    },
+    "line": "BX",
+    "productCode": "G0287",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-10",
+    "packs": [
+      "Iron Man and Thanos Multipack Set"
+    ],
+    "weight": 41.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 17,
+        "defense": 55,
+        "stamina": 28
+      },
+      "weight": 32
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "thanos-4-60p",
+    "names": {
+      "hasbro": "Thanos"
+    },
+    "line": "BX",
+    "productCode": "G0287",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-10",
+    "packs": [
+      "Iron Man and Thanos Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 22,
+        "defense": 60,
+        "stamina": 18
+      },
+      "weight": 29.5
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "P",
+      "name": "Point",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 4,
+      "accent": "#8B3DFF"
+    }
+  },
+  {
+    "id": "spider-man-3-60f",
+    "names": {
+      "hasbro": "Spider-Man"
+    },
+    "line": "BX",
+    "productCode": "G0288",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-10",
+    "packs": [
+      "Spider-Man and Venom Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 33,
+        "defense": 17,
+        "stamina": 50
+      },
+      "weight": 33
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "F",
+      "name": "Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "venom-3-80n",
+    "names": {
+      "hasbro": "Venom"
+    },
+    "line": "BX",
+    "productCode": "G0288",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-10",
+    "packs": [
+      "Spider-Man and Venom Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 55,
+        "defense": 22,
+        "stamina": 23
+      },
+      "weight": 34.3
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "luke-skywalker-4-80b",
+    "names": {
+      "hasbro": "Luke Skywalker"
+    },
+    "line": "BX",
+    "productCode": "G0290",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "packs": [
+      "Luke Skywalker and Darth Vader Multipack Set"
+    ],
+    "weight": 39,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 23,
+        "defense": 55,
+        "stamina": 22
+      },
+      "weight": 29.9
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "darth-vader-4-60p",
+    "names": {
+      "hasbro": "Darth Vader"
+    },
+    "line": "BX",
+    "productCode": "G0290",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "packs": [
+      "Luke Skywalker and Darth Vader Multipack Set"
+    ],
+    "weight": 39.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 28,
+        "defense": 60,
+        "stamina": 12
+      },
+      "weight": 30.7
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "P",
+      "name": "Point",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "optimus-primal-3-60f",
+    "names": {
+      "hasbro": "Optimus Primal"
+    },
+    "line": "BX",
+    "productCode": "G0352",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-07-19",
+    "packs": [
+      "Optimus Primal and Starscream Multipack Set"
+    ],
+    "weight": 43.6,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 27,
+        "stamina": 13
+      },
+      "weight": 35
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "F",
+      "name": "Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 15,
+        "stamina": 10,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "starscream-3-80n",
+    "names": {
+      "hasbro": "Starscream"
+    },
+    "line": "BX",
+    "productCode": "G0352",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2024-07-19",
+    "packs": [
+      "Optimus Primal and Starscream Multipack Set"
+    ],
+    "weight": 38.6,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 18,
+        "defense": 27,
+        "stamina": 55
+      },
+      "weight": 29.5
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "optimus-prime-4-60p",
+    "names": {
+      "hasbro": "Optimus Prime"
+    },
+    "line": "BX",
+    "productCode": "G0353",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-07-19",
+    "packs": [
+      "Optimus Prime and Megatron Multipack Set"
+    ],
+    "weight": 40.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 22,
+        "defense": 55,
+        "stamina": 23
+      },
+      "weight": 31.7
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "P",
+      "name": "Point",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "megatron-4-80b",
+    "names": {
+      "hasbro": "Megatron"
+    },
+    "line": "BX",
+    "productCode": "G0353",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2024-07-19",
+    "packs": [
+      "Optimus Prime and Megatron Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 27,
+        "defense": 35,
+        "stamina": 38
+      },
+      "weight": 31.1
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "captain-america-4-70gb",
+    "names": {
+      "hasbro": "Captain America"
+    },
+    "line": "BX",
+    "productCode": "G1690",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-06",
+    "packs": [
+      "Captain America and Red Hulk Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 55,
+        "defense": 28,
+        "stamina": 17
+      },
+      "weight": 32.3
+    },
+    "ratchet": {
+      "name": "4-70",
+      "stats": {
+        "attack": 11,
+        "defense": 12,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-4-70"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "red-hulk-1-80r",
+    "names": {
+      "hasbro": "Red Hulk"
+    },
+    "line": "BX",
+    "productCode": "G1690",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-06",
+    "packs": [
+      "Captain America and Red Hulk Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 65,
+        "defense": 27,
+        "stamina": 8
+      },
+      "weight": 36.3
+    },
+    "ratchet": {
+      "name": "1-80",
+      "stats": {
+        "attack": 17,
+        "defense": 4,
+        "stamina": 9
+      },
+      "weight": 6.7,
+      "photo": "ratchet-1-80"
+    },
+    "bit": {
+      "code": "R",
+      "name": "Rush",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 20,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-rush"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "miles-morales-1-60gn",
+    "names": {
+      "hasbro": "Miles Morales"
+    },
+    "line": "BX",
+    "productCode": "G1691",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-09",
+    "packs": [
+      "Miles Morales and Green Goblin Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 12,
+        "defense": 33,
+        "stamina": 55
+      },
+      "weight": 31.7
+    },
+    "ratchet": {
+      "name": "1-60",
+      "stats": {
+        "attack": 17,
+        "defense": 9,
+        "stamina": 4
+      },
+      "weight": 6,
+      "photo": "ratchet-1-60"
+    },
+    "bit": {
+      "code": "GN",
+      "name": "Gear Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 20,
+        "defense": 40,
+        "stamina": 10,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "green-goblin-9-80ht",
+    "names": {
+      "hasbro": "Green Goblin"
+    },
+    "line": "BX",
+    "productCode": "G1691",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-09",
+    "packs": [
+      "Miles Morales and Green Goblin Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 17,
+        "defense": 28,
+        "stamina": 55
+      },
+      "weight": 31.7
+    },
+    "ratchet": {
+      "name": "9-80",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.9,
+      "photo": "ratchet-9-80"
+    },
+    "bit": {
+      "code": "HT",
+      "name": "High Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 25,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-high-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 3,
+      "accent": "#6A35D9"
+    }
+  },
+  {
+    "id": "bumblebee-3-60gp",
+    "names": {
+      "hasbro": "Bumblebee"
+    },
+    "line": "BX",
+    "productCode": "G1692",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-11",
+    "packs": [
+      "Bumblebee and Shockwave Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 21,
+        "defense": 55,
+        "stamina": 24
+      },
+      "weight": 31.8
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "GP",
+      "name": "Gear Point",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 25,
+        "stamina": 15,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 4,
+      "accent": "#8B3DFF"
+    }
+  },
+  {
+    "id": "shockwave-5-80o",
+    "names": {
+      "hasbro": "Shockwave"
+    },
+    "line": "BX",
+    "productCode": "G1692",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-11",
+    "packs": [
+      "Bumblebee and Shockwave Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 32,
+        "defense": 18,
+        "stamina": 50
+      },
+      "weight": 32.3
+    },
+    "ratchet": {
+      "name": "5-80",
+      "stats": {
+        "attack": 12,
+        "defense": 8,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-5-80"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "obi-wan-kenobi-4-60p",
+    "names": {
+      "hasbro": "Obi-Wan Kenobi"
+    },
+    "line": "BX",
+    "productCode": "G1694",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-07",
+    "packs": [
+      "Obi-Wan Kenobi and General Grievous Multipack Set"
+    ],
+    "weight": 39.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 23,
+        "defense": 60,
+        "stamina": 17
+      },
+      "weight": 30.6
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "P",
+      "name": "Point",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 25,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-point"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "general-grievous-3-80hn",
+    "names": {
+      "hasbro": "General Grievous"
+    },
+    "line": "BX",
+    "productCode": "G1694",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-07",
+    "packs": [
+      "Obi-Wan Kenobi and General Grievous Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 22,
+        "defense": 50,
+        "stamina": 28
+      },
+      "weight": 31
+    },
+    "ratchet": {
+      "name": "3-80",
+      "stats": {
+        "attack": 15,
+        "defense": 7,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-3-80"
+    },
+    "bit": {
+      "code": "HN",
+      "name": "High Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 15,
+        "defense": 55,
+        "stamina": 20,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.2,
+      "photo": "bit-high-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "chewbacca-4-80lf",
+    "names": {
+      "hasbro": "Chewbacca"
+    },
+    "line": "BX",
+    "productCode": "G1695",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-09",
+    "packs": [
+      "Chewbacca and Stormtrooper Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 22,
+        "defense": 23,
+        "stamina": 55
+      },
+      "weight": 31.8
+    },
+    "ratchet": {
+      "name": "4-80",
+      "stats": {
+        "attack": 11,
+        "defense": 11,
+        "stamina": 8
+      },
+      "weight": 7,
+      "photo": "ratchet-4-80"
+    },
+    "bit": {
+      "code": "LF",
+      "name": "Low Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "stormtrooper-5-70b",
+    "names": {
+      "hasbro": "Stormtrooper"
+    },
+    "line": "BX",
+    "productCode": "G1695",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-09",
+    "packs": [
+      "Chewbacca and Stormtrooper Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 18,
+        "defense": 50,
+        "stamina": 32
+      },
+      "weight": 33.3
+    },
+    "ratchet": {
+      "name": "5-70",
+      "stats": {
+        "attack": 12,
+        "defense": 8.5,
+        "stamina": 9.5
+      },
+      "weight": 6.7,
+      "photo": "ratchet-5-70"
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "t-rex-1-80gb",
+    "names": {
+      "hasbro": "T. Rex"
+    },
+    "line": "BX",
+    "productCode": "G1898",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2025-08",
+    "packs": [
+      "T. Rex and Mosasaurus Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 65,
+        "defense": 30,
+        "stamina": 5
+      },
+      "weight": 37
+    },
+    "ratchet": {
+      "name": "1-80",
+      "stats": {
+        "attack": 17,
+        "defense": 4,
+        "stamina": 9
+      },
+      "weight": 6.7,
+      "photo": "ratchet-1-80"
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 3,
+      "accent": "#9EE6FF"
+    }
+  },
+  {
+    "id": "mosasaurus-9-60u",
+    "names": {
+      "hasbro": "Mosasaurus"
+    },
+    "line": "BX",
+    "productCode": "G1898",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "released": "2025-08",
+    "packs": [
+      "T. Rex and Mosasaurus Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 32,
+        "defense": 55,
+        "stamina": 13
+      },
+      "weight": 29.9
+    },
+    "ratchet": {
+      "name": "9-60",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-9-60"
+    },
+    "bit": {
+      "code": "U",
+      "name": "Unite",
+      "type": "balance",
+      "stats": {
+        "attack": 25,
+        "defense": 25,
+        "stamina": 30,
+        "dash": 20,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-unite"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "spinosaurus-3-85a",
+    "names": {
+      "hasbro": "Spinosaurus"
+    },
+    "line": "BX",
+    "productCode": "G1899",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-08",
+    "packs": [
+      "Spinosaurus and Quetzalcoatlus Multipack Set"
+    ],
+    "weight": 43.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 28,
+        "stamina": 12
+      },
+      "weight": 36
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "A",
+      "name": "Accel",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-accel"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "quetzalcoatlus-4-55d",
+    "names": {
+      "hasbro": "Quetzalcoatlus"
+    },
+    "line": "BX",
+    "productCode": "G1899",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-08",
+    "packs": [
+      "Spinosaurus and Quetzalcoatlus Multipack Set"
+    ],
+    "weight": 41.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 27,
+        "defense": 23,
+        "stamina": 50
+      },
+      "weight": 34.3
+    },
+    "ratchet": {
+      "name": "4-55",
+      "stats": {
+        "attack": 7,
+        "defense": 11,
+        "stamina": 12
+      },
+      "weight": 4.8,
+      "photo": "ratchet-4-55"
+    },
+    "bit": {
+      "code": "D",
+      "name": "Dot",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 55,
+        "stamina": 25,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-dot"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 6,
+      "accent": "#7FD0FF"
+    }
+  },
+  {
+    "id": "grogu-3-85e",
+    "names": {
+      "hasbro": "Grogu"
+    },
+    "line": "BX",
+    "productCode": "G3061",
+    "set": "Multipack",
+    "type": "balance",
+    "spin": "right",
+    "packs": [
+      "Grogu and Snowtrooper Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 21,
+        "defense": 50,
+        "stamina": 29
+      },
+      "weight": 33.5
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "E",
+      "name": "Elevate",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 15,
+        "stamina": 20,
+        "dash": 35,
+        "burstResistance": 30
+      },
+      "weight": 3.2,
+      "photo": "bit-elevate"
+    },
+    "photoSpins": false,
+    "art": {
+      "shape": "wing",
+      "blades": 6,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "snowtrooper-7-60o",
+    "names": {
+      "hasbro": "Snowtrooper"
+    },
+    "line": "BX",
+    "productCode": "G3061",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "packs": [
+      "Grogu and Snowtrooper Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 18,
+        "defense": 50,
+        "stamina": 32
+      },
+      "weight": 33.3
+    },
+    "ratchet": {
+      "name": "7-60",
+      "stats": {
+        "attack": 8,
+        "defense": 14,
+        "stamina": 8
+      },
+      "weight": 7.1,
+      "photo": "ratchet-7-60"
+    },
+    "bit": {
+      "code": "O",
+      "name": "Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 30,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-orb"
+    },
+    "photoSpins": false,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "mister-fantastic-9-65a",
+    "names": {
+      "hasbro": "Mister Fantastic"
+    },
+    "line": "BX",
+    "productCode": "G3063",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "packs": [
+      "Mister Fantastic and Doctor Doom Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 31,
+        "defense": 55,
+        "stamina": 14
+      }
+    },
+    "ratchet": {
+      "name": "9-65",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 4.5,
+      "photo": "ratchet-9-65"
+    },
+    "bit": {
+      "code": "A",
+      "name": "Accel",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-accel"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "doctor-doom-0-80lo",
+    "names": {
+      "hasbro": "Doctor Doom"
+    },
+    "line": "BX",
+    "productCode": "G3063",
+    "set": "Multipack",
+    "type": "stamina",
+    "spin": "right",
+    "packs": [
+      "Mister Fantastic and Doctor Doom Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 19,
+        "defense": 55,
+        "stamina": 26
+      }
+    },
+    "ratchet": {
+      "name": "0-80",
+      "stats": {
+        "attack": 3,
+        "defense": 12,
+        "stamina": 15
+      },
+      "weight": 7.6,
+      "photo": "ratchet-0-80"
+    },
+    "bit": {
+      "code": "LO",
+      "name": "Low Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 5,
+        "defense": 25,
+        "stamina": 55,
+        "dash": 15,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-low-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "spider-man-6-60r",
+    "names": {
+      "hasbro": "Spider-Man"
+    },
+    "line": "BX",
+    "productCode": "G3064",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-07-31",
+    "packs": [
+      "Spider-Man and Hulk Multipack Set"
+    ],
+    "weight": 41.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 33,
+        "defense": 17,
+        "stamina": 50
+      },
+      "weight": 33
+    },
+    "ratchet": {
+      "name": "6-60",
+      "stats": {
+        "attack": 14,
+        "defense": 8,
+        "stamina": 8
+      },
+      "weight": 6.1,
+      "photo": "ratchet-6-60"
+    },
+    "bit": {
+      "code": "R",
+      "name": "Rush",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 20,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-rush"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "hulk-3-85n",
+    "names": {
+      "hasbro": "Hulk"
+    },
+    "line": "BX",
+    "productCode": "G3064",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-07-31",
+    "packs": [
+      "Spider-Man and Hulk Multipack Set"
+    ],
+    "weight": 39.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 12,
+        "defense": 65,
+        "stamina": 23
+      },
+      "weight": 33
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "optimus-prime-7-70l",
+    "names": {
+      "hasbro": "Optimus Prime"
+    },
+    "line": "BX",
+    "productCode": "G3797",
+    "set": "Multipack",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-09-11",
+    "packs": [
+      "Optimus Prime and Bumblebee Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 22,
+        "defense": 55,
+        "stamina": 23
+      },
+      "weight": 31.7
+    },
+    "ratchet": {
+      "name": "7-70",
+      "stats": {
+        "attack": 8,
+        "defense": 12,
+        "stamina": 10
+      },
+      "weight": 7.3,
+      "photo": "ratchet-7-70"
+    },
+    "bit": {
+      "code": "L",
+      "name": "Level",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 5,
+        "stamina": 15,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.7,
+      "photo": "bit-level"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "bumblebee-1-60w",
+    "names": {
+      "hasbro": "Bumblebee"
+    },
+    "line": "BX",
+    "productCode": "G3797",
+    "set": "Multipack",
+    "type": "defense",
+    "spin": "right",
+    "released": "2026-09-11",
+    "packs": [
+      "Optimus Prime and Bumblebee Multipack Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 21,
+        "defense": 55,
+        "stamina": 24
+      },
+      "weight": 31.8
+    },
+    "ratchet": {
+      "name": "1-60",
+      "stats": {
+        "attack": 17,
+        "defense": 9,
+        "stamina": 4
+      },
+      "weight": 6,
+      "photo": "ratchet-1-60"
+    },
+    "bit": {
+      "code": "W",
+      "name": "Wedge",
+      "type": "defense",
+      "stats": {
+        "attack": 5,
+        "defense": 55,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 1.8,
+      "photo": "bit-wedge"
     },
     "photoSpins": true,
     "art": {
