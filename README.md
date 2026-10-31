@@ -56,13 +56,17 @@ The import prints any Bey that is still missing stats. Until a part has stats, i
 
 Pictures live in [`src/photos`](src/photos): `<bey id>.webp` for each Bey, and `parts/` for ratchets and bits. The import downloads them and removes their backgrounds. Any picture you drop in with the same name replaces it; see [`src/photos/README.md`](src/photos/README.md).
 
-The pictures belong to Takara Tomy and Hasbro. That is fine for a family app; keep the site private or unlisted rather than public.
+The pictures belong to Takara Tomy and Hasbro and come from the fan wiki. They are here for a family app, not to sell or redistribute.
 
 ## Putting it on a phone
 
-The app has to be hosted somewhere first. Because this repo is private, the free options are [Netlify](https://www.netlify.com/) or [Cloudflare Pages](https://pages.cloudflare.com/): connect the repo, set the build command to `npm run build` and the output folder to `dist`. (GitHub Pages also works, but needs a paid GitHub plan for private repos.)
+The app is hosted on GitHub Pages at **https://bryoal3k3.github.io/project_blade/**. Every push to `main` rebuilds and publishes it ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
+
+One-time setup: in the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
 
 Then open the site on the phone and:
 
 - **iPhone**: in Safari, tap Share, then **Add to Home Screen**.
 - **Android**: in Chrome, tap the menu, then **Install app** or **Add to Home screen**.
+
+After the first visit it works without Wi-Fi, and it updates itself the next time it opens after a new version is published.
