@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import App from './App';
 import { BEYS, findBey } from './data';
@@ -118,11 +118,55 @@ describe('App', () => {
     expect(screen.queryByRole('slider')).toBeNull();
   });
 
+  it('builds a Bey from three parts and says what to buy', () => {
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+    render(<App />);
+    go('#/build');
+    expect(screen.getByRole('heading', { name: 'Build a Bey!' })).toBeTruthy();
+
+    // Rudder Phoenix's blade, then the 4-70 ratchet and the LF bit.
+    fireEvent.click(screen.getByRole('heading', { name: 'Pick a blade' }).closest('section')!.querySelectorAll('button.pick')[0]);
+    const pickByName = (name: string) => fireEvent.click(screen.getAllByRole('button').find((b) => b.classList.contains('pick') && b.querySelector('.pick-name')?.textContent === name)!);
+    fireEvent.click(screen.getByRole('button', { name: /^Blade/ }));
+    pickByName('Rudder Phoenix');
+    expect(screen.getByRole('heading', { name: 'Pick a ratchet' })).toBeTruthy();
+    pickByName('4-70');
+    expect(screen.getByRole('heading', { name: 'Pick a bit' })).toBeTruthy();
+    pickByName('LF');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Fuse!' }));
+    expect(screen.getByRole('status', { name: 'Fusing your Bey' })).toBeTruthy();
+    act(() => {
+      vi.advanceTimersByTime(3000);
+    });
+
+    expect(screen.getByText('Your new Bey')).toBeTruthy();
+    expect(screen.getByText('4-70LF')).toBeTruthy();
+    const shop = screen.getByRole('region', { name: 'What you need' });
+    expect(within(shop).getByText('Rudder Phoenix 4-70LF')).toBeTruthy();
+    expect(within(shop).getByText('Gives you the blade, ratchet and bit')).toBeTruthy();
+
+    fireEvent.click(within(shop).getByRole('button', { name: 'Add to my wish list' }));
+    expect(within(shop).getByRole('button', { name: 'On your wish list' })).toBeTruthy();
+  });
+
+  it('skips the ratchet for a blade with one built in', () => {
+    render(<App />);
+    go('#/build');
+    fireEvent.click(screen.getAllByRole('button').find((b) => b.classList.contains('pick') && b.querySelector('.pick-name')?.textContent === 'Valor Bison')!);
+    expect(screen.getByRole('heading', { name: 'Pick a bit' })).toBeTruthy();
+    expect(screen.getByText('Built in')).toBeTruthy();
+  });
+
   it('shows a friendly page for an unknown Bey', () => {
     render(<App />);
     go('#/bey/not-a-bey');
     expect(screen.getByText("That Bey isn't here")).toBeTruthy();
   });
+});
+
+afterEach(() => {
+  vi.useRealTimers();
 });
 
 describe('stat bars', () => {

@@ -41,6 +41,9 @@ export const SET_INFO: Record<SetKind, string> = {
   'Deck Set': 'Beys + parts',
   'Dual Pack': '2 Beys, no launcher',
   Multipack: '2 Beys + launchers',
+  Set: 'Beys + extras',
+  'Battle Set': 'Stadium + Beys',
+  'Launcher Set': 'Bey + launcher',
 };
 
 /** Bits without a hand-written description get one from their type. */

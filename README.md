@@ -10,6 +10,7 @@ It runs in the phone's browser and can be added to the home screen like a normal
 - **Bey page**: the Bey spinning in a stadium, its type, its combo (like `4-70LF`), and stats for the Blade, Ratchet and Bit laid out like the back of the box.
 - **Read to me**: the speaker button reads the name and stats out loud.
 - **My Beys and Wish list**: tap the star for Beys you have and the heart for Beys you want. Saved on the device.
+- **Build a Bey**: pick any Blade, Ratchet and Bit Hasbro sells, press Fuse, and watch them lock together. The new Bey gets its added-up stats and type, plus a shopping list with the fewest boxes to buy (skipping parts from Beys in My Beys) and their Canadian list prices. Every Beyblade X part fits every other; a Ratchet-Integrated Blade just needs a bit.
 
 ## Run it
 
@@ -22,7 +23,7 @@ npm run build      # makes the finished app in dist/
 
 ## Where the Beys come from
 
-The app lists every Beyblade X that Hasbro sells: Starter Packs, Booster Packs and the X-Over Beys, plus the Beys that come in Dual Packs and Multipack Sets (Marvel, Star Wars, Transformers, Jurassic World and more). A Bey's page says which pack it comes in. They are imported from the [Beyblade fan wiki](https://beyblade.fandom.com/wiki/List_of_Beyblade_X_products_(Hasbro)): names, parts, stats, release dates and pictures.
+The app lists every Beyblade X that Hasbro sells in Canada or the US: Starter Packs, Booster Packs and the X-Over Beys, plus the Beys that come in Dual Packs, Multipack Sets (Marvel, Star Wars, Transformers, Jurassic World and more), team packs, Battle Sets and deluxe launcher sets. A Bey's page says which pack it comes in. `src/data/packs.json` lists every pack with its Beys and price, for the Build a Bey shopping list. They are imported from the [Beyblade fan wiki](https://beyblade.fandom.com/wiki/List_of_Beyblade_X_products_(Hasbro)): names, parts, stats, release dates and pictures.
 
 ```sh
 npm run import            # refresh src/data/beys.json and download new pictures
@@ -43,7 +44,7 @@ The wiki's stats match the Hasbro boxes almost everywhere, but not always (Rudde
 }
 ```
 
-The import prints any Bey that is still missing stats. Until a part has stats, its page shows "Stats coming soon".
+A reading can also cover one part everywhere it appears, like `"ratchet:2-60"`. The import prints any Bey that is still missing stats. Until a part has stats, its page shows "Stats coming soon".
 
 ### How the box's numbers are shown
 

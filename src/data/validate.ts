@@ -1,4 +1,4 @@
-import { ART_SHAPES, BEY_TYPES, LINES, SET_KINDS, STATS_SOURCES, type Bey, type StatKey } from './types';
+import { ART_SHAPES, BEY_TYPES, LINES, SET_KINDS, STATS_SOURCES, type Bey, type Pack, type StatKey } from './types';
 import { BIT_STAT_KEYS, PART_STAT_KEYS, STAT_MAX } from './meta';
 
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
@@ -30,7 +30,9 @@ export function validateBeys(beys: Bey[]): string[] {
     if (bey.packs !== undefined && !(Array.isArray(bey.packs) && bey.packs.length && bey.packs.every((p) => typeof p === 'string' && p.trim()))) {
       fail('packs must be a list of pack names');
     }
-    if ((bey.set === 'Dual Pack' || bey.set === 'Multipack') && !bey.packs?.length) fail(`a ${bey.set} Bey needs the name of its pack in packs`);
+    if (!['Starter', 'Booster', 'Random Booster'].includes(bey.set) && !bey.packs?.length) fail(`a ${bey.set} Bey needs the name of its pack in packs`);
+    if (bey.price !== undefined && !(bey.price > 0)) fail(`price ${bey.price} should be in dollars`);
+    if (bey.blade?.type !== undefined && !BEY_TYPES.includes(bey.blade.type)) fail(`blade type "${bey.blade.type}" is not a type`);
 
     if (!bey.blade) fail('blade is missing');
     if (bey.blade?.integratedRatchet && bey.ratchet) fail('has a built-in ratchet and a separate one');
@@ -69,5 +71,25 @@ export function validateBeys(beys: Bey[]): string[] {
     if (!HEX.test(bey.art?.accent ?? '')) fail(`art accent "${bey.art?.accent}" must be a color like #FFC24B`);
   }
 
+  return errors;
+}
+
+/** Checks that packs and Beys point at each other correctly. */
+export function validatePacks(packs: Pack[], beys: Bey[]): string[] {
+  const errors: string[] = [];
+  const ids = new Set(beys.map((bey) => bey.id));
+  const names = new Set(packs.map((pack) => pack.name));
+  for (const pack of packs) {
+    if (!SET_KINDS.includes(pack.set)) errors.push(`${pack.name}: set "${pack.set}" is not a set kind`);
+    if (!pack.beys.length) errors.push(`${pack.name}: has no Beys`);
+    for (const id of pack.beys) if (!ids.has(id)) errors.push(`${pack.name}: Bey "${id}" is not in beys.json`);
+    if (pack.price !== undefined && !(pack.price > 0)) errors.push(`${pack.name}: price ${pack.price} should be in dollars`);
+  }
+  for (const bey of beys) {
+    for (const name of bey.packs ?? []) {
+      if (!names.has(name)) errors.push(`${bey.id}: pack "${name}" is not in packs.json`);
+      else if (!packs.find((pack) => pack.name === name)?.beys.includes(bey.id)) errors.push(`${bey.id}: pack "${name}" does not list it`);
+    }
+  }
   return errors;
 }

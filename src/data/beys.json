@@ -13,8 +13,10 @@
     "released": "2024-05-30",
     "packs": [
       "Tail Viper and Sword Dran Dual Pack",
-      "Tackle Goat and Sword Dran Dual Pack"
+      "Tackle Goat and Sword Dran Dual Pack",
+      "Beyblade 25th Anniversary Set"
     ],
+    "price": 16.99,
     "weight": 43.2,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -23,7 +25,8 @@
         "defense": 25,
         "stamina": 20
       },
-      "weight": 34.6
+      "weight": 34.6,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-60",
@@ -68,6 +71,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 16.99,
     "weight": 41.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -76,7 +80,8 @@
         "defense": 55,
         "stamina": 25
       },
-      "weight": 32.4
+      "weight": 32.4,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-80",
@@ -121,6 +126,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 16.99,
     "weight": 41,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -129,7 +135,8 @@
         "defense": 30,
         "stamina": 55
       },
-      "weight": 31.8
+      "weight": 31.8,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-80",
@@ -174,6 +181,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 16.99,
     "weight": 41.4,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -182,7 +190,8 @@
         "defense": 35,
         "stamina": 35
       },
-      "weight": 32.7
+      "weight": 32.7,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-60",
@@ -227,6 +236,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2024-09-02",
+    "price": 16.99,
     "weight": 42.1,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -235,7 +245,8 @@
         "defense": 60,
         "stamina": 15
       },
-      "weight": 32.9
+      "weight": 32.9,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-80",
@@ -280,6 +291,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2024-09-02",
+    "price": 16.99,
     "weight": 40.2,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -288,7 +300,8 @@
         "defense": 40,
         "stamina": 20
       },
-      "weight": 31.4
+      "weight": 31.4,
+      "type": "balance"
     },
     "ratchet": {
       "name": "5-60",
@@ -333,6 +346,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2025-01-06",
+    "price": 16.99,
     "weight": 45.1,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -341,7 +355,8 @@
         "defense": 20,
         "stamina": 10
       },
-      "weight": 36.5
+      "weight": 36.5,
+      "type": "attack"
     },
     "ratchet": {
       "name": "1-60",
@@ -386,6 +401,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2025-01-06",
+    "price": 16.99,
     "weight": 45.2,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -394,7 +410,8 @@
         "defense": 25,
         "stamina": 60
       },
-      "weight": 35.3
+      "weight": 35.3,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "5-70",
@@ -439,6 +456,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2025-04-09",
+    "price": 16.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -446,7 +464,8 @@
         "defense": 25,
         "stamina": 60
       },
-      "weight": 35.3
+      "weight": 35.3,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "1-60",
@@ -491,6 +510,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2025-04-09",
+    "price": 16.99,
     "weight": 37.7,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -499,7 +519,8 @@
         "defense": 70,
         "stamina": 20
       },
-      "weight": 28.2
+      "weight": 28.2,
+      "type": "defense"
     },
     "ratchet": {
       "name": "1-80",
@@ -544,6 +565,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-08",
+    "price": 16.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -551,7 +573,8 @@
         "defense": 25,
         "stamina": 30
       },
-      "weight": 35
+      "weight": 35,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-70",
@@ -596,6 +619,10 @@
     "type": "stamina",
     "spin": "right",
     "released": "2025-08",
+    "packs": [
+      "Rival Rumble Pack"
+    ],
+    "price": 16.99,
     "weight": 45.8,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -604,7 +631,8 @@
         "defense": 30,
         "stamina": 65
       },
-      "weight": 36.8
+      "weight": 36.8,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-80",
@@ -648,6 +676,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-09",
+    "price": 16.99,
     "weight": 42.7,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -656,7 +685,8 @@
         "defense": 40,
         "stamina": 35
       },
-      "weight": 32.6
+      "weight": 32.6,
+      "type": "balance"
     },
     "ratchet": {
       "name": "7-80",
@@ -701,6 +731,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2025-08",
+    "price": 16.99,
     "weight": 41.9,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -709,7 +740,8 @@
         "defense": 60,
         "stamina": 10
       },
-      "weight": 34
+      "weight": 34,
+      "type": "defense"
     },
     "ratchet": {
       "name": "1-60",
@@ -753,6 +785,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2025-04-09",
+    "price": 16.99,
     "weight": 46.4,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -761,7 +794,8 @@
         "defense": 20,
         "stamina": 10
       },
-      "weight": 36.5
+      "weight": 36.5,
+      "type": "attack"
     },
     "ratchet": {
       "name": "5-70",
@@ -806,6 +840,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-04-09",
+    "price": 16.99,
     "weight": 42,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -814,7 +849,8 @@
         "defense": 25,
         "stamina": 25
       },
-      "weight": 33
+      "weight": 33,
+      "type": "balance"
     },
     "ratchet": {
       "name": "3-70",
@@ -858,6 +894,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2026-02-12",
+    "price": 16.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -865,7 +902,8 @@
         "defense": 70,
         "stamina": 17
       },
-      "weight": 27.4
+      "weight": 27.4,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "9-60",
@@ -910,6 +948,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2026-02-12",
+    "price": 16.99,
     "statsFrom": "Hasbro box",
     "blade": {
       "stats": {
@@ -917,7 +956,8 @@
         "defense": 40,
         "stamina": 60
       },
-      "weight": 34.5
+      "weight": 34.5,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-70",
@@ -962,6 +1002,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-02-12",
+    "price": 16.99,
     "statsFrom": "Hasbro box",
     "blade": {
       "stats": {
@@ -969,7 +1010,8 @@
         "defense": 20,
         "stamina": 30
       },
-      "weight": 33.3
+      "weight": 33.3,
+      "type": "attack"
     },
     "ratchet": {
       "name": "2-60",
@@ -1031,6 +1073,7 @@
           "name": "Slash"
         }
       ],
+      "type": "attack",
       "stats": {
         "attack": 60,
         "defense": 20,
@@ -1097,6 +1140,7 @@
           "name": "Turn"
         }
       ],
+      "type": "balance",
       "stats": {
         "attack": 35,
         "defense": 20,
@@ -1163,6 +1207,7 @@
           "name": "Round"
         }
       ],
+      "type": "stamina",
       "stats": {
         "attack": 20,
         "defense": 20,
@@ -1229,6 +1274,7 @@
           "name": "Bumper"
         }
       ],
+      "type": "defense",
       "stats": {
         "attack": 20,
         "defense": 60,
@@ -1295,6 +1341,7 @@
           "name": "Jaggy"
         }
       ],
+      "type": "attack",
       "stats": {
         "attack": 60,
         "defense": 30,
@@ -1343,6 +1390,9 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-08",
+    "packs": [
+      "Rival Rumble Pack"
+    ],
     "weight": 44.7,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -1360,6 +1410,7 @@
           "name": "Round"
         }
       ],
+      "type": "balance",
       "stats": {
         "attack": 34,
         "defense": 22,
@@ -1408,6 +1459,9 @@
     "type": "stamina",
     "spin": "right",
     "released": "2025-08",
+    "packs": [
+      "Rival Rumble Pack"
+    ],
     "statsFrom": "Beyblade wiki",
     "blade": {
       "pieces": [
@@ -1424,6 +1478,7 @@
           "name": "Slash"
         }
       ],
+      "type": "stamina",
       "stats": {
         "attack": 28,
         "defense": 22,
@@ -1489,6 +1544,7 @@
           "name": "Bumper"
         }
       ],
+      "type": "stamina",
       "stats": {
         "attack": 18,
         "defense": 35,
@@ -1555,6 +1611,7 @@
           "name": "Charge"
         }
       ],
+      "type": "balance",
       "stats": {
         "attack": 40,
         "defense": 30,
@@ -1621,6 +1678,7 @@
           "name": "Wheel"
         }
       ],
+      "type": "stamina",
       "stats": {
         "attack": 10,
         "defense": 30,
@@ -1686,6 +1744,7 @@
           "name": "Turn"
         }
       ],
+      "type": "attack",
       "stats": {
         "attack": 45,
         "defense": 20,
@@ -1735,6 +1794,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2026-06",
+    "price": 19.99,
     "weight": 49.4,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -1743,7 +1803,8 @@
         "defense": 25,
         "stamina": 17
       },
-      "weight": 41.4
+      "weight": 41.4,
+      "type": "attack"
     },
     "ratchet": {
       "name": "4-50",
@@ -1787,6 +1848,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2026-08-17",
+    "price": 19.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -1794,7 +1856,8 @@
         "defense": 35,
         "stamina": 27
       },
-      "weight": 40
+      "weight": 40,
+      "type": "balance"
     },
     "ratchet": {
       "name": "0-70",
@@ -1837,6 +1900,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2026-07-15",
+    "price": 19.99,
     "statsFrom": "Hasbro box",
     "blade": {
       "pieces": [
@@ -1857,6 +1921,7 @@
           "name": "Slash"
         }
       ],
+      "type": "balance",
       "stats": {
         "attack": 48,
         "defense": 32,
@@ -1906,6 +1971,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2026-08-17",
+    "price": 19.99,
     "weight": 46.3,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -1927,6 +1993,7 @@
           "name": "Odd"
         }
       ],
+      "type": "balance",
       "stats": {
         "attack": 40,
         "defense": 32,
@@ -1975,6 +2042,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2026-05-12",
+    "price": 19.99,
     "weight": 42.9,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -1984,6 +2052,7 @@
         "stamina": 36
       },
       "weight": 41,
+      "type": "stamina",
       "integratedRatchet": true
     },
     "bit": {
@@ -2019,6 +2088,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2026-07-15",
+    "price": 19.99,
     "weight": 63.2,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2028,6 +2098,7 @@
         "stamina": 40
       },
       "weight": 60.6,
+      "type": "balance",
       "integratedRatchet": true
     },
     "bit": {
@@ -2063,6 +2134,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2026-07-29",
+    "price": 19.99,
     "weight": 47.6,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2084,6 +2156,7 @@
           "name": "Erase"
         }
       ],
+      "type": "stamina",
       "stats": {
         "attack": 25,
         "defense": 20,
@@ -2133,6 +2206,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-06-26",
+    "price": 19.99,
     "weight": 47.4,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2154,6 +2228,7 @@
           "name": "Vertical"
         }
       ],
+      "type": "defense",
       "stats": {
         "attack": 25,
         "defense": 55,
@@ -2203,6 +2278,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2026-08-17",
+    "price": 19.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -2210,6 +2286,7 @@
         "defense": 50,
         "stamina": 30
       },
+      "type": "balance",
       "integratedRatchet": true
     },
     "bit": {
@@ -2245,6 +2322,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-10-01",
+    "price": 19.99,
     "statsFrom": "Hasbro box",
     "blade": {
       "pieces": [
@@ -2312,6 +2390,7 @@
     "set": "Starter",
     "type": "stamina",
     "spin": "right",
+    "price": 19.99,
     "statsFrom": "Hasbro box",
     "blade": {
       "pieces": [
@@ -2332,6 +2411,7 @@
           "name": "Wheel"
         }
       ],
+      "type": "stamina",
       "stats": {
         "attack": 13,
         "defense": 35,
@@ -2378,6 +2458,7 @@
     "set": "Starter",
     "type": "stamina",
     "spin": "right",
+    "price": 19.99,
     "weight": 39.4,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2386,7 +2467,8 @@
         "defense": 35,
         "stamina": 50
       },
-      "weight": 32.9
+      "weight": 32.9,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "9-65",
@@ -2431,6 +2513,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2026-08-17",
+    "price": 19.99,
     "weight": 45.4,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2440,6 +2523,7 @@
         "stamina": 25
       },
       "weight": 43.3,
+      "type": "attack",
       "integratedRatchet": true
     },
     "bit": {
@@ -2474,6 +2558,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2026-08-17",
+    "price": 19.99,
     "statsFrom": "Hasbro box",
     "blade": {
       "stats": {
@@ -2481,7 +2566,8 @@
         "defense": 16,
         "stamina": 52
       },
-      "weight": 34.4
+      "weight": 34.4,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "7-55",
@@ -2525,9 +2611,11 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-08-17",
+    "price": 19.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "weight": 39.4,
+      "type": "defense",
       "integratedRatchet": true
     },
     "bit": {
@@ -2563,6 +2651,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-05-12",
+    "price": 19.99,
     "weight": 48.1,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2571,7 +2660,8 @@
         "defense": 60,
         "stamina": 30
       },
-      "weight": 37.4
+      "weight": 37.4,
+      "type": "defense"
     },
     "ratchet": {
       "name": "0-80",
@@ -2616,6 +2706,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2026-05-12",
+    "price": 19.99,
     "weight": 48.1,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2637,6 +2728,7 @@
           "name": "Knuckle"
         }
       ],
+      "type": "attack",
       "stats": {
         "attack": 65,
         "defense": 20,
@@ -2685,6 +2777,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 11.99,
     "weight": 40.4,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2693,7 +2786,8 @@
         "defense": 37,
         "stamina": 23
       },
-      "weight": 31.2
+      "weight": 31.2,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-80",
@@ -2738,6 +2832,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 11.99,
     "weight": 41.8,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2746,7 +2841,8 @@
         "defense": 50,
         "stamina": 30
       },
-      "weight": 32.7
+      "weight": 32.7,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-80",
@@ -2791,6 +2887,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 11.99,
     "weight": 43,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2799,7 +2896,8 @@
         "defense": 25,
         "stamina": 15
       },
-      "weight": 34.5
+      "weight": 34.5,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-60",
@@ -2843,6 +2941,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 11.99,
     "weight": 43.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2851,7 +2950,8 @@
         "defense": 23,
         "stamina": 50
       },
-      "weight": 34.3
+      "weight": 34.3,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-80",
@@ -2896,6 +2996,10 @@
     "type": "balance",
     "spin": "right",
     "released": "2024-08-29",
+    "packs": [
+      "Yggdrasil Team Pack"
+    ],
+    "price": 11.99,
     "weight": 42.3,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2904,7 +3008,8 @@
         "defense": 35,
         "stamina": 30
       },
-      "weight": 33.4
+      "weight": 33.4,
+      "type": "balance"
     },
     "ratchet": {
       "name": "5-60",
@@ -2948,6 +3053,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2024-08-29",
+    "price": 11.99,
     "weight": 44.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -2956,7 +3062,8 @@
         "defense": 28,
         "stamina": 12
       },
-      "weight": 36
+      "weight": 36,
+      "type": "attack"
     },
     "ratchet": {
       "name": "9-60",
@@ -3001,6 +3108,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2024-08-29",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -3008,7 +3116,8 @@
         "defense": 35,
         "stamina": 35
       },
-      "weight": 32.7
+      "weight": 32.7,
+      "type": "balance"
     },
     "ratchet": {
       "name": "3-80",
@@ -3052,6 +3161,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2024-08-29",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -3059,7 +3169,8 @@
         "defense": 45,
         "stamina": 30
       },
-      "weight": 29.6
+      "weight": 29.6,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-60",
@@ -3104,6 +3215,10 @@
     "type": "defense",
     "spin": "right",
     "released": "2024-12-17",
+    "packs": [
+      "Yggdrasil Team Pack"
+    ],
+    "price": 11.99,
     "weight": 41.6,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3112,7 +3227,8 @@
         "defense": 55,
         "stamina": 10
       },
-      "weight": 32.7
+      "weight": 32.7,
+      "type": "defense"
     },
     "ratchet": {
       "name": "9-80",
@@ -3157,6 +3273,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2024-12-17",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -3164,7 +3281,8 @@
         "defense": 30,
         "stamina": 55
       },
-      "weight": 31.8
+      "weight": 31.8,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-80",
@@ -3209,6 +3327,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2025-03-13",
+    "price": 11.99,
     "weight": 40.7,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3217,7 +3336,8 @@
         "defense": 65,
         "stamina": 25
       },
-      "weight": 32.4
+      "weight": 32.4,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-60",
@@ -3262,6 +3382,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2025-03-13",
+    "price": 11.99,
     "weight": 42.7,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3270,7 +3391,8 @@
         "defense": 25,
         "stamina": 15
       },
-      "weight": 34.5
+      "weight": 34.5,
+      "type": "attack"
     },
     "ratchet": {
       "name": "1-60",
@@ -3315,6 +3437,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-06",
+    "price": 11.99,
     "weight": 48.7,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3323,7 +3446,8 @@
         "defense": 35,
         "stamina": 20
       },
-      "weight": 38.2
+      "weight": 38.2,
+      "type": "balance"
     },
     "ratchet": {
       "name": "5-80",
@@ -3367,6 +3491,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2025-06",
+    "price": 11.99,
     "weight": 44.7,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3375,7 +3500,8 @@
         "defense": 25,
         "stamina": 25
       },
-      "weight": 34.8
+      "weight": 34.8,
+      "type": "attack"
     },
     "ratchet": {
       "name": "4-70",
@@ -3420,6 +3546,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2025-08",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -3427,7 +3554,8 @@
         "defense": 60,
         "stamina": 15
       },
-      "weight": 32.9
+      "weight": 32.9,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-60",
@@ -3474,6 +3602,7 @@
     "packs": [
       "Yell Kong and Helm Knight Dual Pack"
     ],
+    "price": 11.99,
     "weight": 39.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3482,7 +3611,8 @@
         "defense": 37,
         "stamina": 50
       },
-      "weight": 31.1
+      "weight": 31.1,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-60",
@@ -3526,6 +3656,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2025-08",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -3533,7 +3664,8 @@
         "defense": 30,
         "stamina": 55
       },
-      "weight": 31.8
+      "weight": 31.8,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-80",
@@ -3578,6 +3710,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-03-13",
+    "price": 11.99,
     "weight": 47.9,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3586,7 +3719,8 @@
         "defense": 25,
         "stamina": 15
       },
-      "weight": 38
+      "weight": 38,
+      "type": "attack"
     },
     "ratchet": {
       "name": "5-80",
@@ -3631,6 +3765,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2026-02-19",
+    "price": 11.99,
     "weight": 45.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3639,7 +3774,8 @@
         "defense": 15,
         "stamina": 15
       },
-      "weight": 37.6
+      "weight": 37.6,
+      "type": "attack"
     },
     "ratchet": {
       "name": "4-50",
@@ -3683,6 +3819,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2026-02-19",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -3690,7 +3827,8 @@
         "defense": 40,
         "stamina": 35
       },
-      "weight": 32.6
+      "weight": 32.6,
+      "type": "balance"
     },
     "ratchet": {
       "name": "5-70",
@@ -3734,6 +3872,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2026-06-19",
+    "price": 11.99,
     "weight": 43.2,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3742,7 +3881,8 @@
         "defense": 38,
         "stamina": 20
       },
-      "weight": 36.2
+      "weight": 36.2,
+      "type": "balance"
     },
     "ratchet": {
       "name": "3-85",
@@ -3787,6 +3927,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-07-15",
+    "price": 11.99,
     "weight": 44.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3795,7 +3936,8 @@
         "defense": 60,
         "stamina": 20
       },
-      "weight": 37.5
+      "weight": 37.5,
+      "type": "defense"
     },
     "ratchet": {
       "name": "7-55",
@@ -3840,6 +3982,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2026-06-19",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -3847,7 +3990,8 @@
         "defense": 45,
         "stamina": 30
       },
-      "weight": 29.6
+      "weight": 29.6,
+      "type": "defense"
     },
     "ratchet": {
       "name": "5-60",
@@ -3891,6 +4035,7 @@
     "type": "attack",
     "spin": "right",
     "released": "2026-07-15",
+    "price": 11.99,
     "weight": 46.5,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3899,7 +4044,8 @@
         "defense": 30,
         "stamina": 20
       },
-      "weight": 38
+      "weight": 38,
+      "type": "attack"
     },
     "ratchet": {
       "name": "4-60",
@@ -3944,6 +4090,7 @@
     "type": "stamina",
     "spin": "right",
     "released": "2026-07-15",
+    "price": 11.99,
     "weight": 44.3,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -3952,7 +4099,8 @@
         "defense": 10,
         "stamina": 80
       },
-      "weight": 37.7
+      "weight": 37.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "9-65",
@@ -3996,6 +4144,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-02-19",
+    "price": 11.99,
     "statsFrom": "Beyblade wiki",
     "blade": {
       "stats": {
@@ -4003,7 +4152,8 @@
         "defense": 55,
         "stamina": 13
       },
-      "weight": 29.9
+      "weight": 29.9,
+      "type": "defense"
     },
     "ratchet": {
       "name": "9-80",
@@ -4047,6 +4197,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2024-05-30",
+    "price": 16.99,
     "weight": 37,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -4055,7 +4206,8 @@
         "defense": 30,
         "stamina": 35
       },
-      "weight": 27.7
+      "weight": 27.7,
+      "type": "balance"
     },
     "ratchet": {
       "name": "3-80",
@@ -4099,6 +4251,7 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-05",
+    "price": 16.99,
     "weight": 37.8,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -4107,7 +4260,8 @@
         "defense": 35,
         "stamina": 25
       },
-      "weight": 28.6
+      "weight": 28.6,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-80",
@@ -4151,6 +4305,7 @@
     "type": "defense",
     "spin": "right",
     "released": "2026-01",
+    "price": 16.99,
     "weight": 37.1,
     "statsFrom": "Beyblade wiki",
     "blade": {
@@ -4159,7 +4314,8 @@
         "defense": 50,
         "stamina": 20
       },
-      "weight": 28
+      "weight": 28,
+      "type": "defense"
     },
     "ratchet": {
       "name": "7-60",
@@ -4215,7 +4371,8 @@
         "defense": 50,
         "stamina": 27
       },
-      "weight": 30.9
+      "weight": 30.9,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-80",
@@ -4271,7 +4428,8 @@
         "defense": 25,
         "stamina": 15
       },
-      "weight": 34.5
+      "weight": 34.5,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-80",
@@ -4328,7 +4486,8 @@
         "defense": 40,
         "stamina": 25
       },
-      "weight": 33.2
+      "weight": 33.2,
+      "type": "balance"
     },
     "ratchet": {
       "name": "5-60",
@@ -4383,7 +4542,8 @@
         "defense": 30,
         "stamina": 55
       },
-      "weight": 31.8
+      "weight": 31.8,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-60",
@@ -4439,7 +4599,8 @@
         "defense": 20,
         "stamina": 50
       },
-      "weight": 34.7
+      "weight": 34.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "5-80",
@@ -4494,7 +4655,8 @@
         "defense": 55,
         "stamina": 25
       },
-      "weight": 32.4
+      "weight": 32.4,
+      "type": "defense"
     },
     "ratchet": {
       "name": "5-80",
@@ -4549,7 +4711,8 @@
         "defense": 22,
         "stamina": 18
       },
-      "weight": 34
+      "weight": 34,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-60",
@@ -4604,7 +4767,8 @@
         "defense": 35,
         "stamina": 30
       },
-      "weight": 33.4
+      "weight": 33.4,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-60",
@@ -4660,7 +4824,8 @@
         "defense": 40,
         "stamina": 50
       },
-      "weight": 31.9
+      "weight": 31.9,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "5-80",
@@ -4716,7 +4881,8 @@
         "defense": 20,
         "stamina": 50
       },
-      "weight": 34.7
+      "weight": 34.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-80",
@@ -4772,7 +4938,8 @@
         "defense": 30,
         "stamina": 5
       },
-      "weight": 37
+      "weight": 37,
+      "type": "attack"
     },
     "ratchet": {
       "name": "4-70",
@@ -4827,7 +4994,8 @@
         "defense": 40,
         "stamina": 50
       },
-      "weight": 31.9
+      "weight": 31.9,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-60",
@@ -4882,7 +5050,8 @@
         "defense": 25,
         "stamina": 20
       },
-      "weight": 34.6
+      "weight": 34.6,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-80",
@@ -4937,7 +5106,8 @@
         "defense": 55,
         "stamina": 10
       },
-      "weight": 32.7
+      "weight": 32.7,
+      "type": "defense"
     },
     "ratchet": {
       "name": "1-80",
@@ -4983,7 +5153,8 @@
     "spin": "right",
     "released": "2025-05-21",
     "packs": [
-      "Cowl Sphinx and Crest Leon Dual Pack"
+      "Cowl Sphinx and Crest Leon Dual Pack",
+      "Rival Rumble Pack"
     ],
     "weight": 44.1,
     "statsFrom": "Beyblade wiki",
@@ -4993,7 +5164,8 @@
         "defense": 70,
         "stamina": 15
       },
-      "weight": 35
+      "weight": 35,
+      "type": "defense"
     },
     "ratchet": {
       "name": "7-60",
@@ -5039,7 +5211,8 @@
     "spin": "right",
     "released": "2025-05-21",
     "packs": [
-      "Pearl Tiger and Gill Shark Dual Pack"
+      "Pearl Tiger and Gill Shark Dual Pack",
+      "Rival Rumble Pack"
     ],
     "weight": 43.1,
     "statsFrom": "Beyblade wiki",
@@ -5049,7 +5222,8 @@
         "defense": 30,
         "stamina": 25
       },
-      "weight": 34.6
+      "weight": 34.6,
+      "type": "balance"
     },
     "ratchet": {
       "name": "3-60",
@@ -5094,7 +5268,8 @@
     "spin": "right",
     "released": "2025-05-21",
     "packs": [
-      "Pearl Tiger and Gill Shark Dual Pack"
+      "Pearl Tiger and Gill Shark Dual Pack",
+      "Rival Rumble Pack"
     ],
     "weight": 38,
     "statsFrom": "Beyblade wiki",
@@ -5104,7 +5279,8 @@
         "defense": 25,
         "stamina": 55
       },
-      "weight": 29.6
+      "weight": 29.6,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-70",
@@ -5160,7 +5336,8 @@
         "defense": 40,
         "stamina": 55
       },
-      "weight": 26.7
+      "weight": 26.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "0-80",
@@ -5215,7 +5392,8 @@
         "defense": 65,
         "stamina": 22
       },
-      "weight": 31.5
+      "weight": 31.5,
+      "type": "defense"
     },
     "ratchet": {
       "name": "2-70",
@@ -5271,7 +5449,8 @@
         "defense": 30,
         "stamina": 30
       },
-      "weight": 36
+      "weight": 36,
+      "type": "balance"
     },
     "ratchet": {
       "name": "6-70",
@@ -5325,7 +5504,8 @@
         "defense": 65,
         "stamina": 25
       },
-      "weight": 32.4
+      "weight": 32.4,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-85",
@@ -5379,7 +5559,8 @@
         "defense": 40,
         "stamina": 55
       },
-      "weight": 26.7
+      "weight": 26.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-60",
@@ -5433,7 +5614,8 @@
         "defense": 28,
         "stamina": 25
       },
-      "weight": 32.7
+      "weight": 32.7,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-55",
@@ -5489,7 +5671,8 @@
         "defense": 55,
         "stamina": 30
       },
-      "weight": 39.6
+      "weight": 39.6,
+      "type": "balance"
     },
     "ratchet": {
       "name": "0-70",
@@ -5543,7 +5726,8 @@
         "defense": 20,
         "stamina": 50
       },
-      "weight": 34.7
+      "weight": 34.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-85",
@@ -5597,7 +5781,8 @@
         "defense": 43,
         "stamina": 47
       },
-      "weight": 27.6
+      "weight": 27.6,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "9-65",
@@ -5651,7 +5836,8 @@
         "defense": 70,
         "stamina": 15
       },
-      "weight": 35
+      "weight": 35,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-55",
@@ -5706,7 +5892,8 @@
         "defense": 15,
         "stamina": 20
       },
-      "weight": 36.6
+      "weight": 36.6,
+      "type": "attack"
     },
     "ratchet": {
       "name": "6-60",
@@ -5759,7 +5946,8 @@
         "defense": 30,
         "stamina": 25
       },
-      "weight": 34.6
+      "weight": 34.6,
+      "type": "balance"
     },
     "ratchet": {
       "name": "3-85",
@@ -5815,7 +6003,8 @@
         "defense": 65,
         "stamina": 15
       },
-      "weight": 36.5
+      "weight": 36.5,
+      "type": "defense"
     },
     "ratchet": {
       "name": "M-85",
@@ -5869,7 +6058,8 @@
         "defense": 25,
         "stamina": 25
       },
-      "weight": 34.8
+      "weight": 34.8,
+      "type": "attack"
     },
     "ratchet": {
       "name": "7-55",
@@ -5903,6 +6093,424 @@
     }
   },
   {
+    "id": "dragoon-storm-4-60ra",
+    "names": {
+      "hasbro": "Dragoon Storm"
+    },
+    "line": "BX",
+    "productCode": "G1844",
+    "set": "Set",
+    "type": "attack",
+    "spin": "left",
+    "released": "2025-09",
+    "packs": [
+      "Beyblade 25th Anniversary Set"
+    ],
+    "weight": 34.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 55,
+        "defense": 30,
+        "stamina": 15
+      },
+      "weight": 25.1,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "RA",
+      "name": "Rubber Accel",
+      "type": "attack",
+      "stats": {
+        "attack": 60,
+        "defense": 17,
+        "stamina": 3,
+        "dash": 20,
+        "burstResistance": 80
+      },
+      "weight": 3.1,
+      "photo": "bit-rubber-accel"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "storm-pegasis-3-70ra",
+    "names": {
+      "hasbro": "Storm Pegasis"
+    },
+    "line": "BX",
+    "productCode": "G1844",
+    "set": "Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-09",
+    "packs": [
+      "Beyblade 25th Anniversary Set"
+    ],
+    "weight": 40.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 55,
+        "defense": 15,
+        "stamina": 30
+      },
+      "weight": 31,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "3-70",
+      "stats": {
+        "attack": 15,
+        "defense": 8,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-70"
+    },
+    "bit": {
+      "code": "RA",
+      "name": "Rubber Accel",
+      "type": "attack",
+      "stats": {
+        "attack": 60,
+        "defense": 17,
+        "stamina": 3,
+        "dash": 20,
+        "burstResistance": 80
+      },
+      "weight": 3.1,
+      "photo": "bit-rubber-accel"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "victory-valkyrie-2-60ra",
+    "names": {
+      "hasbro": "Victory Valkyrie"
+    },
+    "line": "BX",
+    "productCode": "G1844",
+    "set": "Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-09",
+    "packs": [
+      "Beyblade 25th Anniversary Set"
+    ],
+    "weight": 42.5,
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "stats": {
+        "attack": 55,
+        "defense": 20,
+        "stamina": 25
+      },
+      "weight": 33.2,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "2-60",
+      "stats": {
+        "attack": 10,
+        "defense": 13,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-2-60"
+    },
+    "bit": {
+      "code": "RA",
+      "name": "Rubber Accel",
+      "type": "attack",
+      "stats": {
+        "attack": 60,
+        "defense": 17,
+        "stamina": 3,
+        "dash": 20,
+        "burstResistance": 80
+      },
+      "weight": 3.1,
+      "photo": "bit-rubber-accel"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "mail-knight-3-85bs",
+    "names": {
+      "hasbro": "Mail Knight",
+      "takaraTomy": "KnightMail"
+    },
+    "line": "UX",
+    "productCode": "G3195",
+    "set": "Set",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-12-17",
+    "packs": [
+      "X-treme Expansion Pack"
+    ],
+    "weight": 43.4,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 65,
+        "stamina": 35
+      },
+      "weight": 36.7,
+      "type": "defense"
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "BS",
+      "name": "Bound Spike",
+      "type": "defense",
+      "stats": {
+        "attack": 5,
+        "defense": 60,
+        "stamina": 30,
+        "dash": 5,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-bound-spike"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 5,
+      "accent": "#B9C3D6"
+    }
+  },
+  {
+    "id": "rudder-phoenix-9-70g",
+    "names": {
+      "hasbro": "Rudder Phoenix",
+      "takaraTomy": "PhoenixRudder"
+    },
+    "line": "UX",
+    "productCode": "G3393",
+    "set": "Set",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-03-26",
+    "packs": [
+      "Yggdrasil Team Pack"
+    ],
+    "weight": 43.3,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 10,
+        "defense": 35,
+        "stamina": 55
+      },
+      "weight": 34.5,
+      "type": "stamina"
+    },
+    "ratchet": {
+      "name": "9-70",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.3,
+      "photo": "ratchet-9-70"
+    },
+    "bit": {
+      "code": "G",
+      "name": "Glide",
+      "type": "stamina",
+      "stats": {
+        "attack": 20,
+        "defense": 10,
+        "stamina": 55,
+        "dash": 15,
+        "burstResistance": 30
+      },
+      "weight": 2.5,
+      "photo": "bit-glide"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "afc-6-70h",
+    "names": {
+      "hasbro": "AFC"
+    },
+    "line": "CX",
+    "productCode": "G3607",
+    "set": "Set",
+    "type": "balance",
+    "spin": "right",
+    "released": "2026-09",
+    "packs": [
+      "NFL CX Top Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "AFC"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Courage"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Slash"
+        }
+      ],
+      "type": "attack",
+      "stats": {
+        "attack": 60,
+        "defense": 20,
+        "stamina": 20
+      }
+    },
+    "ratchet": {
+      "name": "6-70",
+      "stats": {
+        "attack": 14,
+        "defense": 7,
+        "stamina": 9
+      },
+      "weight": 6.3,
+      "photo": "ratchet-6-70"
+    },
+    "bit": {
+      "code": "H",
+      "name": "Hexa",
+      "type": "balance",
+      "stats": {
+        "attack": 30,
+        "defense": 35,
+        "stamina": 20,
+        "dash": 15,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-hexa"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 4,
+      "accent": "#8B3DFF"
+    }
+  },
+  {
+    "id": "nfc-9-60lo",
+    "names": {
+      "hasbro": "NFC"
+    },
+    "line": "CX",
+    "productCode": "G3607",
+    "set": "Set",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-09",
+    "packs": [
+      "NFL CX Top Pack"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "NFC"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Arc"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Round"
+        }
+      ],
+      "type": "stamina",
+      "stats": {
+        "attack": 20,
+        "defense": 20,
+        "stamina": 60
+      }
+    },
+    "ratchet": {
+      "name": "9-60",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-9-60"
+    },
+    "bit": {
+      "code": "LO",
+      "name": "Low Orb",
+      "type": "stamina",
+      "stats": {
+        "attack": 5,
+        "defense": 25,
+        "stamina": 55,
+        "dash": 15,
+        "burstResistance": 30
+      },
+      "weight": 1.9,
+      "photo": "bit-low-orb"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
     "id": "the-mandalorian-3-60f",
     "names": {
       "hasbro": "The Mandalorian"
@@ -5923,7 +6531,8 @@
         "defense": 43,
         "stamina": 17
       },
-      "weight": 30.3
+      "weight": 30.3,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-60",
@@ -5976,7 +6585,8 @@
         "defense": 35,
         "stamina": 33
       },
-      "weight": 30.5
+      "weight": 30.5,
+      "type": "balance"
     },
     "ratchet": {
       "name": "3-80",
@@ -6031,7 +6641,8 @@
         "defense": 55,
         "stamina": 28
       },
-      "weight": 32
+      "weight": 32,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-80",
@@ -6085,7 +6696,8 @@
         "defense": 60,
         "stamina": 18
       },
-      "weight": 29.5
+      "weight": 29.5,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-60",
@@ -6139,7 +6751,8 @@
         "defense": 17,
         "stamina": 50
       },
-      "weight": 33
+      "weight": 33,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-60",
@@ -6193,7 +6806,8 @@
         "defense": 22,
         "stamina": 23
       },
-      "weight": 34.3
+      "weight": 34.3,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-80",
@@ -6247,7 +6861,8 @@
         "defense": 55,
         "stamina": 22
       },
-      "weight": 29.9
+      "weight": 29.9,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-80",
@@ -6301,7 +6916,8 @@
         "defense": 60,
         "stamina": 12
       },
-      "weight": 30.7
+      "weight": 30.7,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-60",
@@ -6356,7 +6972,8 @@
         "defense": 27,
         "stamina": 13
       },
-      "weight": 35
+      "weight": 35,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-60",
@@ -6411,7 +7028,8 @@
         "defense": 27,
         "stamina": 55
       },
-      "weight": 29.5
+      "weight": 29.5,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "3-80",
@@ -6466,7 +7084,8 @@
         "defense": 55,
         "stamina": 23
       },
-      "weight": 31.7
+      "weight": 31.7,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-60",
@@ -6520,7 +7139,8 @@
         "defense": 35,
         "stamina": 38
       },
-      "weight": 31.1
+      "weight": 31.1,
+      "type": "balance"
     },
     "ratchet": {
       "name": "4-80",
@@ -6574,7 +7194,8 @@
         "defense": 28,
         "stamina": 17
       },
-      "weight": 32.3
+      "weight": 32.3,
+      "type": "attack"
     },
     "ratchet": {
       "name": "4-70",
@@ -6628,7 +7249,8 @@
         "defense": 27,
         "stamina": 8
       },
-      "weight": 36.3
+      "weight": 36.3,
+      "type": "attack"
     },
     "ratchet": {
       "name": "1-80",
@@ -6682,7 +7304,8 @@
         "defense": 33,
         "stamina": 55
       },
-      "weight": 31.7
+      "weight": 31.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "1-60",
@@ -6736,7 +7359,8 @@
         "defense": 28,
         "stamina": 55
       },
-      "weight": 31.7
+      "weight": 31.7,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "9-80",
@@ -6790,7 +7414,8 @@
         "defense": 55,
         "stamina": 24
       },
-      "weight": 31.8
+      "weight": 31.8,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-60",
@@ -6844,7 +7469,8 @@
         "defense": 18,
         "stamina": 50
       },
-      "weight": 32.3
+      "weight": 32.3,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "5-80",
@@ -6899,7 +7525,8 @@
         "defense": 60,
         "stamina": 17
       },
-      "weight": 30.6
+      "weight": 30.6,
+      "type": "defense"
     },
     "ratchet": {
       "name": "4-60",
@@ -6953,7 +7580,8 @@
         "defense": 50,
         "stamina": 28
       },
-      "weight": 31
+      "weight": 31,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-80",
@@ -7007,7 +7635,8 @@
         "defense": 23,
         "stamina": 55
       },
-      "weight": 31.8
+      "weight": 31.8,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-80",
@@ -7061,7 +7690,8 @@
         "defense": 50,
         "stamina": 32
       },
-      "weight": 33.3
+      "weight": 33.3,
+      "type": "defense"
     },
     "ratchet": {
       "name": "5-70",
@@ -7115,7 +7745,8 @@
         "defense": 30,
         "stamina": 5
       },
-      "weight": 37
+      "weight": 37,
+      "type": "attack"
     },
     "ratchet": {
       "name": "1-80",
@@ -7169,7 +7800,8 @@
         "defense": 55,
         "stamina": 13
       },
-      "weight": 29.9
+      "weight": 29.9,
+      "type": "defense"
     },
     "ratchet": {
       "name": "9-60",
@@ -7224,7 +7856,8 @@
         "defense": 28,
         "stamina": 12
       },
-      "weight": 36
+      "weight": 36,
+      "type": "attack"
     },
     "ratchet": {
       "name": "3-85",
@@ -7279,7 +7912,8 @@
         "defense": 23,
         "stamina": 50
       },
-      "weight": 34.3
+      "weight": 34.3,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "4-55",
@@ -7332,7 +7966,8 @@
         "defense": 50,
         "stamina": 29
       },
-      "weight": 33.5
+      "weight": 33.5,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-85",
@@ -7385,7 +8020,8 @@
         "defense": 50,
         "stamina": 32
       },
-      "weight": 33.3
+      "weight": 33.3,
+      "type": "defense"
     },
     "ratchet": {
       "name": "7-60",
@@ -7437,7 +8073,8 @@
         "attack": 31,
         "defense": 55,
         "stamina": 14
-      }
+      },
+      "type": "defense"
     },
     "ratchet": {
       "name": "9-65",
@@ -7489,7 +8126,8 @@
         "attack": 19,
         "defense": 55,
         "stamina": 26
-      }
+      },
+      "type": "defense"
     },
     "ratchet": {
       "name": "0-80",
@@ -7544,7 +8182,8 @@
         "defense": 17,
         "stamina": 50
       },
-      "weight": 33
+      "weight": 33,
+      "type": "stamina"
     },
     "ratchet": {
       "name": "6-60",
@@ -7599,7 +8238,8 @@
         "defense": 65,
         "stamina": 23
       },
-      "weight": 33
+      "weight": 33,
+      "type": "defense"
     },
     "ratchet": {
       "name": "3-85",
@@ -7653,7 +8293,8 @@
         "defense": 55,
         "stamina": 23
       },
-      "weight": 31.7
+      "weight": 31.7,
+      "type": "balance"
     },
     "ratchet": {
       "name": "7-70",
@@ -7707,7 +8348,8 @@
         "defense": 55,
         "stamina": 24
       },
-      "weight": 31.8
+      "weight": 31.8,
+      "type": "defense"
     },
     "ratchet": {
       "name": "1-60",
@@ -7738,6 +8380,700 @@
       "shape": "wall",
       "blades": 4,
       "accent": "#FFD54A"
+    }
+  },
+  {
+    "id": "dagger-dran-4-60r",
+    "names": {
+      "hasbro": "Dagger Dran",
+      "takaraTomy": "DranDagger"
+    },
+    "line": "BX",
+    "productCode": "F9588",
+    "set": "Battle Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Xtreme Battle Set"
+    ],
+    "weight": 43.2,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 50,
+        "defense": 25,
+        "stamina": 25
+      },
+      "weight": 34.8,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "4-60",
+      "stats": {
+        "attack": 11,
+        "defense": 13,
+        "stamina": 6
+      },
+      "weight": 6.3,
+      "photo": "ratchet-4-60"
+    },
+    "bit": {
+      "code": "R",
+      "name": "Rush",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 10,
+        "stamina": 20,
+        "dash": 30,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-rush"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 3,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "tusk-mammoth-3-60t",
+    "names": {
+      "hasbro": "Tusk Mammoth"
+    },
+    "line": "BX",
+    "productCode": "F9588",
+    "set": "Battle Set",
+    "type": "balance",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Xtreme Battle Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 33,
+        "defense": 35,
+        "stamina": 32
+      },
+      "weight": 32.3,
+      "type": "balance"
+    },
+    "ratchet": {
+      "name": "3-60",
+      "stats": {
+        "attack": 15,
+        "defense": 9,
+        "stamina": 6
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-60"
+    },
+    "bit": {
+      "code": "T",
+      "name": "Taper",
+      "type": "balance",
+      "stats": {
+        "attack": 35,
+        "defense": 20,
+        "stamina": 20,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-taper"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wing",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "hover-wyvern-3-85n",
+    "names": {
+      "hasbro": "Hover Wyvern"
+    },
+    "line": "UX",
+    "productCode": "G0842",
+    "set": "Battle Set",
+    "type": "defense",
+    "spin": "right",
+    "released": "2025-05",
+    "packs": [
+      "Drop Attack Battle Set"
+    ],
+    "weight": 41.7,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 13,
+        "defense": 60,
+        "stamina": 27
+      },
+      "weight": 35.1,
+      "type": "defense"
+    },
+    "ratchet": {
+      "name": "3-85",
+      "stats": {
+        "attack": 5,
+        "defense": 15,
+        "stamina": 10
+      },
+      "weight": 4.7,
+      "photo": "ratchet-3-85"
+    },
+    "bit": {
+      "code": "N",
+      "name": "Needle",
+      "type": "defense",
+      "stats": {
+        "attack": 10,
+        "defense": 50,
+        "stamina": 30,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-needle"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "wall",
+      "blades": 3,
+      "accent": "#C9D6FF"
+    }
+  },
+  {
+    "id": "impact-drake-9-60lr",
+    "names": {
+      "hasbro": "Impact Drake"
+    },
+    "line": "UX",
+    "productCode": "G0842",
+    "set": "Battle Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-05",
+    "packs": [
+      "Drop Attack Battle Set"
+    ],
+    "weight": 47.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 75,
+        "defense": 25,
+        "stamina": 10
+      },
+      "weight": 39,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "9-60",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-9-60"
+    },
+    "bit": {
+      "code": "LR",
+      "name": "Low Rush",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 15,
+        "dash": 35,
+        "burstResistance": 80
+      },
+      "weight": 1.9,
+      "photo": "bit-low-rush"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "cutter-shinobi-lf",
+    "names": {
+      "hasbro": "Cutter Shinobi"
+    },
+    "line": "UX",
+    "productCode": "G1940",
+    "set": "Battle Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-05-12",
+    "packs": [
+      "Sneak Attack Battle Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 48,
+        "defense": 48,
+        "stamina": 34
+      },
+      "weight": 37.4,
+      "type": "balance",
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "LF",
+      "name": "Low Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 45,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-low-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "rampart-aegis-gb",
+    "names": {
+      "hasbro": "Rampart Aegis"
+    },
+    "line": "UX",
+    "productCode": "G1940",
+    "set": "Battle Set",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-05-12",
+    "packs": [
+      "Sneak Attack Battle Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 70,
+        "stamina": 35
+      },
+      "weight": 32.7,
+      "type": "defense",
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "GB",
+      "name": "Gear Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 10,
+        "defense": 15,
+        "stamina": 45,
+        "dash": 30,
+        "burstResistance": 30
+      },
+      "weight": 2,
+      "photo": "bit-gear-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 6,
+      "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "cutter-shinobi-gf",
+    "names": {
+      "hasbro": "Cutter Shinobi"
+    },
+    "line": "UX",
+    "productCode": "G3745",
+    "set": "Battle Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-08-24",
+    "packs": [
+      "Infinity Rail Battle Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 48,
+        "defense": 48,
+        "stamina": 34
+      },
+      "weight": 37.4,
+      "type": "balance",
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "GF",
+      "name": "Gear Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 50,
+        "defense": 5,
+        "stamina": 5,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 5,
+      "accent": "#FF9A3D"
+    }
+  },
+  {
+    "id": "rampart-aegis-b",
+    "names": {
+      "hasbro": "Rampart Aegis"
+    },
+    "line": "UX",
+    "productCode": "G3745",
+    "set": "Battle Set",
+    "type": "stamina",
+    "spin": "right",
+    "released": "2026-08-24",
+    "packs": [
+      "Infinity Rail Battle Set"
+    ],
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 25,
+        "defense": 70,
+        "stamina": 35
+      },
+      "weight": 32.7,
+      "type": "defense",
+      "integratedRatchet": true
+    },
+    "bit": {
+      "code": "B",
+      "name": "Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 25,
+        "stamina": 50,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 2.1,
+      "photo": "bit-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 5,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "soar-phoenix-9-60gf",
+    "names": {
+      "hasbro": "Soar Phoenix",
+      "takaraTomy": "PhoenixWing"
+    },
+    "line": "BX",
+    "productCode": "F9324",
+    "set": "Launcher Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2024-05-30",
+    "packs": [
+      "Soar Phoenix Deluxe String Launcher Set",
+      "Deluxe String Launcher 2-Pack"
+    ],
+    "weight": 46.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 25,
+        "stamina": 15
+      },
+      "weight": 38,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "9-60",
+      "stats": {
+        "attack": 13,
+        "defense": 10,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-9-60"
+    },
+    "bit": {
+      "code": "GF",
+      "name": "Gear Flat",
+      "type": "attack",
+      "stats": {
+        "attack": 50,
+        "defense": 5,
+        "stamina": 5,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.3,
+      "photo": "bit-gear-flat"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "cobalt-dragoon-2-60c",
+    "names": {
+      "hasbro": "Cobalt Dragoon"
+    },
+    "line": "BX",
+    "productCode": "G1491",
+    "set": "Launcher Set",
+    "type": "attack",
+    "spin": "left",
+    "released": "2025-02",
+    "packs": [
+      "Cobalt Dragoon Deluxe Left-Spin String Launcher Set",
+      "Deluxe String Launcher 2-Pack"
+    ],
+    "weight": 46.1,
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 15,
+        "stamina": 25
+      },
+      "weight": 37.8,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "2-60",
+      "stats": {
+        "attack": 10,
+        "defense": 13,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-2-60"
+    },
+    "bit": {
+      "code": "C",
+      "name": "Cyclone",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 5,
+        "stamina": 10,
+        "dash": 45,
+        "burstResistance": 80
+      },
+      "weight": 2.1,
+      "photo": "bit-cyclone"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
+    }
+  },
+  {
+    "id": "saber-samurai-2-70l",
+    "names": {
+      "hasbro": "Saber Samurai",
+      "takaraTomy": "SamuraiSaber"
+    },
+    "line": "UX",
+    "productCode": "G1862",
+    "set": "Launcher Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2025-08",
+    "packs": [
+      "Victory Grip Launcher Set"
+    ],
+    "weight": 45.5,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 65,
+        "defense": 20,
+        "stamina": 25
+      },
+      "weight": 36.5,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "2-70",
+      "stats": {
+        "attack": 10,
+        "defense": 12,
+        "stamina": 8
+      },
+      "weight": 6.3,
+      "photo": "ratchet-2-70"
+    },
+    "bit": {
+      "code": "L",
+      "name": "Level",
+      "type": "attack",
+      "stats": {
+        "attack": 40,
+        "defense": 5,
+        "stamina": 15,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.7,
+      "photo": "bit-level"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "bite-croc-2-60q",
+    "names": {
+      "hasbro": "Bite Croc",
+      "takaraTomy": "CrocoCrunch"
+    },
+    "line": "BX",
+    "productCode": "G3083",
+    "set": "Launcher Set",
+    "type": "attack",
+    "spin": "right",
+    "released": "2026-03",
+    "packs": [
+      "Bite Croc Deluxe String Launcher & Custom Grip Set"
+    ],
+    "weight": 42.5,
+    "statsFrom": "Hasbro box",
+    "blade": {
+      "stats": {
+        "attack": 60,
+        "defense": 22,
+        "stamina": 18
+      },
+      "weight": 34,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "2-60",
+      "stats": {
+        "attack": 10,
+        "defense": 13,
+        "stamina": 7
+      },
+      "weight": 6.2,
+      "photo": "ratchet-2-60"
+    },
+    "bit": {
+      "code": "Q",
+      "name": "Quake",
+      "type": "attack",
+      "stats": {
+        "attack": 55,
+        "defense": 15,
+        "stamina": 5,
+        "dash": 25,
+        "burstResistance": 80
+      },
+      "weight": 2.2,
+      "photo": "bit-quake"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 6,
+      "accent": "#3EC6FF"
+    }
+  },
+  {
+    "id": "meteoroid-dragoon-3-70j",
+    "names": {
+      "hasbro": "Meteoroid Dragoon",
+      "takaraTomy": "MeteorDragoon"
+    },
+    "line": "UX",
+    "productCode": "G3491",
+    "set": "Launcher Set",
+    "type": "attack",
+    "spin": "left",
+    "released": "2026-07-15",
+    "packs": [
+      "Meteoroid Dragoon Deluxe Left-Spin String Launcher Set"
+    ],
+    "weight": 48,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "stats": {
+        "attack": 75,
+        "defense": 15,
+        "stamina": 35
+      },
+      "weight": 39,
+      "type": "attack"
+    },
+    "ratchet": {
+      "name": "3-70",
+      "stats": {
+        "attack": 15,
+        "defense": 8,
+        "stamina": 7
+      },
+      "weight": 6.4,
+      "photo": "ratchet-3-70"
+    },
+    "bit": {
+      "code": "J",
+      "name": "Jolt",
+      "type": "attack",
+      "stats": {
+        "attack": 35,
+        "defense": 10,
+        "stamina": 15,
+        "dash": 40,
+        "burstResistance": 80
+      },
+      "weight": 2.6,
+      "photo": "bit-jolt"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "blade",
+      "blades": 4,
+      "accent": "#E8ECF5"
     }
   }
 ]

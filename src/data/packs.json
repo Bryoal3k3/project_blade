@@ -1,0 +1,484 @@
+[
+  {
+    "name": "Beat Tyranno and Knife Shinobi Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2024-11-16",
+    "beys": [
+      "beat-tyranno-4-70q",
+      "knife-shinobi-4-80hn"
+    ]
+  },
+  {
+    "name": "Beyblade 25th Anniversary Set",
+    "set": "Set",
+    "price": 109.99,
+    "released": "2025-09",
+    "beys": [
+      "dragoon-storm-4-60ra",
+      "storm-pegasis-3-70ra",
+      "victory-valkyrie-2-60ra",
+      "sword-dran-3-60f"
+    ]
+  },
+  {
+    "name": "Bite Croc and Sting Unicorn Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2024-09-11",
+    "beys": [
+      "bite-croc-3-60lf",
+      "sting-unicorn-4-60p"
+    ]
+  },
+  {
+    "name": "Bite Croc Deluxe String Launcher & Custom Grip Set",
+    "set": "Launcher Set",
+    "price": 34.99,
+    "released": "2026-03",
+    "beys": [
+      "bite-croc-2-60q"
+    ]
+  },
+  {
+    "name": "Brace Triceratops and Dagger Dran Dual Pack",
+    "set": "Dual Pack",
+    "released": "2026-07",
+    "beys": [
+      "brace-triceratops-m-85bs",
+      "dagger-dran-7-55k"
+    ]
+  },
+  {
+    "name": "Bumblebee and Shockwave Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2025-11",
+    "beys": [
+      "bumblebee-3-60gp",
+      "shockwave-5-80o"
+    ]
+  },
+  {
+    "name": "Calibur Samurai and Obsidian Shell Dual Pack",
+    "set": "Dual Pack",
+    "released": "2026-02-12",
+    "beys": [
+      "calibur-samurai-6-70m",
+      "obsidian-shell-3-85s"
+    ]
+  },
+  {
+    "name": "Captain America and Red Hulk Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2025-06",
+    "beys": [
+      "captain-america-4-70gb",
+      "red-hulk-1-80r"
+    ]
+  },
+  {
+    "name": "Chain Incendio and Arrow Wizard Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2024-05-30",
+    "beys": [
+      "chain-incendio-5-60ht",
+      "arrow-wizard-4-60n"
+    ]
+  },
+  {
+    "name": "Chewbacca and Stormtrooper Multipack Set",
+    "set": "Multipack",
+    "released": "2025-09",
+    "beys": [
+      "chewbacca-4-80lf",
+      "stormtrooper-5-70b"
+    ]
+  },
+  {
+    "name": "Circle Ghost and Chain Incendio Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2025-07",
+    "beys": [
+      "circle-ghost-0-80gb",
+      "chain-incendio-5-60ht"
+    ]
+  },
+  {
+    "name": "Circle Ghost and Hack Viking Dual Pack",
+    "set": "Dual Pack",
+    "released": "2026-02-12",
+    "beys": [
+      "circle-ghost-4-60lr",
+      "hack-viking-4-55o"
+    ]
+  },
+  {
+    "name": "Clamp Crab and Crest Leon Dual Pack",
+    "set": "Dual Pack",
+    "released": "2026-07-15",
+    "beys": [
+      "clamp-crab-9-65s",
+      "crest-leon-4-55a"
+    ]
+  },
+  {
+    "name": "Cobalt Dragoon Deluxe Left-Spin String Launcher Set",
+    "set": "Launcher Set",
+    "price": 29.99,
+    "beys": [
+      "cobalt-dragoon-2-60c"
+    ]
+  },
+  {
+    "name": "Coil Orochi and Pearl Tiger Dual Pack",
+    "set": "Dual Pack",
+    "beys": [
+      "coil-orochi-6-60lf",
+      "pearl-tiger-3-85wb"
+    ]
+  },
+  {
+    "name": "Cowl Sphinx and Crest Leon Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2025-05-21",
+    "beys": [
+      "cowl-sphinx-1-80gf",
+      "crest-leon-7-60gn"
+    ]
+  },
+  {
+    "name": "Deluxe String Launcher 2-Pack",
+    "set": "Launcher Set",
+    "price": 59.99,
+    "released": "2026-08-01",
+    "beys": [
+      "cobalt-dragoon-2-60c",
+      "soar-phoenix-9-60gf"
+    ]
+  },
+  {
+    "name": "Drop Attack Battle Set",
+    "set": "Battle Set",
+    "price": 69.99,
+    "released": "2025-05",
+    "beys": [
+      "hover-wyvern-3-85n",
+      "impact-drake-9-60lr"
+    ]
+  },
+  {
+    "name": "Gale Wyvern and Sword Dran Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2025-01-10",
+    "beys": [
+      "gale-wyvern-3-60t",
+      "sword-dran-3-80b"
+    ]
+  },
+  {
+    "name": "Gale Wyvern and Tail Viper Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2024-09-11",
+    "beys": [
+      "gale-wyvern-5-80gb",
+      "tail-viper-3-80hn"
+    ]
+  },
+  {
+    "name": "Grogu and Snowtrooper Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "beys": [
+      "grogu-3-85e",
+      "snowtrooper-7-60o"
+    ]
+  },
+  {
+    "name": "Infinity Rail Battle Set",
+    "set": "Battle Set",
+    "price": 69.99,
+    "released": "2026-10-01",
+    "beys": [
+      "cutter-shinobi-gf",
+      "rampart-aegis-b"
+    ]
+  },
+  {
+    "name": "Iron Man and Thanos Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2024-10",
+    "beys": [
+      "iron-man-4-80b",
+      "thanos-4-60p"
+    ]
+  },
+  {
+    "name": "Knife Shinobi and Keel Shark Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2024-05-30",
+    "beys": [
+      "knife-shinobi-4-80hn",
+      "keel-shark-3-80f"
+    ]
+  },
+  {
+    "name": "Luke Skywalker and Darth Vader Multipack Set",
+    "set": "Multipack",
+    "price": 39.99,
+    "beys": [
+      "luke-skywalker-4-80b",
+      "darth-vader-4-60p"
+    ]
+  },
+  {
+    "name": "Meteoroid Dragoon Deluxe Left-Spin String Launcher Set",
+    "set": "Launcher Set",
+    "price": 29.99,
+    "released": "2026-07-15",
+    "beys": [
+      "meteoroid-dragoon-3-70j"
+    ]
+  },
+  {
+    "name": "Miles Morales and Green Goblin Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2025-09",
+    "beys": [
+      "miles-morales-1-60gn",
+      "green-goblin-9-80ht"
+    ]
+  },
+  {
+    "name": "Mister Fantastic and Doctor Doom Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "beys": [
+      "mister-fantastic-9-65a",
+      "doctor-doom-0-80lo"
+    ]
+  },
+  {
+    "name": "NFL CX Top Pack",
+    "set": "Set",
+    "released": "2026-09-09",
+    "beys": [
+      "afc-6-70h",
+      "nfc-9-60lo"
+    ]
+  },
+  {
+    "name": "Obi-Wan Kenobi and General Grievous Multipack Set",
+    "set": "Multipack",
+    "price": 39.99,
+    "released": "2025-07",
+    "beys": [
+      "obi-wan-kenobi-4-60p",
+      "general-grievous-3-80hn"
+    ]
+  },
+  {
+    "name": "Optimus Primal and Starscream Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2024-07-19",
+    "beys": [
+      "optimus-primal-3-60f",
+      "starscream-3-80n"
+    ]
+  },
+  {
+    "name": "Optimus Prime and Bumblebee Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2026-09-11",
+    "beys": [
+      "optimus-prime-7-70l",
+      "bumblebee-1-60w"
+    ]
+  },
+  {
+    "name": "Optimus Prime and Megatron Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2024-07-19",
+    "beys": [
+      "optimus-prime-4-60p",
+      "megatron-4-80b"
+    ]
+  },
+  {
+    "name": "Pearl Tiger and Gill Shark Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2025-05-21",
+    "beys": [
+      "pearl-tiger-3-60u",
+      "gill-shark-4-70o"
+    ]
+  },
+  {
+    "name": "Rival Rumble Pack",
+    "set": "Set",
+    "price": 74.99,
+    "released": "2026-08-01",
+    "beys": [
+      "pearl-tiger-3-60u",
+      "gill-shark-4-70o",
+      "crest-leon-7-60gn",
+      "sterling-wolf-3-80fb",
+      "fort-hornet-r-7-60t",
+      "wriggle-kraken-s-3-85o"
+    ]
+  },
+  {
+    "name": "Sneak Attack Battle Set",
+    "set": "Battle Set",
+    "released": "2026-05-12",
+    "beys": [
+      "cutter-shinobi-lf",
+      "rampart-aegis-gb"
+    ]
+  },
+  {
+    "name": "Soar Phoenix Deluxe String Launcher Set",
+    "set": "Launcher Set",
+    "price": 29.99,
+    "beys": [
+      "soar-phoenix-9-60gf"
+    ]
+  },
+  {
+    "name": "Spear Scorpio and Tail Viper Dual Pack",
+    "set": "Dual Pack",
+    "released": "2026-07-15",
+    "beys": [
+      "spear-scorpio-0-70z",
+      "tail-viper-3-85lo"
+    ]
+  },
+  {
+    "name": "Spider-Man and Hulk Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2026-07-31",
+    "beys": [
+      "spider-man-6-60r",
+      "hulk-3-85n"
+    ]
+  },
+  {
+    "name": "Spider-Man and Venom Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2024-10",
+    "beys": [
+      "spider-man-3-60f",
+      "venom-3-80n"
+    ]
+  },
+  {
+    "name": "Spinosaurus and Quetzalcoatlus Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2025-08",
+    "beys": [
+      "spinosaurus-3-85a",
+      "quetzalcoatlus-4-55d"
+    ]
+  },
+  {
+    "name": "T. Rex and Mosasaurus Multipack Set",
+    "set": "Multipack",
+    "price": 34.99,
+    "released": "2025-08",
+    "beys": [
+      "t-rex-1-80gb",
+      "mosasaurus-9-60u"
+    ]
+  },
+  {
+    "name": "Tackle Goat and Sword Dran Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2025-10",
+    "beys": [
+      "tackle-goat-2-70n",
+      "sword-dran-3-60f"
+    ]
+  },
+  {
+    "name": "Tail Viper and Sword Dran Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2024-05-30",
+    "beys": [
+      "tail-viper-5-80o",
+      "sword-dran-3-60f"
+    ]
+  },
+  {
+    "name": "The Mandalorian and Moff Gideon Multipack Set",
+    "set": "Multipack",
+    "price": 39.99,
+    "beys": [
+      "the-mandalorian-3-60f",
+      "moff-gideon-3-80n"
+    ]
+  },
+  {
+    "name": "Victory Grip Launcher Set",
+    "set": "Launcher Set",
+    "price": 34.99,
+    "beys": [
+      "saber-samurai-2-70l"
+    ]
+  },
+  {
+    "name": "X-treme Expansion Pack",
+    "set": "Set",
+    "released": "2025-12-17",
+    "beys": [
+      "mail-knight-3-85bs"
+    ]
+  },
+  {
+    "name": "Xtreme Battle Set",
+    "set": "Battle Set",
+    "price": 69.99,
+    "released": "2024-05-30",
+    "beys": [
+      "dagger-dran-4-60r",
+      "tusk-mammoth-3-60t"
+    ]
+  },
+  {
+    "name": "Yell Kong and Helm Knight Dual Pack",
+    "set": "Dual Pack",
+    "price": 22.99,
+    "released": "2024-09-11",
+    "beys": [
+      "yell-kong-3-60gb",
+      "helm-knight-5-80t"
+    ]
+  },
+  {
+    "name": "Yggdrasil Team Pack",
+    "set": "Set",
+    "released": "2026-03-26",
+    "beys": [
+      "rudder-phoenix-9-70g",
+      "sting-unicorn-5-60gp",
+      "cowl-sphinx-9-80gn"
+    ]
+  }
+]

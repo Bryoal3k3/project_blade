@@ -41,6 +41,13 @@ const PATHS = {
       <rect x="13" y="13" width="8" height="8" rx="2" />
     </>
   ),
+  build: (
+    <>
+      <path d="M12 3 3 7.5l9 4.5 9-4.5z" />
+      <path d="m3 12 9 4.5 9-4.5M3 16.5 12 21l9-4.5" {...stroke} strokeWidth="2" />
+    </>
+  ),
+  check: <path d="m4.5 12.5 5 5 10-11" {...stroke} strokeWidth="3" />,
   box: (
     <>
       <path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z" {...stroke} strokeWidth="2" />
