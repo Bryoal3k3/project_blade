@@ -20,10 +20,15 @@ export function partPhoto(bey: Bey, part: PartKey): string | undefined {
   return (shared && PHOTOS[`parts/${shared}`]) ?? PHOTOS[`${bey.id}.${part}`];
 }
 
+/** Drawn stand-ins and photos taken from straight above can spin; angled photos can't. */
+export function canSpin(bey: Bey): boolean {
+  return !PHOTOS[bey.id] || Boolean(bey.photoSpins);
+}
+
 /** The Bey's photo when there is one, otherwise its drawn stand-in. */
 export function BeyPicture({ bey, spin = false }: { bey: Bey; spin?: boolean }) {
   const photo = PHOTOS[bey.id];
-  const spinning = spin && (!photo || bey.photoSpins);
+  const spinning = spin && canSpin(bey);
   const className = ['bey-pic', spinning && 'is-spinning', bey.spin === 'left' && 'is-left'].filter(Boolean).join(' ');
 
   if (photo) return <img className={className} src={photo} alt="" draggable={false} />;

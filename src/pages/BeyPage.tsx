@@ -4,7 +4,7 @@ import { SET_INFO, STAT_INFO, TYPE_INFO } from '../data/meta';
 import { comboName, displayName, otherName, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '../data';
 import type { Collection } from '../hooks/useCollection';
 import { canSpeak, speak } from '../lib/speak';
-import { BeyPicture } from '../components/BeyPicture';
+import { SpinStage } from '../components/SpinStage';
 import { Icon } from '../components/Icon';
 import { PartSection, partLabel, statKeys } from '../components/PartSection';
 import { typeVars } from '../components/TypeChips';
@@ -75,7 +75,7 @@ export function BeyPage({ bey, backHref, collection }: Props) {
           <a className="icon-btn" href={backHref} aria-label="Back">
             <Icon name="back" />
           </a>
-          <span className="code-chip">{bey.line}</span>
+          <span className={`code-chip line-chip line-${bey.line.toLowerCase()}`}>{bey.line}</span>
           <span className="spacer" />
           {talk && (
             <button type="button" className="icon-btn" aria-label="Read out loud" onClick={() => speak(spokenIntro(bey))}>
@@ -90,9 +90,7 @@ export function BeyPage({ bey, backHref, collection }: Props) {
           </button>
         </div>
 
-        <div className="stage">
-          <BeyPicture bey={bey} spin />
-        </div>
+        <SpinStage bey={bey} />
 
         <div className="bey-id">
           <span className="type-badge">
