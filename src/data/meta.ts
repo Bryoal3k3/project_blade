@@ -39,6 +39,8 @@ export const SET_INFO: Record<SetKind, string> = {
   Booster: 'Bey only',
   'Random Booster': 'Surprise Bey',
   'Deck Set': 'Beys + parts',
+  'Dual Pack': '2 Beys, no launcher',
+  Multipack: '2 Beys + launchers',
 };
 
 /** Bits without a hand-written description get one from their type. */

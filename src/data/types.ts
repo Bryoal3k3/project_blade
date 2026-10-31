@@ -1,7 +1,7 @@
 export const BEY_TYPES = ['attack', 'defense', 'stamina', 'balance'] as const;
 export type BeyType = (typeof BEY_TYPES)[number];
 
-export const SET_KINDS = ['Starter', 'Booster', 'Random Booster', 'Deck Set'] as const;
+export const SET_KINDS = ['Starter', 'Booster', 'Random Booster', 'Deck Set', 'Dual Pack', 'Multipack'] as const;
 export type SetKind = (typeof SET_KINDS)[number];
 
 export const LINES = ['BX', 'UX', 'CX'] as const;
@@ -51,7 +51,7 @@ export interface Blade extends PartData<PartStats> {
 }
 
 export interface Ratchet extends PartData<PartStats> {
-  /** The ratchet code, e.g. "4-70": 4 points, 7.0 mm tall. */
+  /** The ratchet code, e.g. "4-70": 4 points, 7.0 mm tall. Special ratchets use a letter, like "M-85". */
   name: string;
 }
 
@@ -81,6 +81,8 @@ export interface Bey {
   set: SetKind;
   type: BeyType;
   spin: 'right' | 'left';
+  /** Dual Packs and Multipack Sets this Bey comes in. */
+  packs?: string[];
   /** First release in Canada (or the US), as "2026-02-12" or "2026-02". */
   released?: string;
   /** Total weight in grams. */

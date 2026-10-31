@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Imports every Beyblade X that Hasbro sells on its own (Starter Packs, Booster Packs, X-Over)
-// from the Beyblade fan wiki: names, parts, stats, release dates and pictures.
+// Imports every Beyblade X that Hasbro sells (Starter Packs, Booster Packs, X-Over, and the Beys
+// inside Dual Packs and Multipack Sets) from the Beyblade fan wiki: names, parts, stats, release
+// dates and pictures.
 //
 //   npm run import            update src/data/beys.json and download missing pictures
 //   npm run import -- --force re-download every picture
@@ -20,11 +21,13 @@ const HEADERS = { 'user-agent': 'ProjectBlade/0.1 (family Beyblade catalog app)'
 const LIST_PAGE = 'List of Beyblade X products (Hasbro)';
 const FORCE = process.argv.includes('--force');
 
-/** Which sections of the Hasbro list hold single Beys, and how each is sold. */
+/** Which sections of the Hasbro list hold Beys, how each is sold, and whether it is a pack of several. */
 const SECTIONS = [
-  ['Starter Packs', 'Starter'],
-  ['Booster Packs', 'Booster'],
-  ['X-Over Project', 'Starter'],
+  ['Starter Packs', 'Starter', false],
+  ['Booster Packs', 'Booster', false],
+  ['X-Over Project', 'Starter', false],
+  ['Dual Packs', 'Dual Pack', true],
+  ['Multipack Sets', 'Multipack', true],
 ];
 
 /** Infobox field -> wiki page prefix and the label printed on the box. */
@@ -36,6 +39,8 @@ const PIECES = {
   AssistBlade: { page: 'Assist Blade', label: 'Auxiliary Blade' },
 };
 const LINES = { 'Basic Line': 'BX', 'Unique Line': 'UX', 'Custom Line': 'CX' };
+/** Product photos taken from an angle whose file names don't say so. Their Beys don't spin. */
+const SIDE_VIEW_PHOTOS = new Set(['coil-orochi-6-60lf']);
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 const ART = {
   attack: { shape: 'blade', accents: ['#FFC24B', '#E8ECF5', '#FF9A3D', '#3EC6FF'] },
@@ -193,9 +198,35 @@ function hasbroProducts(listText) {
     }
     const link = /^\|\s*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/.exec(line);
     if (!link || link[1].startsWith('File:')) continue;
-    const set = SECTIONS.find(([key]) => section.includes(key))?.[1];
-    if (set && !products.some((p) => p.title === link[1])) products.push({ title: link[1], set });
+    const match = SECTIONS.find(([key]) => section.includes(key));
+    if (match && !products.some((p) => p.title === link[1])) products.push({ title: link[1], set: match[1], pack: match[2] });
   }
+  return products;
+}
+
+/** Bey pages linked from a pack page's Contents section. */
+function packContents(text = '') {
+  const section = /==\s*Contents\s*==([\s\S]*?)(?:\n==|$)/.exec(text)?.[1] ?? '';
+  return [...section.matchAll(/^\*\s*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/gm)].map((m) => m[1].trim());
+}
+
+/** Single Beys first, then the Beys inside each pack. A Bey sold both ways lists its packs. */
+async function allProducts(listText) {
+  const listed = hasbroProducts(listText);
+  const products = listed.filter((p) => !p.pack).map((p) => ({ title: p.title, set: p.set, packs: [] }));
+  const packs = listed.filter((p) => p.pack);
+  const packPages = await pages(packs.map((p) => p.title));
+  for (const pack of packs) {
+    const page = packPages.get(pack.title);
+    const fields = infobox(page.text, 'Product Infobox') ?? {};
+    const released = date(fields.ReleaseCA) ?? date(fields.ReleaseUS);
+    for (const title of packContents(page.text)) {
+      let product = products.find((p) => p.title === title);
+      if (!product) products.push((product = { title, set: pack.set, packs: [], packReleased: released }));
+      if (!product.packs.includes(pack.title)) product.packs.push(pack.title);
+    }
+  }
+  console.log(`Hasbro list: ${listed.length - packs.length} single Beys and ${packs.length} packs, ${products.length} Beys in all`);
   return products;
 }
 
@@ -257,8 +288,7 @@ async function savePicture(url, file, size) {
 
 async function main() {
   const list = await pages([LIST_PAGE]);
-  const products = hasbroProducts(list.get(LIST_PAGE).text);
-  console.log(`Hasbro list: ${products.length} single Beys`);
+  const products = await allProducts(list.get(LIST_PAGE).text);
 
   const productPages = await pages(products.map((p) => p.title));
   const parsed = [];
@@ -267,7 +297,8 @@ async function main() {
     const page = productPages.get(product.title);
     const fields = infobox(page.text, 'Beyblade Infobox');
     if (!fields) {
-      console.warn(`  skipped ${product.title}: no Beyblade infobox`);
+      // Pack contents also link launchers and other extras; only Beys have this infobox.
+      if (!product.packs.length) console.warn(`  skipped ${product.title}: no Beyblade infobox`);
       continue;
     }
     const part = (key, prefix) => (fields[key] ? `${prefix} - ${plain(fields[key])}` : undefined);
@@ -361,13 +392,14 @@ async function main() {
       set: product.set,
       type,
       spin: /left/i.test(fields.SpinDirection ?? '') ? 'left' : 'right',
-      released: date(fields.ReleaseCA) ?? date(fields.ReleaseUS),
+      released: date(fields.ReleaseCA) ?? date(fields.ReleaseUS) ?? product.packReleased,
+      ...(product.packs.length ? { packs: product.packs } : {}),
       weight: grams(fields.Weight),
       statsFrom: Object.keys(fromBox).length ? 'Hasbro box' : 'Beyblade wiki',
       blade,
       ...(ratchet ? { ratchet } : {}),
       bit,
-      photoSpins: picture ? !/angled|side view|contents|box/i.test(picture) : undefined,
+      photoSpins: picture ? !/angled|side view|contents|box/i.test(picture) && !SIDE_VIEW_PHOTOS.has(id) : undefined,
       art: { shape: art.shape, blades: 3 + (hash(id) % 4), accent: art.accents[hash(id) % art.accents.length] },
     };
     beys.push(JSON.parse(JSON.stringify(bey)));

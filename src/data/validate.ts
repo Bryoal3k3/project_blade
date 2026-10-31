@@ -2,7 +2,7 @@ import { ART_SHAPES, BEY_TYPES, LINES, SET_KINDS, STATS_SOURCES, type Bey, type 
 import { BIT_STAT_KEYS, PART_STAT_KEYS, STAT_MAX } from './meta';
 
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const RATCHET = /^\d-\d{2}$/;
+const RATCHET = /^[0-9A-Z]-\d{2}$/;
 const BIT_CODE = /^[A-Z][A-Za-z]{0,2}$/;
 const DATE = /^\d{4}-\d{2}(-\d{2})?$/;
 const HEX = /^#[0-9A-Fa-f]{6}$/;
@@ -27,6 +27,10 @@ export function validateBeys(beys: Bey[]): string[] {
     if (bey.spin !== 'right' && bey.spin !== 'left') fail(`spin "${bey.spin}" must be right or left`);
     if (bey.released !== undefined && !DATE.test(bey.released)) fail(`released "${bey.released}" should look like 2026-02-12 or 2026-02`);
     if (bey.weight !== undefined && !(bey.weight > 0 && bey.weight < 100)) fail(`weight ${bey.weight} should be in grams`);
+    if (bey.packs !== undefined && !(Array.isArray(bey.packs) && bey.packs.length && bey.packs.every((p) => typeof p === 'string' && p.trim()))) {
+      fail('packs must be a list of pack names');
+    }
+    if ((bey.set === 'Dual Pack' || bey.set === 'Multipack') && !bey.packs?.length) fail(`a ${bey.set} Bey needs the name of its pack in packs`);
 
     if (!bey.blade) fail('blade is missing');
     if (bey.blade?.integratedRatchet && bey.ratchet) fail('has a built-in ratchet and a separate one');

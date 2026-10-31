@@ -6,7 +6,7 @@ It runs in the phone's browser and can be added to the home screen like a normal
 
 ## What it does
 
-- **Browse**: every Hasbro Beyblade X in a grid, newest first, with big buttons to show only Attack, Defense, Stamina or Balance types. New releases get a "New" badge and upcoming ones a "Soon" badge.
+- **Browse**: every Hasbro Beyblade X (including the ones in Dual Packs and Multipacks) in a grid, newest first, with big buttons to show only Attack, Defense, Stamina or Balance types. New releases get a "New" badge and upcoming ones a "Soon" badge.
 - **Bey page**: the Bey spinning in a stadium, its type, its combo (like `4-70LF`), and stats for the Blade, Ratchet and Bit laid out like the back of the box.
 - **Read to me**: the speaker button reads the name and stats out loud.
 - **My Beys and Wish list**: tap the star for Beys you have and the heart for Beys you want. Saved on the device.
@@ -22,7 +22,7 @@ npm run build      # makes the finished app in dist/
 
 ## Where the Beys come from
 
-The app lists every Beyblade X that Hasbro sells on its own (Starter Packs, Booster Packs and the X-Over Beys). They are imported from the [Beyblade fan wiki](https://beyblade.fandom.com/wiki/List_of_Beyblade_X_products_(Hasbro)): names, parts, stats, release dates and pictures.
+The app lists every Beyblade X that Hasbro sells: Starter Packs, Booster Packs and the X-Over Beys, plus the Beys that come in Dual Packs and Multipack Sets (Marvel, Star Wars, Transformers, Jurassic World and more). A Bey's page says which pack it comes in. They are imported from the [Beyblade fan wiki](https://beyblade.fandom.com/wiki/List_of_Beyblade_X_products_(Hasbro)): names, parts, stats, release dates and pictures.
 
 ```sh
 npm run import            # refresh src/data/beys.json and download new pictures

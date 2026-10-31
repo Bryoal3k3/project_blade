@@ -52,6 +52,15 @@ describe('Bey data', () => {
     }
   });
 
+  it('includes the Beys from Dual Packs and Multipack Sets', () => {
+    const spidey = findBey('spider-man-3-60f')!;
+    expect(spidey.set).toBe('Multipack');
+    expect(spidey.packs).toEqual(['Spider-Man and Venom Multipack Set']);
+    expect(findBey('knife-shinobi-4-80hn')!.set).toBe('Dual Pack');
+    expect(findBey('sword-dran-3-60f')!.packs).toContain('Tail Viper and Sword Dran Dual Pack');
+    expect(new Set(BEYS.map((bey) => bey.id)).size).toBe(BEYS.length);
+  });
+
   it('handles a blade with a built-in ratchet', () => {
     const bey = findBey('valor-bison-fb')!;
     expect(bey.ratchet).toBeUndefined();
@@ -95,6 +104,7 @@ describe('helpers', () => {
   it('reads ratchet codes', () => {
     expect(parseRatchet('4-70')).toEqual({ points: 4, height: 70 });
     expect(parseRatchet('3-60')).toEqual({ points: 3, height: 60 });
+    expect(parseRatchet('M-85')).toEqual({ points: undefined, height: 85 });
   });
 
   it('lights the middle height block for 70, like the box', () => {

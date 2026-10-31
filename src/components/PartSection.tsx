@@ -37,7 +37,9 @@ function partWhat(bey: Bey, part: PartKey): string {
   }
   if (part === 'bit') return `${PART_INFO.bit.what} ${bitDescription(bey)}`.trim();
   const { points, height } = parseRatchet(bey.ratchet?.name ?? '');
-  return `${PART_INFO.ratchet.what} ${bey.ratchet?.name} means ${points} ${points === 1 ? 'point' : 'points'}, ${(height / 10).toFixed(1)} mm tall.`;
+  const tall = `${(height / 10).toFixed(1)} mm tall`;
+  if (points === undefined) return `${PART_INFO.ratchet.what} ${bey.ratchet?.name} is a special ratchet, ${tall}.`;
+  return `${PART_INFO.ratchet.what} ${bey.ratchet?.name} means ${points} ${points === 1 ? 'point' : 'points'}, ${tall}.`;
 }
 
 function StatBar({ part, stat, value }: { part: PartKey; stat: StatKey; value: number }) {

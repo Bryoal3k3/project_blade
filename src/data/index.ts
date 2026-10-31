@@ -31,11 +31,20 @@ export function comboName(bey: Bey): string {
   return `${bey.ratchet?.name ?? ''}${bey.bit.code}`;
 }
 
-/** Reads a ratchet code like "4-70": 4 points, 7.0 mm tall, shown as 70 on the box. */
-export function parseRatchet(name: string): { points: number; height: number } {
-  const match = /^(\d+)-(\d+)$/.exec(name);
-  if (!match) return { points: 0, height: 0 };
-  return { points: Number(match[1]), height: Number(match[2]) };
+/**
+ * Reads a ratchet code like "4-70": 4 points, 7.0 mm tall, shown as 70 on the box.
+ * Special ratchets have a letter instead of a number of points, like "M-85".
+ */
+export function parseRatchet(name: string): { points?: number; height: number } {
+  const match = /^([0-9A-Z])-(\d+)$/.exec(name);
+  if (!match) return { height: 0 };
+  const points = Number(match[1]);
+  return { points: Number.isNaN(points) ? undefined : points, height: Number(match[2]) };
+}
+
+/** True for Beys sold only inside a Dual Pack or Multipack Set. */
+export function packOnly(bey: Bey): boolean {
+  return bey.set === 'Dual Pack' || bey.set === 'Multipack';
 }
 
 /** Which of the 5 height blocks lights up (1-5). */

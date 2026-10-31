@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { Bey, PartKey } from '../data/types';
 import { SET_INFO, STAT_INFO, TYPE_INFO } from '../data/meta';
-import { comboName, displayName, otherName, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '../data';
+import { comboName, displayName, otherName, packOnly, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '../data';
 import type { Collection } from '../hooks/useCollection';
 import { canSpeak, speak } from '../lib/speak';
 import { SpinStage } from '../components/SpinStage';
@@ -102,7 +102,7 @@ export function BeyPage({ bey, backHref, collection }: Props) {
           {alsoCalled && <span className="bey-alt">Takara Tomy name: {alsoCalled}</span>}
         </div>
 
-        <div className="facts">
+        <div className={`facts facts-${2 + Number(weight !== undefined) + Number(Boolean(bey.released))}`}>
           <div className="fact">
             <span className="fact-label">Spins</span>
             <span className="fact-value fact-spin">
@@ -127,6 +127,16 @@ export function BeyPage({ bey, backHref, collection }: Props) {
             </div>
           )}
         </div>
+
+        {bey.packs && (
+          <p className="packs-note">
+            <Icon name="box" />
+            <span>
+              {packOnly(bey) ? 'Comes in the ' : 'Also in the '}
+              {bey.packs.join(' and the ')}
+            </span>
+          </p>
+        )}
 
         {partsOf(bey).map((part) => (
           <PartSection key={part} bey={bey} part={part} onSpeak={talk ? () => speak(spokenPart(bey, part)) : undefined} />

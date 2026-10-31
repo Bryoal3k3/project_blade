@@ -361,12 +361,16 @@ a, button { -webkit-touch-callout: none; user-select: none; }
 .bey-alt { font-size: 14.5px; color: var(--muted); }
 
 .facts { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; }
+.facts-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 520px) { .facts-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .fact { display: grid; gap: 2px; padding: 10px 12px; border-radius: 14px; background: var(--surface); min-width: 0; }
 .fact-label { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .fact-value { font-weight: 700; font-size: 15.5px; line-height: 1.2; }
 .fact-spin { display: inline-flex; align-items: center; gap: 6px; }
 .fact-spin .ic { width: 18px; height: 18px; color: var(--tc); }
 .flip { transform: scaleX(-1); }
+.packs-note { margin-top: 10px; display: flex; align-items: flex-start; gap: 8px; padding: 10px 12px; border-radius: 14px; background: var(--surface); color: var(--muted); font-size: 15px; font-weight: 700; }
+.packs-note .ic { width: 20px; height: 20px; color: var(--stat); margin-top: 1px; }
 
 /* One panel per part, laid out like the back of the box. */
 .part {

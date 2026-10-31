@@ -97,6 +97,21 @@ describe('App', () => {
     expect((screen.getByRole('slider', { name: /Spin speed/ }) as HTMLInputElement).value).toBe('8');
   });
 
+  it('says which pack a Bey comes in', () => {
+    render(<App />);
+    go('#/bey/spider-man-3-60f');
+    expect(screen.getByText('Comes in the Spider-Man and Venom Multipack Set')).toBeTruthy();
+    expect(screen.getByText('2 Beys + launchers')).toBeTruthy();
+    go('#/bey/sword-dran-3-60f');
+    expect(screen.getByText(/^Also in the Tail Viper and Sword Dran Dual Pack/)).toBeTruthy();
+  });
+
+  it('explains special letter ratchets', () => {
+    render(<App />);
+    go('#/bey/brace-triceratops-m-85bs');
+    expect(screen.getByText(/M-85 is a special ratchet, 8\.5 mm tall\./)).toBeTruthy();
+  });
+
   it('has no throttle when the photo is taken from the side', () => {
     render(<App />);
     go('#/bey/seize-jaguar-hn');
