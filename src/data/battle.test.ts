@@ -5,10 +5,10 @@ import { BEYS, findBey } from '.';
 
 const base: Fighter = { attack: 80, defense: 80, stamina: 80, dash: 20, burst: 50, weight: 44, type: 'balance' };
 
-function winRate(a: Fighter, b: Fighter, rounds = 400): number {
+function winRate(a: Fighter, b: Fighter, rounds = 400, launch?: [number, number]): number {
   const random = seededRandom(7);
   let wins = 0;
-  for (let i = 0; i < rounds; i++) if (simulateBattle(a, b, random).winner === 0) wins++;
+  for (let i = 0; i < rounds; i++) if (simulateBattle(a, b, random, launch).winner === 0) wins++;
   return wins / rounds;
 }
 
@@ -45,7 +45,7 @@ describe('battle simulation', () => {
 
   it('lets stronger stats win more often', () => {
     expect(winRate({ ...base, attack: 140, dash: 40 }, { ...base, attack: 30, defense: 30 })).toBeGreaterThan(0.6);
-    expect(winRate({ ...base, stamina: 150 }, { ...base, stamina: 30 })).toBeGreaterThan(0.6);
+    expect(winRate({ ...base, stamina: 150 }, { ...base, stamina: 30 }, 1000)).toBeGreaterThan(0.62);
   });
 
   it('gives the weaker Bey a real chance, even against the strongest', () => {
@@ -69,6 +69,12 @@ describe('battle simulation', () => {
       if (ticks.some((t) => t.energy[1 - winner] - t.energy[winner] >= 8)) comebacks++;
     }
     expect(comebacks / decided).toBeGreaterThan(0.35);
+  });
+
+  it('uses the launch powers the players got, and a better launch wins more', () => {
+    expect(simulateBattle(base, base, seededRandom(1), [1.1, 0.9]).launch).toEqual([1.1, 0.9]);
+    expect(winRate(base, base, 600, [1.1, 0.9])).toBeGreaterThan(0.7);
+    expect(winRate(base, base, 600, [1.1, 1])).toBeGreaterThan(0.58);
   });
 
   it('launches each Bey with a little more or less power every round', () => {
