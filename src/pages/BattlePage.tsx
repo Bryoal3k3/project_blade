@@ -6,6 +6,7 @@ import type { Collection } from '../hooks/useCollection';
 import type { Saved } from '../hooks/useSaved';
 import { unlockSound, playFinish, playTick } from '../lib/sound';
 import { BattleArena } from '../components/BattleArena';
+import { LaunchMeter } from '../components/LaunchMeter';
 import { FINISH_ICON, FaceOff, Pips, SIDE_NAMES, Scoreboard, Spotlight } from '../components/BattleBits';
 import { BeyPicture } from '../components/BeyPicture';
 import { FighterPicker, resolveFighter, type FighterRef, type ResolvedFighter } from '../components/FighterPicker';
@@ -95,7 +96,7 @@ function AppBattle({ collection, saved }: { collection: Collection; saved: Saved
   const [score, setScore] = useState<[number, number]>([0, 0]);
   const [log, setLog] = useState<RoundLog[]>([]);
   const [round, setRound] = useState<{ result: BattleResult; n: number } | null>(null);
-  const [phase, setPhase] = useState<'setup' | 'fight' | 'result'>('setup');
+  const [phase, setPhase] = useState<'setup' | 'launch' | 'fight' | 'result'>('setup');
   const [shuffling, setShuffling] = useState(false);
   const shuffleTimer = useRef<number | undefined>(undefined);
   const fighters = [resolveFighter(sides[0], saved.builds), resolveFighter(sides[1], saved.builds)] as const;
@@ -117,7 +118,13 @@ function AppBattle({ collection, saved }: { collection: Collection; saved: Saved
   const fight = () => {
     if (!fighters[0] || !fighters[1]) return;
     unlockSound();
-    const result = simulateBattle(fighterFrom(fighters[0].bey), fighterFrom(fighters[1].bey));
+    setPhase('launch');
+  };
+
+  /** Both Beys are launched: play the round with those launch powers. */
+  const launched = (launch: [number, number]) => {
+    if (!fighters[0] || !fighters[1]) return;
+    const result = simulateBattle(fighterFrom(fighters[0].bey), fighterFrom(fighters[1].bey), Math.random, launch);
     setRound((prev) => ({ result, n: (prev?.n ?? 0) + 1 }));
     setPhase('fight');
   };
@@ -179,6 +186,25 @@ function AppBattle({ collection, saved }: { collection: Collection; saved: Saved
           setPicking(null);
         }}
       />
+    );
+  }
+
+  if (phase === 'launch' && fighters[0] && fighters[1]) {
+    return (
+      <div className="battle">
+        <Scoreboard
+          beys={[fighters[0].bey, fighters[1].bey]}
+          names={[fighters[0].name, fighters[1].name]}
+          score={score}
+          center={
+            <>
+              <span>Round</span>
+              <b>{(round?.n ?? 0) + 1}</b>
+            </>
+          }
+        />
+        <LaunchMeter key={round?.n ?? 0} beys={[fighters[0].bey, fighters[1].bey]} names={[fighters[0].name, fighters[1].name]} onDone={launched} />
+      </div>
     );
   }
 

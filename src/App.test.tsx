@@ -178,6 +178,17 @@ describe('App', () => {
     pickFirst('red');
     pickFirst('blue');
     fireEvent.click(screen.getByRole('button', { name: 'Let it rip!' }));
+    // Each side launches: the marker sweeps, and a tap stops it.
+    for (const side of ['red', 'blue']) {
+      act(() => {
+        vi.advanceTimersByTime(600);
+      });
+      fireEvent.click(screen.getByRole('button', { name: `Launch the ${side} Bey` }));
+      expect(document.querySelector('.launch-result')?.textContent).toMatch(/Super Launch!|rip/);
+      act(() => {
+        vi.advanceTimersByTime(1200);
+      });
+    }
     act(() => {
       vi.advanceTimersByTime(30000);
     });

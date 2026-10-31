@@ -13,6 +13,8 @@ export const FINISH_POINTS: Record<Finish, number> = { spin: 1, over: 2, burst: 
 export const FINISH_LABELS: Record<Finish, string> = { spin: 'Spin Finish', over: 'Over Finish', burst: 'Burst Finish', xtreme: 'Xtreme Finish' };
 /** A match is first to this many points. */
 export const POINTS_TO_WIN = 4;
+/** A launch this strong (1 is normal) is a Super Launch. */
+export const SUPER_LAUNCH = 1.05;
 
 export interface Fighter {
   attack: number;
@@ -91,34 +93,36 @@ const clamp = (value: number, low: number, high: number) => Math.min(high, Math.
 /**
  * A round, moment by moment. Stats tip the odds of every crash, but each crash is its own coin
  * toss and a hard launch can beat better stats, so the lead can swing back and forth and the
- * weaker Bey still wins sometimes.
+ * weaker Bey still wins sometimes. Launch powers come from the players when given (0.9 weak,
+ * 1.1 perfect); otherwise each rip lands somewhere in that range at random.
  */
-export function simulateBattle(a: Fighter, b: Fighter, random: () => number = Math.random): BattleResult {
+export function simulateBattle(a: Fighter, b: Fighter, random: () => number = Math.random, launchPower?: [number, number]): BattleResult {
   const fighters = [a, b] as const;
-  // A rip is never quite the same twice: 0.9 is a weak launch, 1.1 a great one, most land near 1.
   const rip = () => 0.9 + 0.1 * (random() + random());
-  const launch: [number, number] = [rip(), rip()];
+  const launch: [number, number] = launchPower ? [launchPower[0], launchPower[1]] : [rip(), rip()];
   const energy: [number, number] = [0, 1].map((i) => (100 + (fighters[i].weight - 44) * 0.8) * launch[i]) as [number, number];
   const edge = typeEdge(a.type, b.type);
   // Stamina sets how fast a Bey slows down on its own; a type that beats the other's lasts a bit longer.
-  const decay = fighters.map((f, i) => (0.3 + 0.5 * (1 - Math.min(1, f.stamina / 140))) * (edge === i ? 0.92 : 1));
+  const decay = fighters.map((f, i) => (0.25 + 0.6 * (1 - Math.min(1, f.stamina / 140))) * (edge === i ? 0.92 : 1));
   // How much of the stadium a Bey covers: attackers and dashers roam and cause more crashes.
   const aggression = fighters.map((f) => Math.min(1.1, (f.attack / 150) * 0.6 + (f.dash / 100) * 0.6));
   // Crash strength: mostly attack, some defense, a little weight.
   const clout = fighters.map((f) => f.attack * 0.6 + f.defense * 0.4 + f.weight * 0.5);
-  const statOdds = 0.5 + 0.3 * versus(clout[0], clout[1]) + (edge === null ? 0 : edge === 0 ? 0.07 : -0.07);
+  // A harder launch spins faster (more energy above) and hits harder (better odds in every push and crash).
+  const ripEdge = launch[0] - launch[1];
+  const statOdds = 0.5 + 0.42 * versus(clout[0], clout[1]) + (edge === null ? 0 : edge === 0 ? 0.07 : -0.07) + 0.7 * ripEdge;
   const ticks: Tick[] = [];
   let railBoost: 0 | 1 | undefined;
   // The battle goes in pushes: one Bey takes over for a moment, then the other fights back.
-  // Better stats win more pushes, and a Bey that has fallen behind is more likely to get the next one.
+  // Better stats win more pushes; a Bey that has fallen behind gets a small nudge toward the next one.
   let momentum: 0 | 1 = random() < statOdds ? 0 : 1;
   let pushLeft = 5 + Math.floor(random() * 8);
 
   for (let t = 0; t < MAX_TICKS; t++) {
     if (--pushLeft <= 0) {
       let odds = statOdds;
-      if (energy[0] < energy[1] - 8) odds += 0.22;
-      if (energy[1] < energy[0] - 8) odds -= 0.22;
+      if (energy[0] < energy[1] - 8) odds += 0.1;
+      if (energy[1] < energy[0] - 8) odds -= 0.1;
       momentum = random() < clamp(odds, 0.2, 0.8) ? 0 : 1;
       pushLeft = 5 + Math.floor(random() * 8);
     }
@@ -128,7 +132,7 @@ export function simulateBattle(a: Fighter, b: Fighter, random: () => number = Ma
     if (random() < 0.18 + 0.2 * Math.max(...aggression) + (t < WARM_UP_TICKS ? 0.15 : 0)) {
       tick.hit = true;
       // The odds that Bey 0 wins this crash: whoever is pushing usually does, stats and a rail dash help.
-      let odds = (momentum === 0 ? 0.72 : 0.28) + 0.12 * versus(clout[0], clout[1]);
+      let odds = (momentum === 0 ? 0.72 : 0.28) + 0.22 * versus(clout[0], clout[1]) + 0.4 * ripEdge;
       if (railBoost !== undefined) odds += railBoost === 0 ? 0.08 : -0.08;
       odds = clamp(odds, 0.15, 0.85);
       const winner: 0 | 1 = random() < odds ? 0 : 1;

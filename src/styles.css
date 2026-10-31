@@ -1072,6 +1072,69 @@ a, button { -webkit-touch-callout: none; user-select: none; }
 .finish-banner > span:last-child { font-weight: 700; font-size: 15px; color: var(--side, var(--ink)); }
 @keyframes banner-pop { from { transform: translate(-50%, -50%) scale(.4); opacity: 0; } to { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
 
+/* Launch: a marker sweeps the bar, and a tap in the orange middle is a Super Launch. */
+.launcher { display: grid; gap: 10px; }
+.launch {
+  position: relative;
+  display: grid; justify-items: center; gap: 8px;
+  width: 100%;
+  padding: 16px 16px 18px;
+  border: 2px solid var(--side);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--side) 32%, transparent), transparent 60%),
+    linear-gradient(170deg, color-mix(in srgb, var(--side) 18%, var(--surface)), var(--surface-sunk) 85%);
+  box-shadow: 0 0 26px color-mix(in srgb, var(--side) 30%, transparent);
+  color: var(--ink);
+  text-align: center;
+  touch-action: manipulation;
+  animation: spot-in .35s cubic-bezier(.2, 1.4, .4, 1) both;
+}
+.launch:active { transform: scale(.99); }
+.launch.is-super { box-shadow: 0 0 44px rgba(255, 178, 61, .75); border-color: var(--star); }
+.launch-head { display: grid; justify-items: center; gap: 6px; }
+.launch-name { font-family: var(--f-display); font-weight: 700; font-size: 20px; line-height: 1.05; text-transform: uppercase; overflow-wrap: anywhere; }
+.launch-pic { width: 120px; height: 120px; display: grid; place-items: center; }
+.launch-pic > img, .launch-pic > svg { width: 120px; height: 120px; object-fit: contain; display: block; filter: drop-shadow(0 0 14px var(--side)); }
+.launch-track {
+  position: relative;
+  width: 100%; height: 26px;
+  margin-top: 10px;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #2A3660 0 12.5%, #7A4A2A 12.5% 25%, #D9742A 25% 37.5%, #FFB23D 37.5% 62.5%, #D9742A 62.5% 75%, #7A4A2A 75% 87.5%, #2A3660 87.5%);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .35), inset 0 2px 6px rgba(0, 0, 0, .5);
+}
+.launch-zone { position: absolute; left: 37.5%; right: 37.5%; top: -3px; bottom: -3px; border-radius: 8px; border: 2px solid #FFF3B0; box-shadow: 0 0 14px rgba(255, 178, 61, .8); animation: zone-glow 1s ease-in-out infinite; }
+@keyframes zone-glow { 50% { box-shadow: 0 0 26px rgba(255, 178, 61, 1); } }
+.launch-marker {
+  position: absolute; left: 0; top: -9px;
+  width: 8px; height: 44px;
+  margin-left: -4px;
+  border-radius: 4px;
+  background: #FFFFFF;
+  box-shadow: 0 0 10px #FFFFFF, 0 0 20px rgba(255, 255, 255, .6);
+}
+.is-launched .launch-marker { animation: marker-pop .35s cubic-bezier(.2, 1.6, .4, 1) both; }
+@keyframes marker-pop { from { transform: scaleY(1.7); } }
+.launch-ends { width: 100%; display: flex; justify-content: space-between; font-family: var(--f-display); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.launch-ends span:nth-child(2) { color: var(--stat); }
+.launch-cue { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; font-family: var(--f-display); font-weight: 700; font-style: italic; font-size: 24px; text-transform: uppercase; color: var(--stat); animation: cue-pulse .8s ease-in-out infinite; }
+.launch-cue .ic { width: 22px; height: 22px; }
+@keyframes cue-pulse { 50% { transform: scale(1.06); opacity: .8; } }
+.launch-result { margin-top: 4px; font-family: var(--f-display); font-weight: 700; font-style: italic; font-size: 26px; line-height: 1.1; text-transform: uppercase; animation: result-pop .4s cubic-bezier(.2, 1.6, .4, 1) both; }
+@keyframes result-pop { from { transform: scale(.4); opacity: 0; } }
+.is-weak .launch-result { color: var(--muted); }
+.is-good .launch-result { color: var(--ink); }
+.is-great .launch-result { color: var(--stat); text-shadow: 0 0 14px var(--stat-glow); }
+.is-super .launch-result {
+  font-size: 32px;
+  background: linear-gradient(180deg, #FFF6C8, #FFC93D 50%, #FF7A1F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 0 #2A0A00) drop-shadow(0 0 16px rgba(255, 178, 61, .8));
+}
+
 /* After a round: the winner under a spotlight. */
 .spotlight {
   position: relative;
@@ -1207,6 +1270,7 @@ a, button { -webkit-touch-callout: none; user-select: none; }
 @media (prefers-reduced-motion: reduce) {
   .arena.go, .side-ring, .side-empty, .vs-badge, .rip-btn, .pip.fresh, .tug-bar, .spotlight, .spotlight > .spot-rays { animation: none; }
   .spotlight > .confetti { display: none; }
+  .launch, .launch-zone, .launch-cue { animation: none; }
   .fuse-btn { animation: none; }
   .is-spinning { animation: none; }
   .tile { transition: none; }
