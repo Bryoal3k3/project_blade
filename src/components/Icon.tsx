@@ -25,12 +25,6 @@ const PATHS = {
     <path d="M7 10V7.5a5 5 0 0 1 10 0V10h1a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 18 21H6a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 6 10zm2.5 0h5V7.5a2.5 2.5 0 0 0-5 0z" />
   ),
   back: <path d="M15 4 7 12l8 8" {...stroke} strokeWidth="2.6" />,
-  speaker: (
-    <>
-      <path d="M4 9h4l5-4v14l-5-4H4z" />
-      <path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" {...stroke} strokeWidth="2" />
-    </>
-  ),
   heart: <path className="fillable" d="M12 20.5s-8-4.9-8-10.6A4.4 4.4 0 0 1 12 7.4a4.4 4.4 0 0 1 8 2.5c0 5.7-8 10.6-8 10.6z" />,
   star: <path className="fillable" d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" />,
   grid: (
