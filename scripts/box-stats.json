@@ -1,0 +1,24 @@
+{
+  "rudder-phoenix-4-70lf": {
+    "blade": { "attack": 15, "defense": 40, "stamina": 60 }
+  },
+  "hurricane-enlil-is-7-55t": {
+    "blade": { "attack": 48, "defense": 32, "stamina": 20 }
+  },
+  "feather-phoenix-2-60n": {
+    "ratchet": { "attack": 10, "defense": 13, "stamina": 7 }
+  },
+  "antler-stag-b-2-60hn": {
+    "ratchet": { "attack": 10, "defense": 13, "stamina": 7 }
+  },
+  "tread-croc-tq-5-50gn": {
+    "blade": { "attack": 15, "defense": 65, "stamina": 20 },
+    "ratchet": { "attack": 10, "defense": 9, "stamina": 11 }
+  },
+  "whip-brachio-ow-5-70nr": {
+    "blade": { "attack": 13, "defense": 35, "stamina": 52 }
+  },
+  "glare-cyclops-7-55fb": {
+    "blade": { "attack": 32, "defense": 16, "stamina": 52 }
+  }
+}
