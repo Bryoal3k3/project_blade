@@ -26,13 +26,21 @@ interface Step {
   energy: [number, number];
   hit: boolean;
   dash?: 0 | 1;
+  /** This Bey was behind and just took the lead. */
+  comeback?: 0 | 1;
 }
+
+/** A great rip gets a shout-out when the round starts. */
+const SUPER_LAUNCH = 1.05;
 
 function prefersReducedMotion(): boolean {
   return typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-/** Where each Bey is at every moment: attackers roam wide, stamina types hug the middle, dashes ride the rail. */
+/**
+ * Where each Bey is at every moment: attackers roam wide, stamina types hug the middle, dashes
+ * ride the rail, the Bey on the attack roams harder, and the loser of a crash gets knocked back.
+ */
 export function battlePath(beys: [Bey, Bey], result: BattleResult): Step[] {
   const aggression = beys.map((bey) => {
     const f = fighterFrom(bey);
@@ -40,11 +48,17 @@ export function battlePath(beys: [Bey, Bey], result: BattleResult): Step[] {
   });
   const angle = [Math.PI, 0];
   const phase = [0, 1.7];
+  const knock = [0, 0];
+  let leader: 0 | 1 | null = null;
+  const behindBy = [0, 0];
   return result.ticks.map((tick, k) => {
     const at = [0, 1].map((i) => {
       const dir = beys[i].spin === 'left' ? -1 : 1;
+      const push = tick.momentum === i ? 1.25 : 0.85;
       angle[i] += dir * (0.18 + 0.28 * aggression[i]) * (tick.dash === i ? 3 : 1);
-      const r = tick.dash === i ? 0.8 : 0.14 + 0.44 * aggression[i] * (0.5 + 0.5 * Math.sin(k * 0.33 + phase[i]));
+      const roam = 0.14 + 0.44 * Math.min(1, aggression[i] * push) * (0.5 + 0.5 * Math.sin(k * 0.33 + phase[i]));
+      const r = tick.dash === i ? 0.8 : Math.min(0.82, roam + knock[i]);
+      knock[i] *= 0.55;
       return [r * Math.cos(angle[i]), r * Math.sin(angle[i])] as Point;
     }) as [Point, Point];
     if (tick.hit) {
@@ -56,8 +70,20 @@ export function battlePath(beys: [Bey, Bey], result: BattleResult): Step[] {
       dy /= len;
       at[0] = [mid[0] - dx * TOUCH, mid[1] - dy * TOUCH];
       at[1] = [mid[0] + dx * TOUCH, mid[1] + dy * TOUCH];
+      if (tick.clash !== undefined) knock[1 - tick.clash] = 0.35;
     }
-    return { at, energy: tick.energy, hit: tick.hit, dash: tick.dash };
+    // Spot a comeback: the Bey that was clearly behind is now clearly ahead.
+    const gap = tick.energy[0] - tick.energy[1];
+    behindBy[0] = Math.max(behindBy[0], -gap);
+    behindBy[1] = Math.max(behindBy[1], gap);
+    const ahead: 0 | 1 | null = gap > 4 ? 0 : gap < -4 ? 1 : null;
+    let comeback: 0 | 1 | undefined;
+    if (ahead !== null && ahead !== leader) {
+      if (leader !== null && behindBy[ahead] >= 8) comeback = ahead;
+      leader = ahead;
+      behindBy[ahead] = 0;
+    }
+    return { at, energy: tick.energy, hit: tick.hit, dash: tick.dash, comeback };
   });
 }
 
@@ -100,6 +126,7 @@ export function BattleArena({ beys, names, result, score, round, onDone }: Props
     const history: Point[][] = [[], []];
     const dashing = [false, false];
     let lastHit = -1;
+    let lastComeback = -1;
     let hits = 0;
     let lastCount = -1;
     let finishStarted = false;
@@ -147,11 +174,23 @@ export function BattleArena({ beys, names, result, score, round, onDone }: Props
       el.style.top = `${R + y * R}px`;
       restart(el);
     };
+    // Big moments (a comeback, a super launch) stay up a little longer than everyday crash words.
+    let holdUntil = 0;
     const say = (word: string, [x, y]: Point) => {
-      if (!pow.current) return;
+      if (!pow.current || performance.now() < holdUntil) return;
       pow.current.textContent = word;
+      pow.current.classList.remove('is-big', 'side-0', 'side-1');
       // Keep the word inside the stadium.
       flashAt(pow.current, [Math.max(-0.45, Math.min(0.45, x)), Math.max(-0.6, Math.min(0.5, y - 0.28))]);
+    };
+    /** A big word across the middle of the stadium, in the color of the Bey it's about. */
+    const shout = (word: string, side: 0 | 1) => {
+      if (!pow.current) return;
+      holdUntil = performance.now() + 900;
+      pow.current.textContent = word;
+      pow.current.classList.remove('side-0', 'side-1');
+      pow.current.classList.add('is-big', `side-${side}`);
+      flashAt(pow.current, [0, -0.38]);
     };
 
     const loop = (now: number) => {
@@ -175,6 +214,8 @@ export function BattleArena({ beys, names, result, score, round, onDone }: Props
       if (lastCount < COUNTDOWN.length) {
         lastCount = COUNTDOWN.length;
         setCount(COUNTDOWN.length);
+        const best: 0 | 1 = result.launch[0] >= result.launch[1] ? 0 : 1;
+        if (result.launch[best] >= SUPER_LAUNCH) shout('SUPER LAUNCH!', best);
       }
 
       const k = (t - countdownMs) / TICK_MS;
@@ -193,11 +234,15 @@ export function BattleArena({ beys, names, result, score, round, onDone }: Props
           place(i, [a.at[i][0] + (b.at[i][0] - a.at[i][0]) * f, a.at[i][1] + (b.at[i][1] - a.at[i][1]) * f]);
           if (meters[i].current) meters[i].current.style.width = `${Math.max(0, Math.min(100, energy))}%`;
         }
+        if (b.comeback !== undefined && i0 + 1 !== lastComeback && f > 0.5) {
+          lastComeback = i0 + 1;
+          shout('COMEBACK!', b.comeback);
+        }
         if (b.hit && i0 + 1 !== lastHit && f > 0.8) {
           lastHit = i0 + 1;
           const mid: Point = [(b.at[0][0] + b.at[1][0]) / 2, (b.at[0][1] + b.at[1][1]) / 2];
           flashAt(spark.current, mid);
-          if (hits % 2 === 0) say(POW_WORDS[Math.floor(Math.random() * POW_WORDS.length)], mid);
+          if (hits % 2 === 0 && b.comeback === undefined) say(POW_WORDS[Math.floor(Math.random() * POW_WORDS.length)], mid);
           hits++;
           restart(arena.current);
           playClack();

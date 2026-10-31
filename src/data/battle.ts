@@ -24,12 +24,16 @@ export interface Fighter {
   type: BeyType;
 }
 
-/** One moment of the battle, about a quarter of a second of real spinning. */
+/** One moment of the battle, about a seventh of a second of real spinning. */
 export interface Tick {
-  /** How much spin each Bey has left, 0-100+. */
+  /** How much spin each Bey has left, 0-120ish. */
   energy: [number, number];
   /** The two Beys crashed into each other. */
   hit: boolean;
+  /** Who came out on top in the crash: the other one lost more spin. */
+  clash?: 0 | 1;
+  /** The Bey on the attack right now. It wins most crashes until the other one takes over. */
+  momentum: 0 | 1;
   /** A Bey zooming along the rail this moment, if any. */
   dash?: 0 | 1;
 }
@@ -38,6 +42,8 @@ export interface BattleResult {
   /** 0 or 1, or null for a draw (both stopped together). */
   winner: 0 | 1 | null;
   finish?: Finish;
+  /** How hard each Bey was launched, around 1 (0.8 is a weak rip, 1.2 a great one). */
+  launch: [number, number];
   ticks: Tick[];
 }
 
@@ -65,10 +71,6 @@ export function typeEdge(a: BeyType, b: BeyType): 0 | 1 | null {
   return null;
 }
 
-function advantage(me: Fighter, them: Fighter): number {
-  return BEATS[me.type] === them.type ? 1.2 : 1;
-}
-
 /** A repeatable random number source, so tests can replay a battle. */
 export function seededRandom(seed: number): () => number {
   let s = seed >>> 0 || 1;
@@ -78,64 +80,102 @@ export function seededRandom(seed: number): () => number {
   };
 }
 
-const MAX_TICKS = 140;
-/** No knockouts or bursts in the first couple of seconds, so every battle gets some clashing first. */
-const WARM_UP_TICKS = 10;
+const MAX_TICKS = 160;
+/** No knockouts or bursts in the first second or so, so every battle gets some clashing first. */
+const WARM_UP_TICKS = 8;
 
+/** How much bigger x is than y, from -1 to 1, with less and less extra for very big gaps. */
+const versus = (x: number, y: number) => (x - y) / (x + y + 60);
+const clamp = (value: number, low: number, high: number) => Math.min(high, Math.max(low, value));
+
+/**
+ * A round, moment by moment. Stats tip the odds of every crash, but each crash is its own coin
+ * toss and a hard launch can beat better stats, so the lead can swing back and forth and the
+ * weaker Bey still wins sometimes.
+ */
 export function simulateBattle(a: Fighter, b: Fighter, random: () => number = Math.random): BattleResult {
   const fighters = [a, b] as const;
-  const norm = (value: number) => Math.min(1.3, value / 150);
-  const energy: [number, number] = [100 + (a.weight - 44) * 1.5, 100 + (b.weight - 44) * 1.5];
-  const decay = fighters.map((f, i) => (0.9 + 1.4 * (1 - norm(f.stamina))) / advantage(f, fighters[1 - i]));
-  const aggression = fighters.map((f) => norm(f.attack) * 0.6 + (f.dash / 100) * 0.6);
+  // A rip is never quite the same twice: 0.9 is a weak launch, 1.1 a great one, most land near 1.
+  const rip = () => 0.9 + 0.1 * (random() + random());
+  const launch: [number, number] = [rip(), rip()];
+  const energy: [number, number] = [0, 1].map((i) => (100 + (fighters[i].weight - 44) * 0.8) * launch[i]) as [number, number];
+  const edge = typeEdge(a.type, b.type);
+  // Stamina sets how fast a Bey slows down on its own; a type that beats the other's lasts a bit longer.
+  const decay = fighters.map((f, i) => (0.3 + 0.5 * (1 - Math.min(1, f.stamina / 140))) * (edge === i ? 0.92 : 1));
+  // How much of the stadium a Bey covers: attackers and dashers roam and cause more crashes.
+  const aggression = fighters.map((f) => Math.min(1.1, (f.attack / 150) * 0.6 + (f.dash / 100) * 0.6));
+  // Crash strength: mostly attack, some defense, a little weight.
+  const clout = fighters.map((f) => f.attack * 0.6 + f.defense * 0.4 + f.weight * 0.5);
+  const statOdds = 0.5 + 0.3 * versus(clout[0], clout[1]) + (edge === null ? 0 : edge === 0 ? 0.07 : -0.07);
   const ticks: Tick[] = [];
+  let railBoost: 0 | 1 | undefined;
+  // The battle goes in pushes: one Bey takes over for a moment, then the other fights back.
+  // Better stats win more pushes, and a Bey that has fallen behind is more likely to get the next one.
+  let momentum: 0 | 1 = random() < statOdds ? 0 : 1;
+  let pushLeft = 5 + Math.floor(random() * 8);
 
   for (let t = 0; t < MAX_TICKS; t++) {
-    const tick: Tick = { energy: [energy[0], energy[1]], hit: false };
+    if (--pushLeft <= 0) {
+      let odds = statOdds;
+      if (energy[0] < energy[1] - 8) odds += 0.22;
+      if (energy[1] < energy[0] - 8) odds -= 0.22;
+      momentum = random() < clamp(odds, 0.2, 0.8) ? 0 : 1;
+      pushLeft = 5 + Math.floor(random() * 8);
+    }
+    const tick: Tick = { energy: [energy[0], energy[1]], hit: false, momentum };
     ticks.push(tick);
 
-    if (random() < 0.06 + 0.14 * Math.max(...aggression) + (t < WARM_UP_TICKS ? 0.15 : 0)) {
+    if (random() < 0.18 + 0.2 * Math.max(...aggression) + (t < WARM_UP_TICKS ? 0.15 : 0)) {
       tick.hit = true;
-      const power = fighters.map((f, i) => (norm(f.attack) + f.dash / 200) * advantage(f, fighters[1 - i]) * (0.7 + 0.6 * random()));
-      for (const i of [0, 1] as const) {
-        const them = (1 - i) as 0 | 1;
-        energy[them] -= 3 + 8 * power[i] * (1 - 0.6 * Math.min(1, norm(fighters[them].defense)));
-      }
-      // Check who gets knocked out or burst, in a random order so neither side always goes first.
-      const order: (0 | 1)[] = t < WARM_UP_TICKS ? [] : random() < 0.5 ? [0, 1] : [1, 0];
-      for (const i of order) {
-        const them = (1 - i) as 0 | 1;
-        const hitter = fighters[i];
-        const target = fighters[them];
-        const tired = energy[them] < 40 ? 1.6 : 1;
-        if (random() < (0.005 + 0.08 * power[i] * (1 - target.burst / 100) ** 1.5) * tired) {
-          tick.energy = [energy[0], energy[1]];
-          return { winner: i, finish: 'burst', ticks };
+      // The odds that Bey 0 wins this crash: whoever is pushing usually does, stats and a rail dash help.
+      let odds = (momentum === 0 ? 0.72 : 0.28) + 0.12 * versus(clout[0], clout[1]);
+      if (railBoost !== undefined) odds += railBoost === 0 ? 0.08 : -0.08;
+      odds = clamp(odds, 0.15, 0.85);
+      const winner: 0 | 1 = random() < odds ? 0 : 1;
+      const loser = (1 - winner) as 0 | 1;
+      tick.clash = winner;
+      const hitter = fighters[winner];
+      const target = fighters[loser];
+      // The loser takes the big hit; the winner feels a little of it too.
+      const power = (hitter.attack / 150) * 0.7 + (hitter.dash / 100) * 0.5;
+      energy[loser] -= (5 + 6 * power) * (0.5 + random()) * (1 - 0.35 * Math.min(1, target.defense / 140));
+      energy[winner] -= 0.5 + 1.5 * random();
+
+      if (t >= WARM_UP_TICKS) {
+        const tired = energy[loser] < 30 ? 1.7 : 1;
+        if (random() < (0.006 + 0.05 * power * (1 - target.burst / 100) ** 1.5) * tired) {
+          tick.energy = [Math.max(0, energy[0]), Math.max(0, energy[1])];
+          return { winner, finish: 'burst', launch, ticks };
         }
-        const knock = 0.005 + 0.12 * Math.max(0, power[i] - norm(target.defense) * 0.8) * (hitter.weight / target.weight);
+        const knock = clamp(0.012 + 0.07 * (power - 0.45 * Math.min(1, target.defense / 140)) * (hitter.weight / target.weight), 0.006, 0.1) * tired;
         if (random() < knock) {
-          const xtreme = hitter.dash >= 30 && random() < hitter.dash / 100 + 0.15;
-          if (xtreme) tick.dash = i;
-          tick.energy = [energy[0], energy[1]];
-          return { winner: i, finish: xtreme ? 'xtreme' : 'over', ticks };
+          const xtreme = hitter.dash >= 25 && random() < hitter.dash / 100 + 0.2;
+          if (xtreme) tick.dash = winner;
+          tick.energy = [Math.max(0, energy[0]), Math.max(0, energy[1])];
+          return { winner, finish: xtreme ? 'xtreme' : 'over', launch, ticks };
         }
       }
+      railBoost = undefined;
     } else if (random() < aggression[0] * 0.15) {
       tick.dash = 0;
+      railBoost = 0;
     } else if (random() < aggression[1] * 0.15) {
       tick.dash = 1;
+      railBoost = 1;
     }
 
-    // A little wobble in how fast each Bey slows down, so evenly matched Beys rarely stop together.
-    energy[0] -= decay[0] * (0.7 + 0.6 * random());
-    energy[1] -= decay[1] * (0.7 + 0.6 * random());
+    // Roaming Beys tire as the round goes on, so a Stamina type can come back late.
+    // A little wobble too, so evenly matched Beys rarely stop together.
+    const late = Math.min(1, t / 60);
+    energy[0] -= decay[0] * (0.9 + 0.4 * aggression[0] * late) * (0.7 + 0.6 * random());
+    energy[1] -= decay[1] * (0.9 + 0.4 * aggression[1] * late) * (0.7 + 0.6 * random());
     if (energy[0] <= 0 || energy[1] <= 0) {
       tick.energy = [Math.max(0, energy[0]), Math.max(0, energy[1])];
       // Both stopped together: the one that kept a little more spin wins, unless it's truly even.
-      if (Math.abs(energy[0] - energy[1]) < 0.5) return { winner: null, ticks };
-      return { winner: energy[0] > energy[1] ? 0 : 1, finish: 'spin', ticks };
+      if (Math.abs(energy[0] - energy[1]) < 0.5) return { winner: null, launch, ticks };
+      return { winner: energy[0] > energy[1] ? 0 : 1, finish: 'spin', launch, ticks };
     }
   }
   // Still spinning after a long time: the one with more spin left wins.
-  return { winner: energy[0] >= energy[1] ? 0 : 1, finish: 'spin', ticks };
+  return { winner: energy[0] >= energy[1] ? 0 : 1, finish: 'spin', launch, ticks };
 }
