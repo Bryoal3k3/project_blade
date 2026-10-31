@@ -1,12 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import type { Bey, PartKey } from '../data/types';
-import { SET_INFO, STAT_INFO, TYPE_INFO } from '../data/meta';
-import { comboName, displayName, otherName, packOnly, parseRatchet, partsOf, releaseLabel, releaseStatus, totalWeight } from '../data';
+import type { Bey } from '../data/types';
+import { SET_INFO, TYPE_INFO } from '../data/meta';
+import { comboName, displayName, otherName, packOnly, partsOf, releaseLabel, releaseStatus, totalWeight } from '../data';
 import type { Collection } from '../hooks/useCollection';
-import { canSpeak, speak } from '../lib/speak';
 import { SpinStage } from '../components/SpinStage';
 import { Icon } from '../components/Icon';
-import { PartSection, partLabel, statKeys } from '../components/PartSection';
+import { PartSection } from '../components/PartSection';
 import { typeVars } from '../components/TypeChips';
 
 function useToast(): [string | null, (message: string) => void] {
@@ -19,23 +18,6 @@ function useToast(): [string | null, (message: string) => void] {
     timer.current = window.setTimeout(() => setMessage(null), 2400);
   };
   return [message, show];
-}
-
-/** What the big speaker button says: name, combo, type and spin. */
-export function spokenIntro(bey: Bey): string {
-  const ratchet = bey.ratchet ? `${bey.ratchet.name.replace('-', ' ')} ` : '';
-  return `${displayName(bey)}, ${ratchet}${bey.bit.name}. ${TYPE_INFO[bey.type].label} type. Spins ${bey.spin}.`;
-}
-
-/** What a part's speaker button says. */
-export function spokenPart(bey: Bey, part: PartKey): string {
-  const label = partLabel(bey, part);
-  const ratchet = bey.ratchet?.name ?? '';
-  const name = part === 'blade' ? displayName(bey) : part === 'ratchet' ? ratchet.replace('-', ' ') : bey.bit.name;
-  const stats = bey[part]?.stats as Record<string, number> | undefined;
-  const said = stats ? statKeys(part).map((key) => `${STAT_INFO[key].label} ${stats[key]}`) : ['Stats coming soon'];
-  if (part === 'ratchet') said.push(`Height ${parseRatchet(ratchet).height}`);
-  return `${label}, ${name}. ${said.join(', ')}.`;
 }
 
 interface Props {
@@ -53,7 +35,6 @@ export function BeyPage({ bey, backHref, collection }: Props) {
   const want = collection.has('wish', bey.id);
   const weight = totalWeight(bey);
   const status = releaseStatus(bey);
-  const talk = canSpeak();
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -77,11 +58,6 @@ export function BeyPage({ bey, backHref, collection }: Props) {
           </a>
           <span className={`code-chip line-chip line-${bey.line.toLowerCase()}`}>{bey.line}</span>
           <span className="spacer" />
-          {talk && (
-            <button type="button" className="icon-btn" aria-label="Read out loud" onClick={() => speak(spokenIntro(bey))}>
-              <Icon name="speaker" />
-            </button>
-          )}
           <button type="button" className="icon-btn star-btn" aria-label="I have it" aria-pressed={have} onClick={toggleHave}>
             <Icon name="star" />
           </button>
@@ -139,7 +115,7 @@ export function BeyPage({ bey, backHref, collection }: Props) {
         )}
 
         {partsOf(bey).map((part) => (
-          <PartSection key={part} bey={bey} part={part} onSpeak={talk ? () => speak(spokenPart(bey, part)) : undefined} />
+          <PartSection key={part} bey={bey} part={part} />
         ))}
       </div>
       <div className="toast" role="status" hidden={!toast}>

@@ -77,7 +77,7 @@ function HeightBar({ height }: { height: number }) {
 }
 
 /** One part laid out like its panel on the back of the box: name, picture and stat bars. */
-export function PartSection({ bey, part, onSpeak }: { bey: Bey; part: PartKey; onSpeak?: () => void }) {
+export function PartSection({ bey, part }: { bey: Bey; part: PartKey }) {
   const stats = bey[part]?.stats as Partial<Record<StatKey, number>> | undefined;
   const photo = partPhoto(bey, part);
   const picture = photo ? (
@@ -98,11 +98,6 @@ export function PartSection({ bey, part, onSpeak }: { bey: Bey; part: PartKey; o
             {part === 'bit' && <span className="part-sub">{bey.bit.name}</span>}
           </h2>
         </div>
-        {onSpeak && (
-          <button type="button" className="icon-btn icon-btn-small" aria-label={`Read the ${part} stats`} onClick={onSpeak}>
-            <Icon name="speaker" />
-          </button>
-        )}
       </div>
       <div className={picture ? 'part-body has-pic' : 'part-body'}>
         {picture && <div className="part-pic">{picture}</div>}

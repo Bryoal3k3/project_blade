@@ -20,7 +20,6 @@ import {
 import type { Collection } from '../hooks/useCollection';
 import { useBuild } from '../hooks/useBuild';
 import { samePicks, type BuildPicks, type Saved } from '../hooks/useSaved';
-import { canSpeak, speak } from '../lib/speak';
 import { playFuseSound } from '../lib/sound';
 import { BeyPicture, PHOTOS } from '../components/BeyPicture';
 import { FuseAnimation } from '../components/FuseAnimation';
@@ -28,7 +27,6 @@ import { Icon } from '../components/Icon';
 import { PartSection } from '../components/PartSection';
 import { SpinStage } from '../components/SpinStage';
 import { TypeChips, typeVars, type TypeFilter } from '../components/TypeChips';
-import { spokenPart } from './BeyPage';
 
 /** The biggest a fused total can be: a full blade, ratchet and bit. */
 const TOTAL_MAX = STAT_MAX.blade + STAT_MAX.ratchet + STAT_MAX.bit;
@@ -277,21 +275,11 @@ function Result({ choice, collection, saved, onChange, onAgain }: { choice: Choi
   const bey = fusedBey(choice);
   const picks: BuildPicks = { blade: choice.blade.key, ratchet: choice.blade.blade.integratedRatchet ? undefined : choice.ratchet?.key, bit: choice.bit.key };
   const type = TYPE_INFO[bey.type];
-  const talk = canSpeak();
-  const sayIt = () => {
-    const parts = partsOf(bey).map((part) => spokenPart(bey, part)).join(' ');
-    speak(`Your new Bey is ${displayName(bey)} ${comboName(bey).replace('-', ' ')}. ${type.label} type. ${parts}`);
-  };
 
   return (
     <div className="result" style={typeVars(bey.type)}>
       <div className="result-head">
         <span className="result-eyebrow">Your new Bey</span>
-        {talk && (
-          <button type="button" className="icon-btn" aria-label="Read out loud" onClick={sayIt}>
-            <Icon name="speaker" />
-          </button>
-        )}
       </div>
       <SpinStage bey={bey} />
       <div className="bey-id">
@@ -305,7 +293,7 @@ function Result({ choice, collection, saved, onChange, onAgain }: { choice: Choi
       <SaveBox key={`${picks.blade}|${picks.ratchet}|${picks.bit}`} picks={picks} defaultName={`${displayName(bey)} ${comboName(bey)}`} saved={saved} />
       <TotalBars choice={choice} />
       {partsOf(bey).map((part) => (
-        <PartSection key={part} bey={bey} part={part} onSpeak={talk ? () => speak(spokenPart(bey, part)) : undefined} />
+        <PartSection key={part} bey={bey} part={part} />
       ))}
       <ShoppingList choice={choice} collection={collection} />
       <div className="result-actions">

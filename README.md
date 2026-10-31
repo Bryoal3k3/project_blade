@@ -8,7 +8,6 @@ It runs in the phone's browser and can be added to the home screen like a normal
 
 - **Browse**: every Hasbro Beyblade X (including the ones in Dual Packs and Multipacks) in a grid, newest first, with big buttons to show only Attack, Defense, Stamina or Balance types. New releases get a "New" badge and upcoming ones a "Soon" badge.
 - **Bey page**: the Bey spinning in a stadium, its type, its combo (like `4-70LF`), and stats for the Blade, Ratchet and Bit laid out like the back of the box.
-- **Read to me**: the speaker button reads the name and stats out loud.
 - **My Beys and Wish list**: tap the star for Beys you have and the heart for Beys you want. Saved on the device.
 - **Build a Bey**: pick any Blade, Ratchet and Bit Hasbro sells, press Fuse, and watch them lock together. The new Bey gets its added-up stats and type, plus a shopping list with the fewest boxes to buy (skipping parts from Beys in My Beys) and their Canadian list prices. Every Beyblade X part fits every other; a Ratchet-Integrated Blade just needs a bit.
 - **My Builds**: give a built Bey a name and save it to a shelf on the Build screen. Saved builds can battle too.

@@ -1,8 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import App from './App';
-import { BEYS, findBey } from './data';
-import { spokenIntro, spokenPart } from './pages/BeyPage';
+import { BEYS } from './data';
 import { barPercent } from './components/PartSection';
 
 function go(hash: string) {
@@ -226,21 +225,5 @@ describe('stat bars', () => {
     expect(barPercent('blade', 60)).toBe(60);
     expect(barPercent('bit', 80)).toBe(80);
     expect(barPercent('ratchet', 12)).toBe(37.5);
-  });
-});
-
-describe('read aloud', () => {
-  const bey = findBey('rudder-phoenix-4-70lf')!;
-
-  it('says the name, combo, type and spin', () => {
-    expect(spokenIntro(bey)).toBe('Rudder Phoenix, 4 70 Low Flat. Attack type. Spins right.');
-    expect(spokenIntro(findBey('valor-bison-fb')!)).toBe('Valor Bison, Free Ball. Stamina type. Spins right.');
-  });
-
-  it('says each part like the box', () => {
-    expect(spokenPart(bey, 'blade')).toBe('Blade, Rudder Phoenix. Attack 15, Defense 40, Stamina 60.');
-    expect(spokenPart(bey, 'ratchet')).toBe('Ratchet, 4 70. Attack 11, Defense 12, Stamina 7, Height 70.');
-    expect(spokenPart(bey, 'bit')).toBe('Bit, Low Flat. Attack 45, Defense 5, Stamina 10, Dash 40, Burst 80.');
-    expect(spokenPart(findBey('seize-jaguar-hn')!, 'blade')).toBe('Ratchet-Integrated Blade, Seize Jaguar. Stats coming soon.');
   });
 });
