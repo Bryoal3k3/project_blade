@@ -56,6 +56,32 @@ const PATHS = {
       <path d="M20 3.5v5h-5" {...stroke} strokeWidth="2.4" />
     </>
   ),
+  trophy: (
+    <>
+      <path d="M7 3h10v6a5 5 0 0 1-10 0z" />
+      <path d="M7 5H4.5v1.5A3.5 3.5 0 0 0 8 10M17 5h2.5v1.5A3.5 3.5 0 0 1 16 10" {...stroke} strokeWidth="2" />
+      <rect x="11" y="13" width="2" height="4.5" />
+      <rect x="7.5" y="17.5" width="9" height="3.5" rx="1" />
+    </>
+  ),
+  dice: (
+    <>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4" {...stroke} strokeWidth="2" />
+      <circle cx="8.3" cy="8.3" r="1.7" />
+      <circle cx="15.7" cy="8.3" r="1.7" />
+      <circle cx="12" cy="12" r="1.7" />
+      <circle cx="8.3" cy="15.7" r="1.7" />
+      <circle cx="15.7" cy="15.7" r="1.7" />
+    </>
+  ),
+  over: (
+    <>
+      <path d="M14.5 5A7.5 7.5 0 1 0 14.5 19" {...stroke} strokeWidth="2.4" />
+      <path d="M9 12h12M17.5 8.5 21 12l-3.5 3.5" {...stroke} strokeWidth="2.4" />
+    </>
+  ),
+  burst: <path d="M12 1.5l1.6 6.6 5.8-3.5-3.5 5.8 6.6 1.6-6.6 1.6 3.5 5.8-5.8-3.5-1.6 6.6-1.6-6.6-5.8 3.5 3.5-5.8L1.5 12l6.6-1.6-3.5-5.8 5.8 3.5z" />,
+  xtreme: <path d="M4.5 3.5h4.6L12 8.4l2.9-4.9h4.6l-5.2 8.5 5.2 8.5h-4.6L12 15.6l-2.9 4.9H4.5L9.7 12z" />,
 } satisfies Record<string, ReactNode>;
 
 export type IconName = keyof typeof PATHS;
