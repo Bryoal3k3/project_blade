@@ -105,3 +105,27 @@ export function playFinish(): void {
     // No sound on this device.
   }
 }
+
+/** A short beep for the 3-2-1 countdown; the last one, for "Let it rip!", is higher. */
+export function playCount(last = false): void {
+  const ctx = audio();
+  if (!ctx) return;
+  try {
+    const master = output(ctx, 0.08);
+    tone(ctx, master, last ? 1318.5 : 659.25, ctx.currentTime, last ? 0.35 : 0.14, 0.6, 'square');
+  } catch {
+    // No sound on this device.
+  }
+}
+
+/** A tiny tick while the random pick shuffles. */
+export function playTick(): void {
+  const ctx = audio();
+  if (!ctx) return;
+  try {
+    const master = output(ctx, 0.05);
+    tone(ctx, master, 1500 + Math.random() * 500, ctx.currentTime, 0.05, 0.5, 'square');
+  } catch {
+    // No sound on this device.
+  }
+}

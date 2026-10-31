@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { FINISH_POINTS, fighterFrom, seededRandom, simulateBattle, type Fighter } from './battle';
+import { FINISH_POINTS, fighterFrom, seededRandom, simulateBattle, typeEdge, type Fighter } from './battle';
 import { badges } from './badges';
 import { BEYS, findBey } from '.';
 
@@ -13,6 +13,14 @@ function winRate(a: Fighter, b: Fighter, rounds = 400): number {
 }
 
 describe('battle simulation', () => {
+  it('knows which type has the edge', () => {
+    expect(typeEdge('attack', 'stamina')).toBe(0);
+    expect(typeEdge('stamina', 'defense')).toBe(0);
+    expect(typeEdge('attack', 'defense')).toBe(1);
+    expect(typeEdge('balance', 'attack')).toBeNull();
+    expect(typeEdge('attack', 'attack')).toBeNull();
+  });
+
   it('always ends, with a finish for the winner', () => {
     const random = seededRandom(1);
     for (let i = 0; i < 200; i++) {

@@ -58,6 +58,13 @@ export function fighterFrom(bey: Bey): Fighter {
   };
 }
 
+/** Which side's type beats the other's (0 or 1), or null when neither does. */
+export function typeEdge(a: BeyType, b: BeyType): 0 | 1 | null {
+  if (BEATS[a] === b) return 0;
+  if (BEATS[b] === a) return 1;
+  return null;
+}
+
 function advantage(me: Fighter, them: Fighter): number {
   return BEATS[me.type] === them.type ? 1.2 : 1;
 }
