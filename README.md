@@ -11,6 +11,10 @@ It runs in the phone's browser and can be added to the home screen like a normal
 - **Read to me**: the speaker button reads the name and stats out loud.
 - **My Beys and Wish list**: tap the star for Beys you have and the heart for Beys you want. Saved on the device.
 - **Build a Bey**: pick any Blade, Ratchet and Bit Hasbro sells, press Fuse, and watch them lock together. The new Bey gets its added-up stats and type, plus a shopping list with the fewest boxes to buy (skipping parts from Beys in My Beys) and their Canadian list prices. Every Beyblade X part fits every other; a Ratchet-Integrated Blade just needs a bit.
+- **My Builds**: give a built Bey a name and save it to a shelf on the Build screen. Saved builds can battle too.
+- **Battle**: pick two Beys (real ones or saved builds) and press Let it rip. The round is worked out from their real stats and types (Attack beats Stamina, Stamina beats Defense, Defense beats Attack, with some luck), then plays out in the stadium and ends in a Spin, Over, Burst or Xtreme Finish. First to 4 points wins the match.
+- **Keep score**: for real battles. Tap the finish for each round (Spin 1, Over 2, Burst 2, Xtreme 3) and the app announces the winner at 4 points.
+- **Badges**: My Beys shows how many of the Beys are collected and badges for milestones, builds and battles.
 
 ## Run it
 
@@ -30,7 +34,7 @@ npm run import            # refresh src/data/beys.json and download new pictures
 npm run import -- --force # re-download every picture
 ```
 
-Run it when new Beys come out, then `npm test` and commit the changes. The import needs internet access to `beyblade.fandom.com` and `static.wikia.nocookie.net`.
+This runs by itself every Monday ([`.github/workflows/update-beys.yml`](.github/workflows/update-beys.yml)): it imports, runs the tests, builds, commits to `main` and publishes. It can also be started by hand from the repo's **Actions** tab. If the tests fail, nothing is published and GitHub emails the repo owner. The Beys page shows the date of the last check. To run the import yourself, it needs internet access to `beyblade.fandom.com` and `static.wikia.nocookie.net`.
 
 ### Stats from a real box win
 

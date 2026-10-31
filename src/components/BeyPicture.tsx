@@ -31,6 +31,6 @@ export function BeyPicture({ bey, spin = false }: { bey: Bey; spin?: boolean }) 
   const spinning = spin && canSpin(bey);
   const className = ['bey-pic', spinning && 'is-spinning', bey.spin === 'left' && 'is-left'].filter(Boolean).join(' ');
 
-  if (photo) return <img className={className} src={photo} alt="" draggable={false} />;
+  if (photo) return <img className={className} src={photo} alt="" draggable={false} loading="lazy" decoding="async" />;
   return <BeyArt bey={bey} className={className} />;
 }

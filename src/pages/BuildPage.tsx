@@ -10,6 +10,7 @@ import {
   type BladeOption,
   type Choice,
   type RatchetOption,
+  choiceFromPicks,
   findOption,
   fusedBey,
   fusedTotals,
@@ -18,6 +19,7 @@ import {
 } from '../data/builder';
 import type { Collection } from '../hooks/useCollection';
 import { useBuild } from '../hooks/useBuild';
+import { samePicks, type BuildPicks, type Saved } from '../hooks/useSaved';
 import { canSpeak, speak } from '../lib/speak';
 import { playFuseSound } from '../lib/sound';
 import { BeyPicture, PHOTOS } from '../components/BeyPicture';
@@ -234,8 +236,46 @@ function ShoppingList({ choice, collection }: { choice: Choice; collection: Coll
   );
 }
 
-function Result({ choice, collection, onChange, onAgain }: { choice: Choice; collection: Collection; onChange: () => void; onAgain: () => void }) {
+function SaveBox({ picks, defaultName, saved }: { picks: BuildPicks; defaultName: string; saved: Saved }) {
+  const existing = saved.builds.find((b) => samePicks(b.picks, picks));
+  const [name, setName] = useState(defaultName);
+  if (existing) {
+    return (
+      <div className="save-box is-saved">
+        <span className="save-text">
+          <Icon name="check" />
+          Saved in My Builds as <b>{existing.name}</b>
+        </span>
+        <button type="button" className="big-btn ghost" onClick={() => saved.removeBuild(existing.id)}>
+          Remove
+        </button>
+      </div>
+    );
+  }
+  return (
+    <form
+      className="save-box"
+      onSubmit={(event) => {
+        event.preventDefault();
+        saved.saveBuild(name, picks);
+      }}
+    >
+      <label htmlFor="build-name" className="save-label">
+        Give it a name
+      </label>
+      <div className="save-row">
+        <input id="build-name" value={name} maxLength={24} onChange={(event) => setName(event.target.value)} />
+        <button type="submit" className="big-btn">
+          Save
+        </button>
+      </div>
+    </form>
+  );
+}
+
+function Result({ choice, collection, saved, onChange, onAgain }: { choice: Choice; collection: Collection; saved: Saved; onChange: () => void; onAgain: () => void }) {
   const bey = fusedBey(choice);
+  const picks: BuildPicks = { blade: choice.blade.key, ratchet: choice.blade.blade.integratedRatchet ? undefined : choice.ratchet?.key, bit: choice.bit.key };
   const type = TYPE_INFO[bey.type];
   const talk = canSpeak();
   const sayIt = () => {
@@ -262,6 +302,7 @@ function Result({ choice, collection, onChange, onAgain }: { choice: Choice; col
         <h2 className="bey-name">{displayName(bey)}</h2>
         <span className="bey-combo">{comboName(bey)}</span>
       </div>
+      <SaveBox key={`${picks.blade}|${picks.ratchet}|${picks.bit}`} picks={picks} defaultName={`${displayName(bey)} ${comboName(bey)}`} saved={saved} />
       <TotalBars choice={choice} />
       {partsOf(bey).map((part) => (
         <PartSection key={part} bey={bey} part={part} onSpeak={talk ? () => speak(spokenPart(bey, part)) : undefined} />
@@ -279,7 +320,35 @@ function Result({ choice, collection, onChange, onAgain }: { choice: Choice; col
   );
 }
 
-export function BuildPage({ collection }: { collection: Collection }) {
+function BuildsShelf({ saved, onOpen }: { saved: Saved; onOpen: (picks: BuildPicks) => void }) {
+  const builds = saved.builds.flatMap((b) => {
+    const choice = choiceFromPicks(b.picks);
+    return choice ? [{ build: b, bey: fusedBey(choice) }] : [];
+  });
+  if (!builds.length) return null;
+  return (
+    <section className="builds-shelf" aria-labelledby="builds-title">
+      <h2 className="shelf-title" id="builds-title">
+        My Builds
+      </h2>
+      <div className="shelf">
+        {builds.map(({ build, bey }) => (
+          <button key={build.id} type="button" className="pick" style={typeVars(bey.type)} onClick={() => onOpen(build.picks)}>
+            <span className="pick-stage">
+              <BeyPicture bey={bey} />
+            </span>
+            <span className="pick-name">{build.name}</span>
+            <span className="pick-sub">
+              <span className="pick-note">{comboName(bey)}</span>
+            </span>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function BuildPage({ collection, saved }: { collection: Collection; saved: Saved }) {
   const build = useBuild();
   const [editing, setEditing] = useState<PartKey | null>(null);
   const [fusing, setFusing] = useState(false);
@@ -317,6 +386,16 @@ export function BuildPage({ collection }: { collection: Collection }) {
         <h1 className="list-title">Build a Bey!</h1>
         <span className="list-count">Pick a blade, a ratchet and a bit. Then fuse them!</span>
       </header>
+
+      {step === 'blade' && !build.picks.blade && (
+        <BuildsShelf
+          saved={saved}
+          onOpen={(picks) => {
+            build.load(picks);
+            setEditing(null);
+          }}
+        />
+      )}
 
       {step !== 'fusing' && step !== 'done' && (
         <div className="slots" role="group" aria-label="Your parts">
@@ -366,6 +445,7 @@ export function BuildPage({ collection }: { collection: Collection }) {
         <Result
           choice={choice}
           collection={collection}
+          saved={saved}
           onChange={() => build.setFused(false)}
           onAgain={() => {
             build.reset();

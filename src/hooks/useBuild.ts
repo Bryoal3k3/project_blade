@@ -11,7 +11,7 @@ interface BuildState {
 
 const STORAGE_KEY = 'project-blade:build:v1';
 
-function load(): BuildState {
+function loadSaved(): BuildState {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (saved && typeof saved === 'object' && saved.picks && typeof saved.picks === 'object') {
@@ -29,7 +29,7 @@ function load(): BuildState {
 
 /** The Bey being built, saved on this device so it is still there next time. */
 export function useBuild() {
-  const [state, setState] = useState<BuildState>(load);
+  const [state, setState] = useState<BuildState>(loadSaved);
 
   useEffect(() => {
     try {
@@ -44,6 +44,8 @@ export function useBuild() {
   }, []);
   const setFused = useCallback((fused: boolean) => setState((prev) => ({ ...prev, fused })), []);
   const reset = useCallback(() => setState({ picks: {}, fused: false }), []);
+  /** Show a saved build again. */
+  const load = useCallback((picks: Picks) => setState({ picks, fused: true }), []);
 
-  return { ...state, pick, setFused, reset };
+  return { ...state, pick, setFused, reset, load };
 }

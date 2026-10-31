@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { findBey } from './data';
 import { useCollection } from './hooks/useCollection';
+import { useSaved } from './hooks/useSaved';
 import { hashFor, useHashRoute } from './hooks/useHashRoute';
 import { BeyPage } from './pages/BeyPage';
 import { BrowsePage } from './pages/BrowsePage';
 import { BuildPage } from './pages/BuildPage';
+import { BattlePage } from './pages/BattlePage';
 import { TabBar } from './components/TabBar';
 import type { TypeFilter } from './components/TypeChips';
 
 export default function App() {
   const { route, backTo } = useHashRoute();
   const collection = useCollection();
+  const saved = useSaved();
   const [filter, setFilter] = useState<TypeFilter>('all');
   const counts = { mine: collection.lists.mine.length, wish: collection.lists.wish.length };
 
@@ -30,9 +33,11 @@ export default function App() {
       </main>
     );
   } else if (route.name === 'build') {
-    page = <BuildPage collection={collection} />;
+    page = <BuildPage collection={collection} saved={saved} />;
+  } else if (route.name === 'battle') {
+    page = <BattlePage collection={collection} saved={saved} />;
   } else {
-    page = <BrowsePage list={route.name} filter={filter} onFilter={setFilter} collection={collection} />;
+    page = <BrowsePage list={route.name} filter={filter} onFilter={setFilter} collection={collection} saved={saved} />;
   }
 
   return (

@@ -47,6 +47,7 @@ const PATHS = {
       <path d="m3 12 9 4.5 9-4.5M3 16.5 12 21l9-4.5" {...stroke} strokeWidth="2" />
     </>
   ),
+  battle: <path d="M5 5l14 14M19 5 5 19M3 15l6 6M15 21l6-6" {...stroke} strokeWidth="2.4" />,
   check: <path d="m4.5 12.5 5 5 10-11" {...stroke} strokeWidth="3" />,
   box: (
     <>

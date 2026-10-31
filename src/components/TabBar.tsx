@@ -5,6 +5,7 @@ import { Icon, type IconName } from './Icon';
 const TABS: { name: BackName; label: string; icon: IconName }[] = [
   { name: 'all', label: 'Beys', icon: 'grid' },
   { name: 'build', label: 'Build', icon: 'build' },
+  { name: 'battle', label: 'Battle', icon: 'battle' },
   { name: 'mine', label: 'My Beys', icon: 'star' },
   { name: 'wish', label: 'Wish list', icon: 'heart' },
 ];

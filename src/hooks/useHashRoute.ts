@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
 export type ListName = 'all' | 'mine' | 'wish';
-export type Route = { name: ListName } | { name: 'build' } | { name: 'bey'; id: string };
+export type Route = { name: ListName } | { name: 'build' } | { name: 'battle' } | { name: 'bey'; id: string };
 /** Screens a Bey page's Back button can return to. */
-export type BackName = ListName | 'build';
+export type BackName = ListName | 'build' | 'battle';
 
 /** Routes live in the URL hash (#/, #/mine, #/wish, #/build, #/bey/dran-sword) so the app works from any host or folder. */
 export function parseHash(hash: string): Route {
   const [first, second] = hash.replace(/^#\/?/, '').split('/');
   if (first === 'bey' && second) return { name: 'bey', id: decodeURIComponent(second) };
-  if (first === 'mine' || first === 'wish' || first === 'build') return { name: first };
+  if (first === 'mine' || first === 'wish' || first === 'build' || first === 'battle') return { name: first };
   return { name: 'all' };
 }
 
