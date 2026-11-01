@@ -1072,7 +1072,7 @@ a, button { -webkit-touch-callout: none; user-select: none; }
 .finish-banner > span:last-child { font-weight: 700; font-size: 15px; color: var(--side, var(--ink)); }
 @keyframes banner-pop { from { transform: translate(-50%, -50%) scale(.4); opacity: 0; } to { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
 
-/* Launch: a marker sweeps the bar, and a tap in the orange middle is a Super Launch. */
+/* Launch: pull the ripcord. Drag anywhere across the panel; the faster the pull, the stronger the launch. */
 .launcher { display: grid; gap: 10px; }
 .launch {
   position: relative;
@@ -1087,39 +1087,64 @@ a, button { -webkit-touch-callout: none; user-select: none; }
   box-shadow: 0 0 26px color-mix(in srgb, var(--side) 30%, transparent);
   color: var(--ink);
   text-align: center;
-  touch-action: manipulation;
+  overflow: hidden;
+  touch-action: none;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
   animation: spot-in .35s cubic-bezier(.2, 1.4, .4, 1) both;
 }
-.launch:active { transform: scale(.99); }
+.launch.is-pulling { cursor: grabbing; }
 .launch.is-super { box-shadow: 0 0 44px rgba(255, 178, 61, .75); border-color: var(--star); }
 .launch-head { display: grid; justify-items: center; gap: 6px; }
 .launch-name { font-family: var(--f-display); font-weight: 700; font-size: 20px; line-height: 1.05; text-transform: uppercase; overflow-wrap: anywhere; }
-.launch-pic { width: 120px; height: 120px; display: grid; place-items: center; }
+.launch-pic { position: relative; z-index: 1; width: 120px; height: 120px; display: grid; place-items: center; }
 .launch-pic > img, .launch-pic > svg { width: 120px; height: 120px; object-fit: contain; display: block; filter: drop-shadow(0 0 14px var(--side)); }
+.launch-pic .is-spinning { animation-duration: var(--rev, 7s); }
+/* The ripcord: a toothed strip from the Bey's rim to the handle under the finger. */
+.cord {
+  position: absolute; left: 0; top: 0; z-index: 2;
+  width: 0; height: 12px;
+  margin-top: -6px;
+  transform-origin: 0 50%;
+  border-radius: 6px;
+  background: repeating-linear-gradient(90deg, #EEF2FF 0 7px, #8E9BC9 7px 10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+.grip {
+  position: absolute; left: 0; top: 0; z-index: 3;
+  width: 64px; height: 44px;
+  margin: -22px 0 0 -32px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--side) 70%, #FFFFFF), var(--side));
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--side), 0 4px 10px rgba(0, 0, 0, .5);
+  color: #FFFFFF;
+  pointer-events: none;
+}
+.grip .ic { width: 26px; height: 26px; }
+.launch:not(.is-pulling):not(.is-launched) .grip .ic { animation: nudge 1.2s ease-in-out infinite; }
+@keyframes nudge { 50% { transform: translateX(7px); } }
+.is-launched .cord, .is-launched .grip { opacity: 0; transition: opacity .3s; }
+/* The gauge shows the fastest pull so far: slow on the left, Super Launch on the right. */
 .launch-track {
   position: relative;
   width: 100%; height: 26px;
   margin-top: 10px;
   border-radius: 13px;
-  background: linear-gradient(90deg, #2A3660 0 12.5%, #7A4A2A 12.5% 25%, #D9742A 25% 37.5%, #FFB23D 37.5% 62.5%, #D9742A 62.5% 75%, #7A4A2A 75% 87.5%, #2A3660 87.5%);
+  background: linear-gradient(90deg, #2A3660 0 25%, #7A4A2A 25% 50%, #D9742A 50% 75%, #FFB23D 75% 100%);
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .35), inset 0 2px 6px rgba(0, 0, 0, .5);
 }
-.launch-zone { position: absolute; left: 37.5%; right: 37.5%; top: -3px; bottom: -3px; border-radius: 8px; border: 2px solid #FFF3B0; box-shadow: 0 0 14px rgba(255, 178, 61, .8); animation: zone-glow 1s ease-in-out infinite; }
+.gauge-cover { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: 13px; background: rgba(10, 15, 31, .8); transition: left .08s linear; }
+.gauge::after { content: ''; position: absolute; left: 75%; right: 0; top: -3px; bottom: -3px; border-radius: 8px; border: 2px solid #FFF3B0; box-shadow: 0 0 14px rgba(255, 178, 61, .8); animation: zone-glow 1s ease-in-out infinite; }
 @keyframes zone-glow { 50% { box-shadow: 0 0 26px rgba(255, 178, 61, 1); } }
-.launch-marker {
-  position: absolute; left: 0; top: -9px;
-  width: 8px; height: 44px;
-  margin-left: -4px;
-  border-radius: 4px;
-  background: #FFFFFF;
-  box-shadow: 0 0 10px #FFFFFF, 0 0 20px rgba(255, 255, 255, .6);
-}
-.is-launched .launch-marker { animation: marker-pop .35s cubic-bezier(.2, 1.6, .4, 1) both; }
-@keyframes marker-pop { from { transform: scaleY(1.7); } }
 .launch-ends { width: 100%; display: flex; justify-content: space-between; font-family: var(--f-display); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.launch-ends span:nth-child(2) { color: var(--stat); }
-.launch-cue { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; font-family: var(--f-display); font-weight: 700; font-style: italic; font-size: 24px; text-transform: uppercase; color: var(--stat); animation: cue-pulse .8s ease-in-out infinite; }
+.launch-ends span:nth-child(3) { color: var(--stat); }
+.launch-cue { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; font-family: var(--f-display); font-weight: 700; font-style: italic; font-size: clamp(18px, 6.6vw, 24px); white-space: nowrap; text-transform: uppercase; color: var(--stat); animation: cue-pulse .8s ease-in-out infinite; }
 .launch-cue .ic { width: 22px; height: 22px; }
+.launch-cue.is-short { color: var(--heart); animation: shake .3s ease-out; }
 @keyframes cue-pulse { 50% { transform: scale(1.06); opacity: .8; } }
 .launch-result { margin-top: 4px; font-family: var(--f-display); font-weight: 700; font-style: italic; font-size: 26px; line-height: 1.1; text-transform: uppercase; animation: result-pop .4s cubic-bezier(.2, 1.6, .4, 1) both; }
 @keyframes result-pop { from { transform: scale(.4); opacity: 0; } }
@@ -1270,7 +1295,7 @@ a, button { -webkit-touch-callout: none; user-select: none; }
 @media (prefers-reduced-motion: reduce) {
   .arena.go, .side-ring, .side-empty, .vs-badge, .rip-btn, .pip.fresh, .tug-bar, .spotlight, .spotlight > .spot-rays { animation: none; }
   .spotlight > .confetti { display: none; }
-  .launch, .launch-zone, .launch-cue { animation: none; }
+  .launch, .launch-cue, .gauge::after, .grip .ic { animation: none; }
   .fuse-btn { animation: none; }
   .is-spinning { animation: none; }
   .tile { transition: none; }

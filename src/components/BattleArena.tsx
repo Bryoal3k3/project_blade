@@ -122,6 +122,8 @@ export function BattleArena({ beys, names, result, score, round, onDone }: Props
     }
     const loser = result.winner === null ? null : ((1 - result.winner) as 0 | 1);
     const spinDir = beys.map((bey) => (bey.spin === 'left' ? -1 : 1));
+    // A harder launch looks faster too: a Super Launch spins about 40% quicker than a normal rip.
+    const spinBoost = result.launch.map((launch) => 1 + (launch - 1) * 4);
     const turn = [0, 0];
     const history: Point[][] = [[], []];
     const dashing = [false, false];
@@ -227,7 +229,7 @@ export function BattleArena({ beys, names, result, score, round, onDone }: Props
         const b = steps[i0 + 1];
         for (const i of [0, 1] as const) {
           const energy = a.energy[i] + (b.energy[i] - a.energy[i]) * f;
-          turn[i] += spinDir[i] * dt * 1100 * Math.max(0.1, Math.min(1.3, energy / 100));
+          turn[i] += spinDir[i] * dt * 1100 * spinBoost[i] * Math.max(0.1, Math.min(1.3, energy / 100));
           const nowDashing = a.dash === i || b.dash === i;
           if (nowDashing && !dashing[i]) say('X DASH!', a.at[i]);
           setDashing(i, nowDashing);
@@ -269,7 +271,7 @@ export function BattleArena({ beys, names, result, score, round, onDone }: Props
         const isLoser = i === loser || result.winner === null;
         const from = end.at[i];
         if (!isLoser) {
-          turn[i] += spinDir[i] * dt * 900;
+          turn[i] += spinDir[i] * dt * 900 * spinBoost[i];
           place(i, [from[0] * (1 - Math.min(1, ft / 900) * 0.6), from[1] * (1 - Math.min(1, ft / 900) * 0.6)]);
           continue;
         }
