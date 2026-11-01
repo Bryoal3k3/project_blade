@@ -39,3 +39,8 @@ export function useHashRoute(): RouteState {
 
   return state;
 }
+
+/** The list screens (Beys, My Beys, Wish list): leaving one loses nothing, so an app update can reload there. */
+export function isListRoute(hash: string): boolean {
+  return /^#?\/?(mine|wish)?\/?$/.test(hash);
+}

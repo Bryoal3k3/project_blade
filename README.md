@@ -73,4 +73,4 @@ Then open the site on the phone and:
 - **iPhone**: in Safari, tap Share, then **Add to Home Screen**.
 - **Android**: in Chrome, tap the menu, then **Install app** or **Add to Home screen**.
 
-After the first visit it works without Wi-Fi, and it updates itself the next time it opens after a new version is published.
+After the first visit it works without Wi-Fi. The app looks for a new version every time it is opened or brought back to the front (and once an hour while open), downloads it in the background, and switches to it on a list screen so a battle or a build in progress isn't interrupted. The bottom of the Beys page shows the date the app was built, so you can tell whether a phone has the latest version.

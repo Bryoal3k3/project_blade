@@ -70,7 +70,13 @@ export function BrowsePage({ list, filter, onFilter, collection, saved }: Props)
       ) : (
         <EmptyState list={list} filter={filter} listIsEmpty={inList.length === 0} />
       )}
-      {list === 'all' && <p className="checked-note">New Beys last checked {checkedLabel(checked.date)}.</p>}
+      {list === 'all' && (
+        <p className="checked-note">
+          New Beys last checked {checkedLabel(checked.date)}.
+          <br />
+          App updated {checkedLabel(__BUILD_DATE__)}.
+        </p>
+      )}
     </main>
   );
 }

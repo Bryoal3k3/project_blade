@@ -3,6 +3,7 @@ import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import App from './App';
 import { BEYS } from './data';
 import { barPercent } from './components/PartSection';
+import { isListRoute } from './hooks/useHashRoute';
 
 function go(hash: string) {
   act(() => {
@@ -233,5 +234,12 @@ describe('stat bars', () => {
     expect(barPercent('blade', 60)).toBe(60);
     expect(barPercent('bit', 80)).toBe(80);
     expect(barPercent('ratchet', 12)).toBe(37.5);
+  });
+});
+
+describe('app updates', () => {
+  it('only reloads for a new version on the list screens', () => {
+    for (const hash of ['', '#', '#/', '#/mine', '#/wish']) expect(isListRoute(hash)).toBe(true);
+    for (const hash of ['#/battle', '#/build', '#/bey/rudder-phoenix-4-70lf']) expect(isListRoute(hash)).toBe(false);
   });
 });
