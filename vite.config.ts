@@ -6,10 +6,16 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   // Relative paths, so the built app works from any host or sub-folder.
   base: './',
+  define: {
+    // Shown at the bottom of the Beys page, so a phone's copy can be told apart from the latest.
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+  },
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      // src/pwa.ts registers the worker itself, so it can check for updates and reload at a quiet moment.
+      injectRegister: false,
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
         name: 'Project Blade',
