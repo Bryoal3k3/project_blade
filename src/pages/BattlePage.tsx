@@ -6,7 +6,7 @@ import type { Collection } from '../hooks/useCollection';
 import type { Saved } from '../hooks/useSaved';
 import { unlockSound, playFinish, playTick } from '../lib/sound';
 import { BattleArena } from '../components/BattleArena';
-import { LaunchMeter } from '../components/LaunchMeter';
+import { Ripcord } from '../components/Ripcord';
 import { FINISH_ICON, FaceOff, Pips, SIDE_NAMES, Scoreboard, Spotlight } from '../components/BattleBits';
 import { BeyPicture } from '../components/BeyPicture';
 import { FighterPicker, resolveFighter, type FighterRef, type ResolvedFighter } from '../components/FighterPicker';
@@ -203,7 +203,7 @@ function AppBattle({ collection, saved }: { collection: Collection; saved: Saved
             </>
           }
         />
-        <LaunchMeter key={round?.n ?? 0} beys={[fighters[0].bey, fighters[1].bey]} names={[fighters[0].name, fighters[1].name]} onDone={launched} />
+        <Ripcord key={round?.n ?? 0} beys={[fighters[0].bey, fighters[1].bey]} names={[fighters[0].name, fighters[1].name]} onDone={launched} />
       </div>
     );
   }
