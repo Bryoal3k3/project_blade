@@ -15,6 +15,11 @@ function quiet(): boolean {
 
 export function setupUpdates(): void {
   if (!('serviceWorker' in navigator)) return;
+  // A new worker pings every open page; answering tells it this page will reload itself (below).
+  // Pages from older versions can't answer, and the worker (public/sw-update.js) reloads them.
+  navigator.serviceWorker.addEventListener('message', (event) => {
+    if (event.data?.type === 'blade:ping') (event.source ?? navigator.serviceWorker.controller)?.postMessage({ type: 'blade:pong' });
+  });
   registerSW({
     immediate: true,
     onRegisteredSW(_url, registration) {

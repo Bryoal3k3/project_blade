@@ -3,12 +3,15 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+// The config runs in Node, but the project has no Node type definitions; this is all it needs.
+declare const process: { env: Record<string, string | undefined> };
+
 export default defineConfig({
   // Relative paths, so the built app works from any host or sub-folder.
   base: './',
   define: {
     // Shown at the bottom of the Beys page, so a phone's copy can be told apart from the latest.
-    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+    __BUILD_DATE__: JSON.stringify(process.env.BUILD_DATE ?? new Date().toISOString().slice(0, 10)),
   },
   plugins: [
     react(),
@@ -34,7 +37,13 @@ export default defineConfig({
         ],
       },
       workbox: {
+        // A new version takes over right away, even with the old one open, instead of waiting for every page to close.
+        skipWaiting: true,
+        clientsClaim: true,
+        // Reloads pages from older versions when a new worker takes over; see public/sw-update.js.
+        importScripts: ['sw-update.js'],
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,webp,woff2}'],
+        globIgnores: ['**/node_modules/**/*', 'sw-update.js'],
         // Bey photos can be large; keep them available offline too.
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
       },
