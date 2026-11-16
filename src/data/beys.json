@@ -676,6 +676,9 @@
     "type": "balance",
     "spin": "right",
     "released": "2025-09",
+    "packs": [
+      "Lightning Hunters Multipack"
+    ],
     "price": 16.99,
     "weight": 42.7,
     "statsFrom": "Beyblade wiki",
@@ -2286,6 +2289,7 @@
         "defense": 50,
         "stamina": 30
       },
+      "weight": 42.6,
       "type": "balance",
       "integratedRatchet": true
     },
@@ -5212,7 +5216,8 @@
     "released": "2025-05-21",
     "packs": [
       "Pearl Tiger and Gill Shark Dual Pack",
-      "Rival Rumble Pack"
+      "Rival Rumble Pack",
+      "Lightning Hunters Multipack"
     ],
     "weight": 43.1,
     "statsFrom": "Beyblade wiki",
@@ -6508,6 +6513,75 @@
       "shape": "round",
       "blades": 6,
       "accent": "#FFC24B"
+    }
+  },
+  {
+    "id": "hunt-wolf-f-0-60db",
+    "names": {
+      "hasbro": "Hunt Wolf F",
+      "takaraTomy": "WolfHunt"
+    },
+    "line": "CX",
+    "productCode": "G4706",
+    "set": "Set",
+    "type": "stamina",
+    "spin": "right",
+    "packs": [
+      "Lightning Hunters Multipack"
+    ],
+    "weight": 49.1,
+    "statsFrom": "Beyblade wiki",
+    "blade": {
+      "pieces": [
+        {
+          "label": "Lock Chip",
+          "name": "Wolf"
+        },
+        {
+          "label": "Primary Blade",
+          "name": "Hunt"
+        },
+        {
+          "label": "Auxiliary Blade",
+          "name": "Free"
+        }
+      ],
+      "type": "stamina",
+      "stats": {
+        "attack": 25,
+        "defense": 30,
+        "stamina": 55
+      }
+    },
+    "ratchet": {
+      "name": "0-60",
+      "stats": {
+        "attack": 3,
+        "defense": 14,
+        "stamina": 13
+      },
+      "weight": 6.8,
+      "photo": "ratchet-0-60"
+    },
+    "bit": {
+      "code": "DB",
+      "name": "Disk Ball",
+      "type": "stamina",
+      "stats": {
+        "attack": 15,
+        "defense": 20,
+        "stamina": 55,
+        "dash": 10,
+        "burstResistance": 30
+      },
+      "weight": 3.2,
+      "photo": "bit-disk-ball"
+    },
+    "photoSpins": true,
+    "art": {
+      "shape": "round",
+      "blades": 4,
+      "accent": "#7FD0FF"
     }
   },
   {

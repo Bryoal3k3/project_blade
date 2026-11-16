@@ -231,6 +231,15 @@
     ]
   },
   {
+    "name": "Lightning Hunters Multipack",
+    "set": "Set",
+    "beys": [
+      "hunt-wolf-f-0-60db",
+      "shelter-drake-7-80gp",
+      "pearl-tiger-3-60u"
+    ]
+  },
+  {
     "name": "Luke Skywalker and Darth Vader Multipack Set",
     "set": "Multipack",
     "price": 39.99,
